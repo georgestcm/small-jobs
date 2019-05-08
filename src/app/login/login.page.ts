@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-public  iconLink: string ="assets/imgs/icon.png";
+ public  iconLink: string ="assets/imgs/icon.png";
   constructor() { }
 
   ngOnInit() {
