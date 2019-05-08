@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
+<div class="header">
+  <ion-toolbar color='bg'>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-img [src]='iconLink'></ion-img>
   </ion-toolbar>
-</ion-header>
+</div>
 
 <ion-content>
-
+ <div class="register_text">
+   <h2>REGISTER</h2>
+ </div>
+ <div class="form">
+   <form action="dfdsf">
+     <ion-input type="text" placeholder="username" required><ion-icon name="contact"></ion-icon></ion-input>
+     <ion-input type="text" placeholder="password" required><ion-icon name="key"></ion-icon></ion-input>
+     <ion-input type="text" placeholder="first name"><ion-icon name="person" required></ion-icon></ion-input>
+     <ion-input type="text" placeholder="last name"><ion-icon name="person" required></ion-icon></ion-input>
+     <ion-input type="text" placeholder="email"><ion-icon name="mail" required></ion-icon></ion-input>
+     <ion-input type="number" placeholder="phone number"><ion-icon name="call" required></ion-icon></ion-input>
+     <ion-input type="number" placeholder="zip code"><ion-icon name="pin" required></ion-icon></ion-input>
+     <ion-button type="submit"  color="light" class="ion-text-center">SUBMIT</ion-button>
+   </form>
+ </div>
+ <div class="back_to_login">
+ <a routerLink="/login" routerDirection="backward">Already Have An Account</a>
+ </div>
 </ion-content>
