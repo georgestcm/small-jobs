@@ -1,0 +1,65 @@
+.--color {
+  color: red;
+}
+
+.header {
+  letter-spacing: 2px;
+}
+
+.header h2 {
+  text-align: center;
+  margin-top: 30%;
+  font-weight: 700;
+  color: grey;
+}
+
+.img_shadow {
+  width: 80%;
+  margin: auto;
+  border-radius: 20px;
+  background-color: #f5f6f9;
+}
+
+.img_shadow .img {
+  width: 40%;
+  margin: 0 auto;
+}
+
+form {
+  text-align: center;
+}
+
+form ion-input {
+  width: 80%;
+  height: 44px;
+  margin: auto;
+  text-align: left;
+  font-size: 20px;
+  border-bottom: 1px solid grey;
+  margin-top: 20px;
+}
+
+form ion-input ion-icon {
+  color: #BBBF49;
+}
+
+form ion-button {
+  margin-top: 40px;
+  width: 34%;
+}
+
+.form_shadow {
+  width: 90%;
+  margin: auto;
+}
+
+div.register {
+  margin-top: 20px;
+  text-align: center;
+}
+
+div.register a {
+  text-decoration: none;
+  font-size: 13px;
+  color: grey;
+}

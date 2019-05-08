@@ -1,0 +1,7 @@
+{
+  "name": "smalljobs",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
