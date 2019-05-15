@@ -21,7 +21,8 @@ const routes: Routes = [
   { path: 'payments', component:PaymentsPage , pathMatch:'full'},
   { path: 'posted', component:PostedJPage , pathMatch:'full'},
   { path: 'post', component:PostPage , pathMatch:'full'},
-  { path: 'settings', component: SettingsPage, pathMatch:'full' }
+  { path: 'settings', component: SettingsPage, pathMatch:'full' },
+  { path: 'profile-edit', component: ProfileEditPage, pathMatch:'full' }
   ]
 },
 { path: 'password-reset', component:PasswordResetPage, pathMatch:'full' }
