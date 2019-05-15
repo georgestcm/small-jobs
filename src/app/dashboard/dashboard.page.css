@@ -46,6 +46,7 @@ div.header .arrow ion-icon {
 }
 
 ion-list.list {
+  padding: 0;
   height: 100%;
 }
 
