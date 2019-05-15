@@ -1,9 +1,37 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-split-pane>
+  <ion-menu contentId="content" menuId="main">
+ <div class="header" [routerLink]="">
+ <div class="img">
+   <img src="https://timedotcom.files.wordpress.com/2019/04/katiebouman.jpg"/>
+ </div>
+ <div class="name">
+   <p>Georges Tchianga</p>
+ </div>
+ <div class="arrow">
+  <ion-icon name="arrow-forward"></ion-icon>
+ </div>
+ </div>
+ <ion-content>
+   <ion-list class="list">
+     <ion-menu-toggle auto-hide="false">
+       <div class="menu_nav">
+         <ul>
+           <li (click)="toHome()" ><a>Home</a></li>
+           <li (click)="toMessages()"><a>Messages <ion-badge color="primary">2</ion-badge></a></li>
+            <li (click)="toPayments()"><a >Payments</a></li>
+             <li (click)="toPosted()"><a >Posted Jobs <ion-badge color="primary">11</ion-badge></a></li>
+         </ul>
+       </div>
 
-<ion-content>
-
-</ion-content>
+       <div class="footer">
+      <ul>
+        <li (click)="toSettings()"> <a > Settings</a></li>
+      </ul>
+       </div>
+     </ion-menu-toggle>
+   </ion-list>
+ </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content" main>
+  </ion-router-outlet>
+</ion-split-pane>
