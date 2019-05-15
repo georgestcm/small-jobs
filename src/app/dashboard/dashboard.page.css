@@ -1,0 +1,94 @@
+div.header {
+  width: 100%;
+  height: 30%;
+  background-color: #BBBF49;
+  display: flex;
+}
+
+div.header .img {
+  height: 100%;
+  width: 40%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.header .img img {
+  height: 46%;
+  width: 68%;
+  border-radius: 50%;
+  background-color: green;
+}
+
+div.header .name {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+div.header .arrow {
+  float: right;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.header .arrow ion-icon {
+  color: white;
+}
+
+ion-list.list {
+  height: 100%;
+}
+
+div.menu_nav ul {
+  list-style: none;
+  margin-top: 60px;
+}
+
+div.menu_nav ul li {
+  margin-bottom: 30px;
+  height: 36px;
+}
+
+div.menu_nav ul li a {
+  height: 36px;
+  width: inherit;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 100;
+  color: #0D0D0D;
+}
+
+div.menu_nav ul li a ion-badge {
+  background-color: #e57373;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+div.footer {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+}
+
+div.footer ul {
+  list-style: none;
+}
+
+div.footer ul li {
+  width: 100%;
+  height: 36px;
+}
+
+div.footer ul li a {
+  color: #0D0D0D;
+}
