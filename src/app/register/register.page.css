@@ -1,8 +1,3 @@
-ion-img {
-  width: 85px;
-  float: right;
-}
-
 ion-back-button {
   color: grey;
 }
@@ -11,7 +6,7 @@ ion-content .register_text {
   text-align: center;
 }
 
-ion-content .register_text h2 {
+ion-content .register_text h3 {
   margin: 0;
   font-weight: 700;
   color: grey;
