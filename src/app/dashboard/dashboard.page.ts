@@ -11,20 +11,29 @@ export class DashboardPage implements OnInit {
 
   ngOnInit() {
   }
+
   toMessages(){
       this.router.navigate(['dashboard/messages'])
     }
-    toHome(){
+
+ toHome(){
         this.router.navigate(['dashboard/home'])
       }
-      toPosted(){
+
+  toPosted(){
           this.router.navigate(['dashboard/posted'])
         }
-        toPayments(){
+
+  toPayments(){
             this.router.navigate(['dashboard/payments'])
           }
 
-    toSettings(){
+  toSettings(){
       this.router.navigate(['dashboard/settings'])
     }
+
+  toProfileEdit(){
+    this.router.navigate(['dashboard/profile-edit'])
+  }
+  
 }
