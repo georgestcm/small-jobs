@@ -17,7 +17,7 @@
   width: 80%;
   margin: auto;
   border-radius: 20px;
-  background-color: #f5f6f9;
+  background-color: #BBBF49;
 }
 
 .img_shadow .img {
@@ -45,12 +45,23 @@ form ion-input ion-icon {
 
 form ion-button {
   margin-top: 40px;
-  width: 34%;
+  width: 40%;
 }
 
 .form_shadow {
   width: 90%;
   margin: auto;
+}
+
+div.forgot_p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+div.forgot_p a {
+  color: grey;
+  text-decoration: none;
+  font-size: 15px;
 }
 
 div.register {
@@ -60,6 +71,6 @@ div.register {
 
 div.register a {
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
   color: grey;
 }
