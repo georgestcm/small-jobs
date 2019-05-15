@@ -18,3 +18,74 @@ div.post {
   font-weight: bold;
 }
 }
+
+div.title {
+  h4 {
+    text-align: center;
+    color: grey;
+    font-weight: bold;
+  }
+}
+
+
+div.form {
+
+  form {
+
+    label {
+      color: grey;
+      margin-left: 20px;
+    }
+    ion-input {
+      width: 90%;
+      height: 40px;
+      margin: auto;
+   text-align: left;
+   font-size: 20px;
+    border:1px solid grey;
+   border-radius: 3px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+div.submit {
+  text-align: center;
+  margin-bottom: 10px;
+}
+    ion-datetime {
+      width: 90%;
+      height: 40px;
+      margin: auto;
+      font-size: 20px;
+       border:1px solid grey;
+      border-radius: 3px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    ion-textarea {
+      width: 90%;
+      font-size: 20px;
+       border:1px solid grey;
+       margin: auto;
+       border-radius: 3px;
+       margin-top: 10px;
+       margin-bottom: 10px;
+    }
+    div.images {
+      margin:auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height: 100px;
+      width: 90%;
+      background-color: grey;
+      border-radius: 3px;
+    }
+    div.time {
+      label {
+        display: block;
+      }
+      ion-input {
+        width: 90%;
+      }
+    }
+  }
+}
