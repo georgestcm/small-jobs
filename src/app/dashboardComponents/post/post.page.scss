@@ -1,0 +1,20 @@
+div.header {
+  height: 41px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #BBBF49;
+  .exit {
+    width: 40%;
+    ion-buttons {
+      ion-back-button {
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+div.post {
+  color: white;
+  font-weight: bold;
+}
+}
