@@ -1,0 +1,18 @@
+div.header {
+  height: 41px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #BBBF49;
+  .menu {
+    display: inline-block;
+    margin: 7px 0 0 7px;
+    width: 37%;
+    color: grey;
+  }
+  .c_title {
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+  }
+}
