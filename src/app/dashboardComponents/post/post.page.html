@@ -10,5 +10,33 @@
 </div>
 
 <ion-content>
+  <div class="title">
+     <h4 >{{ pageTitle | uppercase }}</h4>
+  </div>
+  <div class="form">
+     <form action="">
+       <label for="job title">Job Title</label>
+  <ion-input type="text"></ion-input>
+  <label for="job description">Job Description</label>
+   <ion-textarea rows="7"  placeholder="Job Description"></ion-textarea>
+   <label for="images upload">Upload Job Images</label>
+   <div class="images">
+
+   </div>
+   <label for="start">Start date:</label>
+   <ion-datetime display-format="MMM DD, YYYY" value="1990-02-19"></ion-datetime>
+   <label for="time">Time</label>
+   <ion-datetime display-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
+   <label for="zipcode"> zip code</label>
+   <ion-input type="number"> </ion-input>
+
+<label for="payment"> Price</label>
+<ion-input type="number">&nbsp; $ </ion-input>
+<div class="submit">
+    <ion-button type="submit"  color="light" class="ion-text-center">SUBMIT</ion-button>
+</div>
+     </form>
+  </div>
+
 
 </ion-content>
