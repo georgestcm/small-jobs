@@ -16,7 +16,7 @@
   <div class="form">
      <form action="">
        <label for="job title">Job Title</label>
-  <ion-input type="text"></ion-input>
+  <ion-input type="text" placeholder="Job Title"></ion-input>
   <label for="job description">Job Description</label>
    <ion-textarea rows="7"  placeholder="Job Description"></ion-textarea>
    <label for="images upload">Upload Job Images</label>
@@ -27,8 +27,13 @@
    <ion-datetime display-format="MMM DD, YYYY" value="1990-02-19"></ion-datetime>
    <label for="time">Time</label>
    <ion-datetime display-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
-   <label for="zipcode"> zip code</label>
-   <ion-input type="number"> </ion-input>
+   <div class="location">
+     <div class="zip-code">
+       <label for="zipcode"> Enter zip code or use Geolocation</label>
+       <ion-input type="number" placeholder="Zip code"> </ion-input>
+        <ion-toggle color="primary"></ion-toggle>
+     </div>
+   </div>
 
 <label for="payment"> Price</label>
 <ion-input type="number">&nbsp; $ </ion-input>
