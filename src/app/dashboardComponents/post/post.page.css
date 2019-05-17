@@ -79,10 +79,28 @@ div.form form div.images {
   border-radius: 3px;
 }
 
-div.form form div.time label {
+div.form form div.location label {
+  width: 90%;
   display: block;
 }
 
-div.form form div.time ion-input {
-  width: 90%;
+div.form form div.location ion-input {
+  display: inline-block;
+  width: 40%;
+  height: 40px;
+  margin: 0 !important;
+  text-align: left;
+  font-size: 20px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  margin-top: 10px !important;
+  margin-left: 20px !important;
+  margin-bottom: 10px !important;
+}
+
+div.form form div.location ion-toggle {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  left: 20px;
 }
