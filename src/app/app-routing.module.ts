@@ -9,6 +9,7 @@ import {ProfileEditPage } from './dashboardComponents/profile-edit/profile-edit.
 import {PostPage } from './dashboardComponents/post/post.page'
 import {SettingsPage} from './dashboardComponents/settings/settings.page'
 import { PasswordResetPage } from './dashboardComponents/password-reset/password-reset.page'
+import { JobCompletedPage } from './dashboardComponents/job-completed/job-completed.page'
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'posted', component:PostedJPage , pathMatch:'full'},
   { path: 'post', component:PostPage , pathMatch:'full'},
   { path: 'settings', component: SettingsPage, pathMatch:'full' },
-  { path: 'profile-edit', component: ProfileEditPage, pathMatch:'full' }
+  { path: 'profile-edit', component: ProfileEditPage, pathMatch:'full' },
+  { path: 'job-completed', component: JobCompletedPage, pathMatch:'full' }
   ]
 },
 { path: 'password-reset', component:PasswordResetPage, pathMatch:'full' }
@@ -44,5 +46,6 @@ export const components = [
   DashboardPage,
   PostPage,
   SettingsPage,
-  PasswordResetPage
+  PasswordResetPage,
+  JobCompletedPage
 ];
