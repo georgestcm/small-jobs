@@ -35,5 +35,7 @@ export class DashboardPage implements OnInit {
   toProfileEdit(){
     this.router.navigate(['dashboard/profile-edit'])
   }
-  
+  toCompleted(){
+    this.router.navigate(['dashboard/Job-completed'])
+  }
 }
