@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post.page.scss'],
 })
 export class PostPage implements OnInit {
-  const pageTitle:string = "create a new job"
+
   constructor() { }
 
   ngOnInit() {
