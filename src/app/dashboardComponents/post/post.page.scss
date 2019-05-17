@@ -79,12 +79,29 @@ div.submit {
       background-color: grey;
       border-radius: 3px;
     }
-    div.time {
+    div.location {
       label {
+        width: 90%;
         display: block;
       }
       ion-input {
-        width: 90%;
+        display: inline-block;
+        width: 40%;
+        height: 40px;
+        margin: 0 !important;
+     text-align: left;
+     font-size: 20px;
+      border:1px solid grey;
+     border-radius: 3px;
+     margin-top: 10px !important;
+         margin-left: 20px !important;
+     margin-bottom: 10px !important;
+      }
+      ion-toggle {
+        display: inline-block;
+position: relative;
+top: 10px;
+left: 20px;
       }
     }
   }
