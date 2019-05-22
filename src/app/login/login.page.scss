@@ -4,12 +4,16 @@
 
 .header {
  letter-spacing: 2px;
+ padding-top: 30%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
   h2 {
-    text-align: center;
-    margin-top: 30%;
+     height: 100%;
      font-weight: 700;
-     color: grey;
-
+     color: #BBBF49;
+     bottom: 45px;
+     position: relative
   }
 }
 .img_shadow{
