@@ -4,7 +4,7 @@
 
 .header {
   letter-spacing: 2px;
-  padding-top: 30%;
+  padding-top: 28%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@
 .header h2 {
   height: 100%;
   font-weight: 700;
-  color: #BBBF49;
+  color: grey;
   bottom: 45px;
   position: relative;
 }
@@ -21,12 +21,11 @@
 .img_shadow {
   width: 80%;
   margin: auto;
-  border-radius: 20px;
-  background-color: #BBBF49;
+  margin-bottom: 5%;
 }
 
 .img_shadow .img {
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -45,7 +44,7 @@ form ion-input {
 }
 
 form ion-input ion-icon {
-  color: #BBBF49;
+  color: grey;
 }
 
 form ion-button {
