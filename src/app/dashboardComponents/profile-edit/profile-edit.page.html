@@ -1,32 +1,35 @@
 <div class="header">
 <div class="back">
   <ion-buttons slot="start">
-        <ion-back-button defaultHref="/dashboard/home"></ion-back-button>
+        <ion-back-button defaultHref="/dashboard/home/1000"></ion-back-button>
       </ion-buttons>
 </div>
-<div class="c_title">Edit Profile</div>
+<div class="setting"><ion-icon (click)="presentActionSheet()"name="settings"></ion-icon></div>
 </div>
 
 <ion-content>
-  <form action="">
      <div class="upload-photo">
-       <label for="image upload">
-         <img src="https://timedotcom.files.wordpress.com/2019/04/katiebouman.jpg" alt="">
-         <ion-input type="file" name="picture" accept="image/*" title="take photo" ></ion-input>
-       </label>
+         <img  class="profile_photo" [src]="userData.profile_photo"  alt=""/>
+       <ion-button (click)="snapPic()">Change photo</ion-button>
      </div>
-     <div class="edit">
-       <ion-icon name="create">
-       </ion-icon>
-     </div>
-    <div class="form">
-      <ion-input type="text" disabled placeholder="username" required><ion-icon name="contact"></ion-icon></ion-input>
-      <ion-input type="text" disabled placeholder="first name"><ion-icon name="person" required></ion-icon></ion-input>
-      <ion-input type="text"  disabled placeholder="last name"><ion-icon name="person" required></ion-icon></ion-input>
-      <ion-input type="text" disabled placeholder="email"><ion-icon name="mail" required></ion-icon></ion-input>
-      <ion-input type="number" disabled placeholder="phone number"><ion-icon name="call" required></ion-icon></ion-input>
-      <ion-input type="number" disabled placeholder="zip code"><ion-icon name="pin" required></ion-icon></ion-input>
+    <div class="profile">
+      <div class="info">
+        <div class="name infos">
+          <div class="icon"><ion-icon name="person"></ion-icon></div>
+          <div class="data">{{userData.first_name + " "+ userData.last_name}}</div>
+        </div>
+        <div class="username infos">
+          <div class="icon"><ion-icon name="contact"></ion-icon></div>
+          <div class="data">{{userData.username}}</div>
+        </div>
+        <div class="email infos">
+          <div class="icon"><ion-icon name="mail"></ion-icon></div>
+          <div class="data">{{userData.email}}</div>
+        </div>
+        <div class="number infos">
+          <div class="icon"><ion-icon name="call"></ion-icon></div>
+          <div class="data">{{userData.phone_number}}</div>
+        </div>
+      </div>
     </div>
-    <ion-button type="submit" disabled color="light" class="ion-text-center">UPDATE</ion-button>
-  </form>
 </ion-content>

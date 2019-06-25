@@ -3,7 +3,7 @@ div.header {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #BBBF49;
+  background-color: white;
 }
 
 div.header .exit {
@@ -11,16 +11,77 @@ div.header .exit {
 }
 
 div.header .exit ion-buttons ion-back-button {
-  color: white;
+  color: grey;
   font-weight: bold;
 }
 
 div.setting {
-  color: white;
+  color: grey;
   font-weight: bold;
 }
 
 ion-list ion-item {
   color: #e57373;
   width: 100%;
+}
+
+ion-footer ion-list {
+  padding: 0;
+}
+
+ion-content ion-list ion-item {
+  color: #e57373;
+}
+
+ion-content ion-list ion-item:nth-child(1) {
+  height: 10px;
+}
+
+ion-content ion-list ion-item:nth-child(2) div.account_info {
+  width: 100%;
+  display: inherit;
+}
+
+ion-content ion-list ion-item:nth-child(2) div.account_info div.my_photo {
+  width: 30%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-content ion-list ion-item:nth-child(2) div.account_info div.my_photo img {
+  border-radius: 50%;
+  width: 100px;
+  display: inline-block;
+}
+
+ion-content ion-list ion-item:nth-child(2) div.account_info div.info {
+  width: 70%;
+  height: 120px;
+  display: inline-block;
+}
+
+ion-content ion-list ion-item:nth-child(2) div.account_info div.info p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+ion-content ion-list ion-item:nth-child(2) div.account_info div.info p:nth-child(1) {
+  margin-top: 20px;
+}
+
+ion-content ion-list ion-item:nth-child(2) div.account_info div.info p ion-icon {
+  color: grey;
+  margin-left: 5px;
+}
+
+ion-content ion-list ion-item:nth-child(3) {
+  color: grey;
+}
+
+ion-content ion-list ion-item:nth-child(3) ion-icon {
+  position: relative;
+  top: 2px;
+  margin-left: 10px;
 }

@@ -4,27 +4,28 @@
 
 .header {
  letter-spacing: 2px;
- padding-top: 28%;
- display: flex;
- justify-content: center;
- align-items: center;
+ //padding-top: 28%;
   h2 {
-     height: 100%;
-     font-weight: 700;
+    text-align: center;
+    margin-top: 90px;
+     //height: 100%;
+     //font-weight: 700;
      color: grey;
-     bottom: 45px;
-     position: relative
+     //bottom: 45px;
+     //position:
+
+  }
+  .img_shadow{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5%;
+  .img {
+    width: 50%;
+    margin:  0 auto;
+  }
   }
 }
-.img_shadow{
-  width: 80%;
-  margin: auto;
-  margin-bottom: 5%;
-.img {
-  width: 50%;
-  margin:  0 auto;
-}
-}
+
 form {
 text-align: center;
 

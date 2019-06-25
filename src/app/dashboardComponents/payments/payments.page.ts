@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payments.page.scss'],
 })
 export class PaymentsPage implements OnInit {
-
+public  iconLink: string ="/assets/imgs/icon.png";
   constructor() { }
 
   ngOnInit() {

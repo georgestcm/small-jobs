@@ -2,6 +2,26 @@ ion-back-button {
   color: grey;
 }
 
+ion-toolbar ion-buttons {
+  width: 34%;
+}
+
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-content div.register_text {
+  text-align: center;
+}
+
+ion-content div.register_text h3 {
+  color: grey;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
 ion-content .register_text {
   text-align: center;
 }
@@ -42,7 +62,11 @@ div.form form ion-input ion-icon {
   color: grey;
 }
 
-div.form form ion-button {
+div.form form ion-input:nth-child(1) {
   margin-top: 40px;
-  width: 34%;
+}
+
+div.form form ion-button {
+  margin-top: 30px;
+  width: 40%;
 }

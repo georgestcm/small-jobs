@@ -65,5 +65,5 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
   /**bg  **/
-  --ion-color-bg-contrast: #f5f6f9;
+  --ion-color-bg-contrast: red;
 }

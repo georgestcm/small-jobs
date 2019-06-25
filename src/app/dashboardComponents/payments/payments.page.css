@@ -3,7 +3,6 @@ div.header {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #BBBF49;
 }
 
 div.header .menu {
@@ -16,5 +15,77 @@ div.header .menu {
 div.header .c_title {
   display: inline-block;
   font-weight: bold;
-  color: white;
+  color: grey;
+}
+
+ion-content ion-card ion-card-content {
+  padding: 0;
+}
+
+ion-content ion-card ion-card-content div.img {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+ion-content ion-card ion-card-content div.img ion-img {
+  width: 90px;
+}
+
+ion-content ion-card ion-card-content div.plan {
+  height: 70px;
+}
+
+ion-content ion-card ion-card-content div.plan h3 {
+  text-align: center;
+  margin: 0;
+}
+
+ion-content ion-card ion-card-content div.plan div.plan_details {
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  border: 0.8px solid #D8D8D8;
+  border-radius: 10px;
+  margin-top: 7px;
+}
+
+ion-content ion-card ion-card-content div.plan div.plan_details h4 {
+  font-weight: bolder;
+  margin: 0;
+  font-size: xx-large;
+  height: 66px;
+}
+
+ion-content ion-card ion-card-content div.plan div.plan_details h4 ion-icon {
+  font-size: 50px;
+  color: #e57373;
+  position: relative;
+  top: 12px;
+  margin-right: 15px;
+}
+
+ion-content ion-card ion-card-content div.plan div.plan_details h4 sub {
+  font-size: 10px;
+  color: #e57373;
+}
+
+ion-content ion-card ion-card-content div.plan div.plan_details h4 sup {
+  font-size: 19px;
+}
+
+ion-content ion-card ion-card-content div.status {
+  text-align: center;
+  margin-top: 32px;
+}
+
+ion-content ion-card ion-card-content div.status h2 ion-icon {
+  position: relative;
+  top: 3px;
+}
+
+ion-content ion-card ion-card-content div.status ion-button {
+  margin-top: 10px;
+  margin-bottom: 15px;
 }

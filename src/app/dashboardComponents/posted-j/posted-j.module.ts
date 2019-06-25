@@ -8,10 +8,6 @@ import { IonicModule } from '@ionic/angular';
 import { PostedJPage } from './posted-j.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: PostedJPage
-  }
 ];
 
 @NgModule({

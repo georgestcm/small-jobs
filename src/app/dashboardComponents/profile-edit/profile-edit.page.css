@@ -3,7 +3,6 @@ div.header {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #BBBF49;
 }
 
 div.header .back {
@@ -13,83 +12,101 @@ div.header .back {
 }
 
 div.header .back ion-buttons ion-back-button {
-  color: white;
+  color: grey;
   font-size: 20px;
 }
 
-div.header .c_title {
-  display: inline-block;
-  font-weight: bold;
-  color: white;
+div.header .setting {
+  width: 63%;
+  height: 41px;
+  display: flex;
+  align-items: center;
 }
 
-form {
-  text-align: center;
+div.header .setting ion-icon {
+  position: relative;
+  left: 83%;
+  top: 4px;
+  color: grey;
+  font-size: 18px;
 }
 
-form div.upload-photo {
-  height: 170px;
+div.upload-photo {
   width: 100%;
-  background-color: #E0E0E0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: white;
 }
 
-form div.upload-photo label {
-  height: 150px;
-  width: 150px;
+div.upload-photo img {
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-form div.upload-photo label img {
-  height: 150px;
   width: 150px;
-  border-radius: 50%;
+  margin-left: 30%;
+  margin-top: 10px;
 }
 
-form div.upload-photo label ion-input {
-  height: 150px;
-  width: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: -222;
+div.upload-photo ion-button {
+  margin-left: 30%;
+  margin-top: 20px;
 }
 
-form div.edit {
+div.edit {
   width: 80%;
   margin: auto;
   padding-top: 10px;
 }
 
-form div.edit ion-icon[name="create"] {
+div.edit ion-icon[name="create"] {
   margin: 9px 10px 9px 0;
   margin-left: 95%;
 }
 
-form .form ion-input {
-  width: 80%;
-  height: 44px;
+.profile {
+  margin-top: 20px;
+  width: 100%;
+  height: 60%;
+}
+
+.profile .info {
+  border-radius: 7px;
+  height: 100%;
+  width: 90%;
   margin: auto;
-  text-align: left;
-  font-size: 20px;
-  border-bottom: 1px solid grey;
-  margin-top: 10px;
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.26);
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.26);
 }
 
-form .form ion-input:nth-child(1) {
-  margin-top: 0;
+.profile .info .infos {
+  width: 80%;
+  height: 24%;
+  margin: auto;
 }
 
-form .form ion-input ion-icon {
-  color: #BBBF49;
+.profile .info .infos div.icon {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  margin-top: 43px;
 }
 
-form ion-button {
-  margin-top: 40px;
-  width: 34%;
+.profile .info .infos div.icon ion-icon {
+  color: grey;
+  font-size: 26px;
+}
+
+.profile .info .infos div.data {
+  width: 50%;
+  display: inline-block;
+  color: grey;
+  text-align: center;
+}
+
+.profile .info .infos:nth-child(3) div.icon {
+  width: 30%;
+}
+
+.profile .info .infos:nth-child(3) div.data {
+  width: 70%;
+  text-align: right;
+  position: relative;
+  bottom: 6px;
 }

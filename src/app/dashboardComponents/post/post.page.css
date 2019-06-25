@@ -3,20 +3,20 @@ div.header {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #BBBF49;
+  background-color: white;
 }
 
 div.header .exit {
-  width: 40%;
+  width: 45%;
 }
 
 div.header .exit ion-buttons ion-back-button {
-  color: white;
+  color: grey;
   font-weight: bold;
 }
 
 div.header div.post {
-  color: white;
+  color: grey;
   font-weight: bold;
 }
 
@@ -24,6 +24,14 @@ div.title h4 {
   text-align: center;
   color: grey;
   font-weight: bold;
+}
+
+.take_picture {
+  display: block;
+  width: 20%;
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 div.form form label {
@@ -73,10 +81,42 @@ div.form form div.images {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
-  height: 100px;
+  height: 120px;
   width: 90%;
-  background-color: grey;
+  border-bottom: 1px solid grey;
   border-radius: 3px;
+  overflow-x: auto;
+  white-space: nowrap;
+  overflow-y: hidden;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.form form div.images ion-item {
+  display: inline-block;
+  height: inherit;
+  width: auto;
+}
+
+div.form form div.images ion-item ion-thumbnail {
+  margin: 0;
+  height: inherit;
+  width: 90px;
+}
+
+div.form form div.images ion-item ion-thumbnail ion-icon {
+  position: relative;
+  background-color: #e57373;
+  color: white;
+  border-radius: 50%;
+  left: 90%;
+  top: 15px;
+}
+
+div.form form div.images h3 {
+  color: grey;
 }
 
 div.form form div.location label {
@@ -103,4 +143,9 @@ div.form form div.location ion-toggle {
   position: relative;
   top: 10px;
   left: 20px;
+}
+
+div.form form ion-list ion-list-header {
+  color: grey;
+  font-size: 16px;
 }

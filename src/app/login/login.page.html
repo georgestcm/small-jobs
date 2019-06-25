@@ -1,14 +1,14 @@
 <div class='header'>
  <h2>QUICK JOBS</h2>
+ <div class="img_shadow">
+   <ion-img [src]="iconLink" class="img"></ion-img>
+   </div>
 </div>
-<div class="img_shadow">
-  <ion-img [src]="iconLink" class="img"></ion-img>
-  </div>
 <ion-content>
   <form action="">
-    <ion-input type="text" placeholder="username"><ion-icon name="person"></ion-icon></ion-input>
-    <ion-input type="password" placeholder="password"><ion-icon name="key"></ion-icon></ion-input>
-    <ion-button type="submit"  color="light" class="ion-text-center">LOGIN</ion-button>
+    <ion-input [(ngModel)]="loginData.username" type="text" name="username"placeholder="username"><ion-icon name="person"></ion-icon></ion-input>
+    <ion-input [(ngModel)]="loginData.password" type="password" name="password" placeholder="password"><ion-icon name="key"></ion-icon></ion-input>
+    <ion-button (click)="log()" type="submit"  color="light" class="ion-text-center">LOGIN</ion-button>
   </form>
   <div class="forgot_p">
     <a (click)="toPasswordReset()">Forgot Password</a>

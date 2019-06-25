@@ -1,12 +1,63 @@
 
   <ion-toolbar>
-    <ion-searchbar ></ion-searchbar>
+    <ion-item>
+      <ion-label><ion-icon name="pin"></ion-icon>filter</ion-label>
+      <ion-select placeholder="radius" (ionChange)="setDistance(distance)" value="1609.34" [(ngModel)]="distance" name="category">
+        <ion-select-option value="1609.34">1 miles</ion-select-option>
+        <ion-select-option value="8046.72">5 miles</ion-select-option>
+        <ion-select-option value="16093.4">10 miles</ion-select-option>
+        <ion-select-option value="24140.2">15 miles </ion-select-option>
+        <ion-select-option value="32186.9">20 miles</ion-select-option>
+      </ion-select>
+    </ion-item>
   </ion-toolbar>
 
-
 <ion-content padding>
+
+  <ion-card *ngFor="let jobs of allJobsNear" [hidden]="">
+    <div>
+  <ion-card-header>
+    <div class="user">
+      <div class="img">
+        <img src="https://via.placeholder.com/150" alt="">
+      </div>
+      <div class="info">
+        <div class="info_text">
+          <p><ion-icon name="person"></ion-icon></p>
+          <h6><ion-icon name="hammer"></ion-icon> {{jobs.job_title}}</h6>
+          <h5><ion-icon name="cash"></ion-icon>${{jobs.price}}</h5>
+        </div>
+      </div>
+    </div>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="job_imgs">
+      <ion-item>
+     <ion-thumbnail slot="start" *ngFor="let img of jobs.images">
+       <img [src]="img"/>
+     </ion-thumbnail>
+     </ion-item>
+    </div>
+    <div class="job_info">
+      <div class="job_info_one">
+        <p><ion-icon name="list"></ion-icon>Category: {{jobs.category}}</p>
+     <p><ion-icon name="pin"></ion-icon> Location: {{jobs.location}}</p>
+      </div>
+      <div class="job_info_two">
+        <p><ion-icon name="calendar"></ion-icon>Due date: {{jobs.due_date| date:'shortDate'}}</p>
+          <p><ion-icon name="time"></ion-icon>Time: {{jobs.time }}</p>
+      </div>
+
+    </div>
+    <div class="apply_description">
+      <ion-button (click)="presentAlert(jobs.description)">More Info</ion-button>
+      <ion-button color="danger">Apply</ion-button>
+    </div>
+</ion-card-content>
+</div>
+  </ion-card>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button color="light" [routerLink]="['../post']">
+      <ion-fab-button color="light" [routerLink]="['/dashboard/post']">
         <ion-icon name="add">
         </ion-icon>
       </ion-fab-button>

@@ -3,54 +3,45 @@ div.header {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #BBBF49;
   .back {
     display: inline-block;
     width: 37%;
     color: grey;
     ion-buttons {
       ion-back-button {
-        color: white;
+        color: grey;
         font-size: 20px;
       }
     }
+
   }
-  .c_title {
-    display: inline-block;
-    font-weight: bold;
-    color: white;
+  .setting {
+    width: 63%;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    ion-icon {
+      position: relative;
+      left: 83%;
+      top: 4px;
+      color: grey;
+      font-size: 18px;
+    }
   }
 }
 
-form {
-  text-align: center;
   div.upload-photo {
-    height: 170px;
     width: 100%;
-    background-color:#E0E0E0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    label {
-      height: 150px;
-      width: 150px;
+    background-color: white;
+    img {
       border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img {
-        height: 150px;
-        width: 150px;
-        border-radius: 50%;
-      }
-      ion-input {
-        height: 150px;
-        width: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: -222;
-      }
+      width: 150px;
+      margin-left: 30%;
+      margin-top: 10px;
+    }
+    ion-button {
+      margin-left: 30%;
+      margin-top: 20px;
     }
   }
   div.edit {
@@ -62,25 +53,51 @@ form {
       margin-left: 95%;
     }
   }
-    .form {
-      ion-input {
+    .profile {
+      margin-top: 20px;
+      width: 100%;
+      height: 60%;
+      .info {
+         border-radius: 7px;
+         height: 100%;
+         width:90%;
+         margin: auto;
+         -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.26);
+-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.26);
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.26);
+
+      .infos {
         width: 80%;
-        height: 44px;
+        height: 24%;
         margin: auto;
-     text-align: left;
-     font-size: 20px;
-     border-bottom: 1px solid grey;
-     margin-top: 10px;
-     &:nth-child(1){
-       margin-top: 0;
-     }
-     ion-icon {
-       color:#BBBF49;
-     }
+        div.icon {
+          display: inline-block;
+          width: 50%;
+          height: 100%;
+          margin-top: 43px;
+          ion-icon {
+            color: grey;
+            font-size: 26px;
+
+          }
+        }
+        div.data {
+          width: 50%;
+             display: inline-block;
+             color: grey;
+             text-align: center;
+        }
+        &:nth-child(3){
+          div.icon {
+            width: 30%;
+          }
+          div.data {
+            width: 70%;
+            text-align: right;
+            position: relative;
+            bottom: 6px;
+          }
+        }
+      }
       }
     }
-    ion-button {
-    margin-top: 40px;
-    width: 34%;
-    }
-}

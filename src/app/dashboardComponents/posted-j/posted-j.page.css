@@ -3,7 +3,7 @@ div.header {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #BBBF49;
+  background-color: white;
 }
 
 div.header .menu {
@@ -16,5 +16,5 @@ div.header .menu {
 div.header .c_title {
   display: inline-block;
   font-weight: bold;
-  color: white;
+  color: grey;
 }

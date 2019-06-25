@@ -3,12 +3,12 @@ div.header {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #BBBF49;
+  background-color: white;
   .exit {
     width: 40%;
     ion-buttons {
       ion-back-button {
-        color: white;
+        color: grey;
         font-weight: bold;
       }
     }
@@ -16,7 +16,7 @@ div.header {
 }
 
 div.setting {
-  color: white;
+  color: grey;
   font-weight: bold;
 }
 
@@ -24,5 +24,68 @@ ion-list {
   ion-item {
     color: #e57373;
     width: 100%;
+  }
+}
+
+ion-footer {
+  ion-list {
+    padding: 0;
+  }
+}
+
+
+ion-content{
+  ion-list {
+    ion-item {
+        color:#e57373;
+        &:nth-child(1){
+          height: 10px;
+        }
+        &:nth-child(2){
+          div.account_info {
+            width: 100%;
+            display: inherit;
+            div.my_photo {
+              width: 30%;
+              height: 120px;
+              //background-color: blue;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                border-radius: 50%;
+                //background-color: red;
+                width: 100px;
+                display: inline-block;
+              }
+            }
+            div.info {
+              //background-color: red;
+              width: 70%;
+              height: 120px;
+              display: inline-block;
+              p {
+                margin:0;
+                margin-bottom: 5px;
+                &:nth-child(1){
+                  margin-top: 20px;
+                }
+                ion-icon {
+                color: grey;
+                margin-left: 5px;
+              }
+              }
+            }
+          }
+        }
+        &:nth-child(3){
+          color: grey;
+          ion-icon {
+            position: relative;
+            top: 2px;
+            margin-left: 10px;
+          }
+        }
+    }
   }
 }

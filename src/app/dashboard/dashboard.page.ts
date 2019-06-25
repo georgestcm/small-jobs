@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/data.service';
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
+userData;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,public _data: DataService,public storage: Storage) { }
 
   ngOnInit() {
+    this.userData = this.storage.get('user');
+    this.storage.get('user').then((value)=>{
+      this.userData = value;
+    });
   }
 
   toMessages(){
@@ -17,12 +24,8 @@ export class DashboardPage implements OnInit {
     }
 
  toHome(){
-        this.router.navigate(['dashboard/home'])
+        this.router.navigate(['dashboard'])
       }
-
-  toPosted(){
-          this.router.navigate(['dashboard/posted'])
-        }
 
   toPayments(){
             this.router.navigate(['dashboard/payments'])
@@ -35,7 +38,9 @@ export class DashboardPage implements OnInit {
   toProfileEdit(){
     this.router.navigate(['dashboard/profile-edit'])
   }
-  toCompleted(){
-    this.router.navigate(['dashboard/Job-completed'])
-  }
+
+toJobCenter(){
+  this.router.navigate(['dashboard/job-center'])
+}
+
 }

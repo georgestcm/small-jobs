@@ -1,7 +1,7 @@
 <div class="header">
   <div class="exit">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="dashboard/home"></ion-back-button>
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
     </ion-buttons>
   </div>
   <div class="setting">
@@ -12,8 +12,32 @@
 
 <ion-content>
   <ion-list>
-    <ion-item>
-      <ion-label>Sign Out</ion-label>
-    </ion-item>
-    </ion-list>
+    <ion-item lines="full"></ion-item>
+  <ion-item lines="full">
+    <div class="account_info">
+      <div class="my_photo">
+        <img src="https://via.placeholder.com/150" alt="">
+      </div><div class="info">
+           <p><ion-icon name="person"></ion-icon></p>
+           <p><ion-icon name="contact"></ion-icon></p>
+           <p><ion-icon name="mail"></ion-icon></p>
+           <p><ion-icon name="call"></ion-icon></p>
+      </div>
+    </div>
+
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label>
+      <ion-icon name="contact"></ion-icon>
+      Account
+    </ion-label>
+  </ion-item>
+</ion-list>
 </ion-content>
+<ion-footer>
+  <ion-list lines="full">
+  <ion-item (click)="logout()">
+    Sign Out
+  </ion-item>
+</ion-list>
+</ion-footer>

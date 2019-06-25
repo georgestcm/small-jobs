@@ -1,7 +1,7 @@
 <div class="header">
   <div class="exit">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="dashboard/home"></ion-back-button>
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
     </ion-buttons>
   </div>
   <div class="post">
@@ -16,29 +16,45 @@
   <div class="form">
      <form action="">
        <label for="job title">Job Title</label>
-  <ion-input type="text" placeholder="Job Title"></ion-input>
-  <label for="job description">Job Description</label>
-   <ion-textarea rows="7"  placeholder="Job Description"></ion-textarea>
-   <label for="images upload">Upload Job Images</label>
+  <ion-input  [(ngModel)]="jobToPost.job_title" name="job_title" type="text" placeholder="job title"></ion-input>
+  <ion-list>
+  <ion-list-header>Categories</ion-list-header>
+
+  <ion-item>
+    <ion-label>Choose one</ion-label>
+    <ion-select placeholder="Select One" [(ngModel)]="jobToPost.category" name="category">
+      <ion-select-option value="cleaning">Cleaning</ion-select-option>
+      <ion-select-option value="repair">Repair</ion-select-option>
+      <ion-select-option value="baby-sitting">Baby Sitting</ion-select-option>
+      <ion-select-option value="dog-walking">Dog walking</ion-select-option>
+      <ion-select-option value="other">Other</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+  <label for="job description">Job Description:</label>
+   <ion-textarea rows="7"  placeholder="job description"[(ngModel)]="jobToPost.description" name="decription"></ion-textarea>
+   <label for="images upload">Upload job images:</label>
+    <ion-button class="take_picture" (click)="snapPic()"><ion-icon name="camera"></ion-icon></ion-button>
    <div class="images">
-
+     <h3 *ngIf="jobToPost.images.length ===0" text-center>Please select images</h3>
+     <ion-item *ngFor="let img of jobToPost.images; index as pos">
+    <ion-thumbnail slot="start">
+      <ion-icon name="close" (click)="delete(pos)"></ion-icon>
+      <ion-img [src]="img" (click)="viewImg(img)">
+      </ion-img>
+    </ion-thumbnail>
+ </ion-item>
    </div>
-   <label for="start">Start date:</label>
-   <ion-datetime display-format="MMM DD, YYYY" value="1990-02-19"></ion-datetime>
-   <label for="time">Time</label>
-   <ion-datetime display-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
-   <div class="location">
-     <div class="zip-code">
-       <label for="zipcode"> Enter zip code or use Geolocation</label>
-       <ion-input type="number" placeholder="Zip code"> </ion-input>
-        <ion-toggle color="primary"></ion-toggle>
-     </div>
-   </div>
-
-<label for="payment"> Price</label>
-<ion-input type="number">&nbsp; $ </ion-input>
+   <label for="location">Location:</label>
+   <ion-input type='text' placeholder="location" [(ngModel)]="jobToPost.location" name="location"></ion-input>
+   <label for="start">Due date:</label>
+   <ion-datetime display-format="MMM DD, YYYY" value="001-01-19" [(ngModel)]="jobToPost.due_date" name="due_date"></ion-datetime>
+   <label for="time">Time:</label>
+   <ion-datetime  display-format="hh:mm a" value="01:00" [(ngModel)]="jobToPost.time" name="time"></ion-datetime>
+<label for="payment"> Price:</label>
+<ion-input placeholder="price"type="number" [(ngModel)]="jobToPost.price" name="price">&nbsp; $ </ion-input>
 <div class="submit">
-    <ion-button type="submit"  color="light" class="ion-text-center">SUBMIT</ion-button>
+    <ion-button type="submit" (click)="post()"  color="light" class="ion-text-center">SUBMIT</ion-button>
 </div>
      </form>
   </div>
