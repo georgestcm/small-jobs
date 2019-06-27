@@ -12,6 +12,10 @@ ion-toolbar {
 }
 
 ion-content {
+  div {
+    color: grey;
+    text-align: center;
+  }
   ion-card {
     margin-bottom: 25px;
     display: block;
@@ -34,7 +38,7 @@ ion-content {
               margin: 0;
               color: grey;
               margin-left: 10px;
-              margin-bottom: 5px;
+              margin-bottom: 8px;
               ion-icon {
                 color: grey;
                 position: relative;
@@ -46,7 +50,7 @@ ion-content {
               margin: 0;
               color: grey;
               margin-left: 10px;
-              margin-bottom: 4px;
+              margin-bottom: 7px;
               ion-icon {
                 color: grey;
                 position: relative;
@@ -66,13 +70,6 @@ ion-content {
                 margin-right: 5px;
               }
             }
-          }
-        }
-        div.img {
-          display: inline-block;
-          width: 30%;
-          img {
-            border-radius: 50%;
           }
         }
       }

@@ -8,6 +8,11 @@ ion-toolbar ion-item ion-label ion-icon {
   top: 2px;
 }
 
+ion-content div {
+  color: grey;
+  text-align: center;
+}
+
 ion-content ion-card {
   margin-bottom: 25px;
   display: block;
@@ -40,7 +45,7 @@ ion-content ion-card ion-card-header div.user div.info .info_text p {
   margin: 0;
   color: grey;
   margin-left: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 ion-content ion-card ion-card-header div.user div.info .info_text p ion-icon {
@@ -54,7 +59,7 @@ ion-content ion-card ion-card-header div.user div.info .info_text h6 {
   margin: 0;
   color: grey;
   margin-left: 10px;
-  margin-bottom: 4px;
+  margin-bottom: 7px;
 }
 
 ion-content ion-card ion-card-header div.user div.info .info_text h6 ion-icon {
@@ -76,15 +81,6 @@ ion-content ion-card ion-card-header div.user div.info .info_text h5 ion-icon {
   position: relative;
   top: 4px;
   margin-right: 5px;
-}
-
-ion-content ion-card ion-card-header div.user div.img {
-  display: inline-block;
-  width: 30%;
-}
-
-ion-content ion-card ion-card-header div.user div.img img {
-  border-radius: 50%;
 }
 
 ion-content ion-card ion-card-content div.job_imgs {
