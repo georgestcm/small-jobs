@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { AlertController } from '@ionic/angular';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -18,8 +19,11 @@ usersNear;
  jobsNear=[];
  allJobsNear;
 
-  constructor(public _data: DataService,private route: ActivatedRoute,public storage: Storage,
-    private photoViewer: PhotoViewer,public alertController: AlertController) {
+  constructor(public _data: DataService,
+    private route: ActivatedRoute,
+    public storage: Storage,
+    public alertController: AlertController,
+  private photoViewer: PhotoViewer) {
  }
 
   ngOnInit() {
@@ -40,6 +44,9 @@ usersNear;
     }, 1000);
   }
 
+  viewImg(src){
+    this.photoViewer.show(src);
+  }
   async presentAlert(msg) {
       const alert = await this.alertController.create({
         header: 'Job Description',
