@@ -10,17 +10,17 @@
     <ion-item lines="full" (click)="toPosted()">
       <ion-icon name="list-box"></ion-icon>
       <ion-label>Posted Jobs</ion-label>
-      <ion-badge color="primary">0</ion-badge>
+      <ion-badge color="primary">{{userData.postedJobs.length}}</ion-badge>
     </ion-item>
     <ion-item lines="full" (click)="toApplied()">
       <ion-icon name="checkmark-circle"></ion-icon>
       <ion-label>Jobs Apllied</ion-label>
-      <ion-badge color="primary">0</ion-badge>
+      <ion-badge color="primary">{{userData.appliedJobs.length}}</ion-badge>
     </ion-item>
     <ion-item lines="full" (click)="toJobCompleted()">
       <ion-icon name="checkmark"></ion-icon>
       <ion-label>Completed Jobs</ion-label>
-      <ion-badge color="primary">0</ion-badge>
+      <ion-badge color="primary">{{userData.completedJobs.length}}</ion-badge>
     </ion-item>
   </ion-list>
 </ion-content>
