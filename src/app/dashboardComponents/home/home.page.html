@@ -13,19 +13,21 @@
   </ion-toolbar>
 
 <ion-content padding>
-
-  <ion-card *ngFor="let jobs of allJobsNear" [hidden]="">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="!allJobsNear?.length; else elseBlock"> There are no jobs near you, be the first to post :)</div>
+<ng-template #elseBlock>
+  <ion-card [hidden]="">
+    <!--*ngFor="let jobs of allJobsNear"-->
     <div>
   <ion-card-header>
     <div class="user">
-      <div class="img">
-        <img src="https://via.placeholder.com/150" alt="">
-      </div>
       <div class="info">
         <div class="info_text">
           <p><ion-icon name="person"></ion-icon></p>
-          <h6><ion-icon name="hammer"></ion-icon> {{jobs.job_title}}</h6>
-          <h5><ion-icon name="cash"></ion-icon>${{jobs.price}}</h5>
+          <h6><ion-icon name="hammer"></ion-icon></h6>
+          <h5><ion-icon name="cash"></ion-icon></h5>
         </div>
       </div>
     </div>
@@ -33,19 +35,21 @@
   <ion-card-content>
     <div class="job_imgs">
       <ion-item>
-     <ion-thumbnail slot="start" *ngFor="let img of jobs.images">
-       <img [src]="img"/>
+     <ion-thumbnail slot="start" >
+       <!--*ngFor="let img of jobs.images"-->
+       <img [src]=""/>
      </ion-thumbnail>
      </ion-item>
     </div>
     <div class="job_info">
       <div class="job_info_one">
-        <p><ion-icon name="list"></ion-icon>Category: {{jobs.category}}</p>
-     <p><ion-icon name="pin"></ion-icon> Location: {{jobs.location}}</p>
+        <p><ion-icon name="list"></ion-icon>Category:</p>
+     <p><ion-icon name="pin"></ion-icon> Location:</p>
       </div>
       <div class="job_info_two">
-        <p><ion-icon name="calendar"></ion-icon>Due date: {{jobs.due_date| date:'shortDate'}}</p>
-          <p><ion-icon name="time"></ion-icon>Time: {{jobs.time }}</p>
+        <p><ion-icon name="calendar"></ion-icon>Due date: </p>
+        <!--{{jobs.due_date| date:'shortDate'}}-->
+          <p><ion-icon name="time"></ion-icon>Time:</p>
       </div>
 
     </div>
@@ -56,6 +60,7 @@
 </ion-card-content>
 </div>
   </ion-card>
+  </ng-template>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button color="light" [routerLink]="['/dashboard/post']">
         <ion-icon name="add">
