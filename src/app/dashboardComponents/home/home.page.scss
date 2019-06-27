@@ -1,3 +1,5 @@
+
+
 ion-toolbar {
   ion-item {
     ion-label {
@@ -12,7 +14,7 @@ ion-toolbar {
 }
 
 ion-content {
-  div {
+  div.nojobs {
     color: grey;
     text-align: center;
   }
@@ -89,17 +91,17 @@ ion-content {
          white-space: nowrap;
          overflow-y: hidden;
          z-index: -1;
-         display: flex;
-         align-items: center;
-         justify-content: center;
+         text-align: center;
         ion-item {
           display: inline-block;
-          height: inherit;
+          height: 88%;
           width: auto;
+          --padding-start: 0 !important;
           ion-thumbnail {
             margin:0;
             height: inherit;
             width: 90px;
+            margin-right: 5px;
             ion-icon {
               position: relative;
               background-color: #e57373;
