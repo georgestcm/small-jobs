@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-job-center',
   templateUrl: './job-center.page.html',
@@ -7,9 +8,14 @@ import { Router } from '@angular/router';
 })
 export class JobCenterPage implements OnInit {
 
-  constructor(private router: Router) { }
-
+  constructor(private router: Router,public storage: Storage) { }
+ userData;
   ngOnInit() {
+    this.userData = this.storage.get('user');
+    this.storage.get('user').then((value)=>{
+      this.userData = value;
+    });
+    console.log(this.userData)
   }
 
 
