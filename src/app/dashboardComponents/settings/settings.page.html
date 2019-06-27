@@ -1,8 +1,6 @@
 <div class="header">
   <div class="exit">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/dashboard"></ion-back-button>
-    </ion-buttons>
+    <ion-menu-button></ion-menu-button>
   </div>
   <div class="setting">
      Settings
@@ -16,12 +14,12 @@
   <ion-item lines="full">
     <div class="account_info">
       <div class="my_photo">
-        <img src="https://via.placeholder.com/150" alt="">
+        <img [src]="userData.profile_photo" alt="">
       </div><div class="info">
-           <p><ion-icon name="person"></ion-icon></p>
-           <p><ion-icon name="contact"></ion-icon></p>
-           <p><ion-icon name="mail"></ion-icon></p>
-           <p><ion-icon name="call"></ion-icon></p>
+           <p><ion-icon name="person"></ion-icon> {{userData.first_name + " "+userData.last_name}}</p>
+           <p><ion-icon name="contact"></ion-icon> {{userData.username}}</p>
+           <p><ion-icon name="mail"></ion-icon> {{userData.email}}</p>
+           <p><ion-icon name="call"></ion-icon> {{userData.phone_number}}</p>
       </div>
     </div>
 
