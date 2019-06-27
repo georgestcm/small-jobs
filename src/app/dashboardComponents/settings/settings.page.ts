@@ -10,13 +10,14 @@ import { Storage } from '@ionic/storage';
 })
 export class SettingsPage implements OnInit {
 
+userData;
   constructor(private _update: UpdateService,private _authService: AuthService, private _router:Router,public storage: Storage) { }
- id;
-  ngOnInit() {
-    this.storage.get('user').then((value)=>{
-   this.id = value._id
-   })
 
+  ngOnInit() {
+    this.userData = this.storage.get('user');
+    this.storage.get('user').then((value)=>{
+      this.userData = value;
+    });
   }
 
 logout(){
