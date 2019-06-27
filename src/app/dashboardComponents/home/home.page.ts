@@ -24,13 +24,22 @@ usersNear;
 
   ngOnInit() {
   this.storage.get('user').then((value)=>{
- this.long = value.geometry.coordinates[0]
- this.lat = value.geometry.coordinates[1]
+ this.long = value.geometry.coordinates[0];
+ this.lat = value.geometry.coordinates[1];
+ console.log(value)
  this.distance = "1609.34";
  this.getUsers()
  })
 
   }
+  doRefresh(event) {
+    this.getUsers();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 1000);
+  }
+
   async presentAlert(msg) {
       const alert = await this.alertController.create({
         header: 'Job Description',
@@ -41,6 +50,7 @@ usersNear;
 
       await alert.present();
     }
+
 
  getUsers() {
   while(this.jobsNear.length>0){
