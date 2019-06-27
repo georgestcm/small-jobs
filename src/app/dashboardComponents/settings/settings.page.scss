@@ -4,13 +4,11 @@ div.header {
   display: flex;
   align-items: center;
   background-color: white;
+  border-bottom: 1px solid #CDCDCD;
   .exit {
     width: 40%;
-    ion-buttons {
-      ion-back-button {
-        color: grey;
-        font-weight: bold;
-      }
+    ion-menu-button {
+      color: grey;
     }
   }
 }
@@ -67,12 +65,14 @@ ion-content{
               p {
                 margin:0;
                 margin-bottom: 5px;
+                color: grey;
                 &:nth-child(1){
                   margin-top: 20px;
                 }
                 ion-icon {
                 color: grey;
                 margin-left: 5px;
+                margin-right: 20px;
               }
               }
             }
