@@ -19,6 +19,7 @@ div.header {
 
 ion-content {
   ion-card {
+    height: 300px;
     ion-card-content {
       padding:0;
       div.img {
@@ -26,6 +27,7 @@ ion-content {
         height: 70px;
         display: flex;
         justify-content: center;
+        margin-top: 33px;
         ion-img {
           width: 90px;
         }
@@ -74,13 +76,48 @@ ion-content {
             top: 3px;
           }
         }
-
-        ion-button {
-          margin-top: 10px;
-          margin-bottom: 15px;
-        }
       }
     }
   }
+  div.payment {
+    form {
+      margin-top: 80px;
+  h6 {
+    color: #8080809e;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+      ion-input {
+          width: 95%;
+          border: 1px solid #80808061;
+          margin: auto;
+          border-radius: 5px;
+          margin-top: 9px;
+          &:nth-child(3){
+            width: 30%;
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 8px;
+          }
+          &:nth-child(4){
+            width: 30%;
+            display: inline-block;
+            margin-right: 8px;
+          }
+          &:nth-child(5){
+            width: 30%;
+            display: inline-block;
+          }
+      }
+      ion-button {
+        margin-top: 20px;
+        position: relative;
+        left: 33%;
+        --background: #e57373 !important;
+      }
+    }
+  }
+
 
 }

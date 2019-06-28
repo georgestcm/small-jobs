@@ -18,6 +18,10 @@ div.header .c_title {
   color: grey;
 }
 
+ion-content ion-card {
+  height: 300px;
+}
+
 ion-content ion-card ion-card-content {
   padding: 0;
 }
@@ -27,6 +31,7 @@ ion-content ion-card ion-card-content div.img {
   height: 70px;
   display: flex;
   justify-content: center;
+  margin-top: 33px;
 }
 
 ion-content ion-card ion-card-content div.img ion-img {
@@ -85,7 +90,46 @@ ion-content ion-card ion-card-content div.status h2 ion-icon {
   top: 3px;
 }
 
-ion-content ion-card ion-card-content div.status ion-button {
-  margin-top: 10px;
-  margin-bottom: 15px;
+ion-content div.payment form {
+  margin-top: 80px;
+}
+
+ion-content div.payment form h6 {
+  color: #8080809e;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ion-content div.payment form ion-input {
+  width: 95%;
+  border: 1px solid #80808061;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 9px;
+}
+
+ion-content div.payment form ion-input:nth-child(3) {
+  width: 30%;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 8px;
+}
+
+ion-content div.payment form ion-input:nth-child(4) {
+  width: 30%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+ion-content div.payment form ion-input:nth-child(5) {
+  width: 30%;
+  display: inline-block;
+}
+
+ion-content div.payment form ion-button {
+  margin-top: 20px;
+  position: relative;
+  left: 33%;
+  --background: #e57373 !important;
 }
