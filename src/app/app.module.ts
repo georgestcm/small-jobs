@@ -18,6 +18,7 @@ import { TokenInterceptorService} from './token-interceptor.service'
 import { IonicStorageModule } from '@ionic/storage';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import {Camera} from '@ionic-native/camera/ngx';
+import { Stripe } from '@ionic-native/stripe/ngx';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import {Camera} from '@ionic-native/camera/ngx';
     AuthGuard,
     PhotoViewer,
     Camera,
+    Stripe,
     { provide: HTTP_INTERCEPTORS, useClass:TokenInterceptorService ,multi: true}
   ],
   bootstrap: [AppComponent]
