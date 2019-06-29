@@ -14,6 +14,7 @@ import { DashboardPageModule } from './dashboard/dashboard.module';
 import { AuthService } from './auth.service'
 import { AuthGuard} from './auth.guard'
 import { UpdateService} from './update.service'
+import { SubscriptionService} from './subscription.service';
 import { TokenInterceptorService} from './token-interceptor.service'
 import { IonicStorageModule } from '@ionic/storage';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
@@ -41,10 +42,12 @@ import { Stripe } from '@ionic-native/stripe/ngx';
     Geolocation,
     AuthService,
     UpdateService,
+    SubscriptionService,
     AuthGuard,
     PhotoViewer,
     Camera,
     Stripe,
+    IonicStorageModule,
     { provide: HTTP_INTERCEPTORS, useClass:TokenInterceptorService ,multi: true}
   ],
   bootstrap: [AppComponent]
