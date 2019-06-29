@@ -15,15 +15,16 @@ import { Storage } from '@ionic/storage';
 export class PostPage implements OnInit {
 
  jobToPost = {
-   _id:'',
+   poster_id:'',
 job_title:'',
+name: '',
 category:'',
 description:'',
 location:'',
 due_date:'',
 time:'',
 price:undefined,
-images: ["https://via.placeholder.com/150","https://via.placeholder.com/150"]
+images: []
  }
 
  options: CameraOptions = {
@@ -43,9 +44,11 @@ public storage: Storage
 
   ngOnInit() {
     this.storage.get('user').then((value)=>{
-      this.jobToPost._id = value._id
+      this.jobToPost.poster_id = value._id
+      this.jobToPost.name = value.first_name+" "+value.last_name
     })
   }
+
   async presentAlert(msg) {
     const alert = await this.alertController.create({
       header:  "",
@@ -71,9 +74,6 @@ snapPic(){
 });
 }
 
-setId(){
-
-}
 post(){
   this._data.postJob(this.jobToPost)
   .subscribe(
