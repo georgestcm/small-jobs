@@ -24,7 +24,7 @@ loggedIn(){
     if(token){
       return true
     } else {
-      return false
+      return false//change to false
     }
   })
 }
