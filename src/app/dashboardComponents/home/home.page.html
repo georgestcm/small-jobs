@@ -24,7 +24,7 @@
     <div class="user">
       <div class="info">
         <div class="info_text">
-          <p><ion-icon name="person"></ion-icon></p>
+          <p><ion-icon name="person"></ion-icon> {{jobs.name}}</p>
           <h6><ion-icon name="hammer"></ion-icon> {{jobs.job_title}}</h6>
           <h5><ion-icon name="cash"></ion-icon> ${{jobs.price}}</h5>
         </div>
@@ -53,7 +53,7 @@
     </div>
     <div class="apply_description">
       <ion-button (click)="presentAlert(jobs.description)">More Info</ion-button>
-      <ion-button color="danger">Apply</ion-button>
+      <ion-button color="danger"(click)="checkSubscriptionStatusApply()">Apply</ion-button>
     </div>
 </ion-card-content>
 </div>
