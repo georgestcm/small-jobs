@@ -150,18 +150,19 @@ ion-content ion-card ion-card-content div.job_info div.job_info_two p ion-icon {
 }
 
 ion-content ion-card ion-card-content div.apply_description {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 ion-content ion-card ion-card-content div.apply_description ion-button {
   width: 35%;
 }
 
-ion-content ion-card ion-card-content div.apply_description ion-button:nth-child(1) {
+ion-content ion-card ion-card-content div.apply_description ion-button:nth-child(2) {
   margin-right: 12%;
 }
 
-ion-content ion-card ion-card-content div.apply_description ion-button:nth-child(2) {
+ion-content ion-card ion-card-content div.apply_description ion-button:nth-child(3) {
   margin-left: 12%;
 }
 
