@@ -89,24 +89,24 @@ ion-content {
     margin-bottom: 20px;
   }
       ion-input {
-          width: 95%;
+          width: 75%;
           border: 1px solid #80808061;
           margin: auto;
           border-radius: 5px;
           margin-top: 9px;
           &:nth-child(3){
-            width: 30%;
+            width: 24%;
             display: inline-block;
-            margin-left: 10px;
+            margin-left: 50px;
             margin-right: 8px;
           }
           &:nth-child(4){
-            width: 30%;
+            width: 24%;
             display: inline-block;
             margin-right: 8px;
           }
           &:nth-child(5){
-            width: 30%;
+            width: 24%;
             display: inline-block;
           }
       }

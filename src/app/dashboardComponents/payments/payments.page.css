@@ -102,7 +102,7 @@ ion-content div.payment form h6 {
 }
 
 ion-content div.payment form ion-input {
-  width: 95%;
+  width: 75%;
   border: 1px solid #80808061;
   margin: auto;
   border-radius: 5px;
@@ -110,20 +110,20 @@ ion-content div.payment form ion-input {
 }
 
 ion-content div.payment form ion-input:nth-child(3) {
-  width: 30%;
+  width: 24%;
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 50px;
   margin-right: 8px;
 }
 
 ion-content div.payment form ion-input:nth-child(4) {
-  width: 30%;
+  width: 24%;
   display: inline-block;
   margin-right: 8px;
 }
 
 ion-content div.payment form ion-input:nth-child(5) {
-  width: 30%;
+  width: 24%;
   display: inline-block;
 }
 
