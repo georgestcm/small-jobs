@@ -13,6 +13,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 export class ProfileEditPage implements OnInit {
 
   userData;
+  photoToSend;
   constructor(public actionSheetController: ActionSheetController,
               private router: Router,
               public _data: DataService,
@@ -28,12 +29,21 @@ export class ProfileEditPage implements OnInit {
   }
 
   options: CameraOptions = {
-    quality: 100,
-    destinationType: this.camera.DestinationType.FILE_URI,
+    quality: 50,
+    destinationType: this.camera.DestinationType.DATA_URL,
     encodingType: this.camera.EncodingType.JPEG,
     mediaType: this.camera.MediaType.PICTURE
   }
 
+ionViewWillEnter(){
+  this._data.getCurrentUser(this.userData._id)
+  .subscribe(
+    res=>(
+  this.storage.set('user',res)
+    ),
+    err=> console.log(err)
+  )
+}
 
 
   async presentActionSheet() {
@@ -58,16 +68,27 @@ export class ProfileEditPage implements OnInit {
       await actionSheet.present();
     }
 
-
     snapPic(){
       this.camera.getPicture(this.options).then((imageData) => {
      let base64Image = 'data:image/jpeg;base64,' + imageData;
-  this._update.updatePhoto(this.userData._id,base64Image)
+         this.photoToSend = base64Image;
+         this.updatePhoto();
     }, (err) => {
-      console.log(
-        err
-      )
     });
     }
 
+
+
+    updatePhoto(){
+      console.log(this.userData._id)
+      this._update.updatePhoto(this.userData._id,this.photoToSend)
+      .subscribe(
+        res =>(
+          console.log(res),
+          this.storage.set('user',res)
+        )
+      ,
+        err => console.log(err)
+      )
+    }
   }
