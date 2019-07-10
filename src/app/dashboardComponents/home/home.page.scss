@@ -147,13 +147,14 @@ ion-content {
         }
       }
       div.apply_description {
-        text-align: center;
+        display: flex;
+        justify-content: center;
         ion-button {
           width: 35%;
-        &:nth-child(1){
+        &:nth-child(2){
           margin-right: 12%;
         }
-        &:nth-child(2){
+        &:nth-child(3){
           margin-left: 12%;
         }
         }
