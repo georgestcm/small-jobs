@@ -5,7 +5,7 @@
 <div class="c_title">Payments</div>
 </div>
 <ion-content>
-  <ion-card>
+  <ion-card (click)="trial()">
     <ion-card-content>
       <div class="img">
         <ion-img [src]="iconLink" class="img"></ion-img>
@@ -17,11 +17,11 @@
         </div>
       </div>
       <div class="status">
-       <h2><ion-icon name="checkmark-circle"></ion-icon> Status: Not active</h2>
+       <h2><ion-icon name="checkmark-circle"></ion-icon> Status: trial</h2>
       </div>
     </ion-card-content>
   </ion-card>
-  <div class="payment">
+  <div class="payment" [hidden]="true">
    <form>
      <h6> add a card to subscribe</h6>
      <ion-input [(ngModel)]="card.number" name="number" type="number" placeholder="card number" required></ion-input>
