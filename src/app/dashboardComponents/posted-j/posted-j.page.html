@@ -7,6 +7,53 @@
 <div class="c_title">Posted Jobs</div>
 </div>
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="!allJobs?.length; else elseBlock" class="nojobs"> you have no posted jobs</div>
+<ng-template #elseBlock>
+  <ion-card *ngFor="let jobs of allJobs">
+    <div>
+      <input [hidden]="true" #jobid [value]="jobs._id"/>
+  <ion-card-header>
+    <div class="user">
+      <div class="info">
+        <div class="info_text">
+          <p><ion-icon name="person"></ion-icon> {{jobs.name}}</p>
+          <h6><ion-icon name="hammer"></ion-icon> {{jobs.job_title}}</h6>
+          <h5><ion-icon name="cash"></ion-icon> ${{jobs.price}}</h5>
+        </div>
+      </div>
+    </div>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="job_imgs">
+      <ion-item>
+     <ion-thumbnail slot="start" *ngFor="let img of jobs.images">
+       <img [src]="img" (click)="viewImg(img)"/>
+     </ion-thumbnail>
+     </ion-item>
+    </div>
+    <div class="job_info">
+      <div class="job_info_one">
+        <p><ion-icon name="list"></ion-icon>Category: {{jobs.category}}</p>
+     <p><ion-icon name="pin"></ion-icon> Location: {{jobs.location}}</p>
+      </div>
+      <div class="job_info_two">
+        <p><ion-icon name="calendar"></ion-icon>Due date: {{jobs.due_date| date:'shortDate'}}</p>
+
+          <p><ion-icon name="time"></ion-icon>Time: {{jobs.time}}</p>
+      </div>
+
+    </div>
+    <div class="apply_description">
+      <ion-button (click)="presentAlert(jobs.description)">More Info</ion-button>
+      <ion-button color="danger"(click)="delete(jobid.value)">Delete</ion-button>
+    </div>
+</ion-card-content>
+</div>
+  </ion-card>
+  </ng-template>
 
 </ion-content>
 <router-outlet></router-outlet>
