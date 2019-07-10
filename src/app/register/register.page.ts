@@ -32,21 +32,24 @@ export class RegisterPage implements OnInit {
    }
 
   ngOnInit() {
-    this.geolocation.getCurrentPosition().then((resp) => {
-
-      this.registerData.geometry = {
-  "type" : "Point",
-  coordinates : [
-    resp.coords.longitude,
-    resp.coords.latitude
-  ]
-}
-}).catch((error) => {
-  console.log('Error getting location', error);
-});
   }
 
+ionViewWillEnter(){
+  this.geolocation.getCurrentPosition().then((resp) => {
 
+    this.registerData.geometry = {
+"type" : "Point",
+coordinates : [
+  resp.coords.longitude,
+  resp.coords.latitude
+]
+}
+}).catch((error) => {
+console.log('Error getting location', error);
+});
+
+console.log(this.registerData)
+}
   async presentAlert(msg) {
     const alert = await this.alertController.create({
       header:  "Registration",
@@ -70,7 +73,7 @@ export class RegisterPage implements OnInit {
           if(this.registerData.email.length===0 || this.registerData.email.toLowerCase().indexOf('@') ===-1){
             this.presentAlert("You can not register without a valid email")
           } else {
-            if(this.registerData.phone_number.length ===0){
+            if(this.registerData.phone_number.length ===0 || this.registerData.phone_number.length>10 || this.registerData.phone_number.length < 10){
               this.presentAlert("You must enter a valid email to register")
             } else {
               if(this.registerData.zip_code.length===0 ||this.registerData.zip_code.length <0 || this.registerData.zip_code.length >6){
