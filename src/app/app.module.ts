@@ -14,12 +14,14 @@ import { DashboardPageModule } from './dashboard/dashboard.module';
 import { AuthService } from './auth.service'
 import { AuthGuard} from './auth.guard'
 import { UpdateService} from './update.service'
+import { SendmessageService} from './sendmessage.service'
 import { SubscriptionService} from './subscription.service';
 import { TokenInterceptorService} from './token-interceptor.service'
 import { IonicStorageModule } from '@ionic/storage';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import {Camera} from '@ionic-native/camera/ngx';
 import { Stripe } from '@ionic-native/stripe/ngx';
+import { Network } from '@ionic-native/network/ngx';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,12 +43,14 @@ import { Stripe } from '@ionic-native/stripe/ngx';
     SplashScreen,
     Geolocation,
     AuthService,
+    SendmessageService,
     UpdateService,
     SubscriptionService,
     AuthGuard,
     PhotoViewer,
     Camera,
     Stripe,
+    Network,
     IonicStorageModule,
     { provide: HTTP_INTERCEPTORS, useClass:TokenInterceptorService ,multi: true}
   ],
