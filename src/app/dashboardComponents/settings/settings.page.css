@@ -53,6 +53,7 @@ ion-content ion-list ion-item:nth-child(2) div.account_info div.my_photo {
 ion-content ion-list ion-item:nth-child(2) div.account_info div.my_photo img {
   border-radius: 50%;
   width: 100px;
+  height: 100px;
   display: inline-block;
 }
 
