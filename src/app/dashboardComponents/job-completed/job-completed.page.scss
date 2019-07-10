@@ -16,3 +16,156 @@ div.header {
     color: grey;
   }
 }
+
+ion-content {
+  div.nojobs {
+    margin-top: 15px;
+    color: grey;
+    text-align: center;
+  }
+  ion-card {
+    display: block;
+    width: 94%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    ion-card-header {
+      display: block !important;
+      padding: 9px;
+      div.user {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 4px;
+        div.info {
+          display: inline-block;
+          width: 70%;
+          height: 100%;
+          .info_text {
+            width: 100%;
+            height: 100%;
+            p {
+              margin: 0;
+              color: grey;
+              margin-left: 10px;
+              margin-bottom: 8px;
+              ion-icon {
+                color: #f04141ab;
+                position: relative;
+                top: 4px;
+                margin-right: 5px;
+              }
+            }
+            h6 {
+              margin: 0;
+              color: #808080a8;
+              margin-left: 10px;
+              margin-bottom: 7px;
+              ion-icon {
+                color: #808080a8;
+                position: relative;
+                top: 4px;
+                margin-right: 5px;
+              }
+            }
+            h5 {
+              margin: 0;
+              color: grey;
+              margin-left: 10px;
+              margin-top: 3px;
+              ion-icon {
+                color: #85bf4b;
+                position: relative;
+                top: 4px;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+
+
+    }
+
+    ion-card-content {
+      div.job_imgs {
+        margin:auto;
+        margin-bottom: 10px;
+        height: 100px;
+        width: 90%;
+        border-bottom: 1px solid grey;
+        border-radius: 3px;
+        overflow-x: auto;
+         white-space: nowrap;
+         overflow-y: hidden;
+         z-index: -1;
+         text-align: center;
+        ion-item {
+          display: inline-block;
+          height: 88%;
+          width: auto;
+          --padding-start: 0 !important;
+          ion-thumbnail {
+            margin:0;
+            height: inherit;
+            width: 90px;
+            margin-right: 5px;
+            ion-icon {
+              position: relative;
+              background-color: #e57373;
+              color:white;
+              border-radius: 50%;
+              left: 90%;
+              top: 15px;
+            }
+            ion-img {
+            }
+          }
+        }
+        h3 {
+          color: grey;
+
+        }
+      }
+      div.job_info {
+        div.job_info_one {
+          display: inline-block;
+          width: 50%;
+          margin-bottom: 5px;
+          p {
+            ion-icon {
+              margin-left: 5px;
+              margin-right: 2px;
+              position: relative;
+              top: 2px;
+            }
+          }
+        }
+        div.job_info_two{
+          display: inline-block;
+          width: 50%;
+          p {
+            ion-icon {
+              margin-left: 5px;
+              margin-right: 2px;
+              position: relative;
+              top: 2px;
+            }
+          }
+        }
+      }
+      div.apply_description {
+        text-align: center;
+        ion-button {
+          width: 35%;
+        &:nth-child(1){
+          margin-right: 12%;
+        }
+        &:nth-child(2){
+          margin-left: 12%;
+        }
+        }
+      }
+    }
+  }
+}
