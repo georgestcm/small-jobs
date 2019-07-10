@@ -6,8 +6,8 @@ import { Storage } from '@ionic/storage';
   providedIn: 'root'
 })
 export class AuthService {
-  private _registerUrl = "http://localhost:3000/api/register"
-  private _loginUrl = "http://localhost:3000/api/login"
+  private _registerUrl = "https://quickjobsapi.herokuapp.com/api/register"
+  private _loginUrl = "https://quickjobsapi.herokuapp.com/api/login"
   constructor(private http: HttpClient, private _router:Router,private storage: Storage) { }
   registerUser(user){
     return this.http.post<any>(this._registerUrl,user)
