@@ -39,6 +39,7 @@ div.upload-photo {
 div.upload-photo img {
   border-radius: 50%;
   width: 150px;
+  height: 150px;
   margin-left: 30%;
   margin-top: 10px;
 }
