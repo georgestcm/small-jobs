@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 import { DataService} from 'src/app/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage';
@@ -39,6 +40,7 @@ job;
 text={
 msg:''
 }
+nearButNotApplied;
 
 
 //jobsending
@@ -49,13 +51,18 @@ msg:''
   private photoViewer: PhotoViewer,
 private _subscription: SubscriptionService,
 private _router:Router,
-public _sendM: SendmessageService) {
+public _sendM: SendmessageService,
+private menu: MenuController) {
  }
 
   ngOnInit() {
-
-
+  this.openFirst();
+  console.log("ran")
   }
+
+  openFirst() {
+      this.menu.open();
+    }
 
   ionViewWillEnter(){
     this.storage.get('user').then((value)=>{
@@ -72,6 +79,14 @@ public _sendM: SendmessageService) {
 
   }
 
+  doRefreshTwo() {
+    this.getUsers();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      //event.target.complete();
+    }, 1000);
+  }
+
   doRefresh(event) {
     this.getUsers();
     setTimeout(() => {
@@ -79,7 +94,6 @@ public _sendM: SendmessageService) {
       event.target.complete();
     }, 1000);
   }
-
   viewImg(src){
     this.photoViewer.show(src);
   }
@@ -158,35 +172,21 @@ loadJobs(){
   this.jobsNear.push(user.postedJobs)
 })
 this.allJobsNear= Array.prototype.concat.apply([], this.jobsNear);
-//console.log(this.appliedJobs)
-//console.log(this.allJobsNear)
+
  let applied = this.appliedJobs;
  let jobsN = this.allJobsNear;
- let appliedId = [];
- let jobsNearId = [];
- for(let i=0; i<jobsN.length; i++){
-   //this.appliedId.push()
-   jobsNearId.push(this.allJobsNear[i]._id)
+
+ this.nearButNotApplied = this.allJobsNear.filter(({
+   _id: nearId
+ }) => !this.appliedJobs.some(({
+   _id: appliedId
+ }) => appliedId === nearId));
+
+ console.log(this.nearButNotApplied)
 
  }
- for(let i=0; i<applied.length; i++){
-   //this.appliedId.push()
-   appliedId.push(this.appliedJobs[i]._id)
 
- }
- console.log(jobsNearId)
- console.log(appliedId)
 
- for(let i=0; i <jobsNearId.length; i++){
-   if(jobsNearId[i] === appliedId[i]){
-     console.log(i)
-    this.allJobsNear.splice(i,1)
-    --i;
-    break;
-  console.log(i)
-   }
- }
- }
 
 checkSubscriptionStatusApply(){
    this._subscription.checkSubscription(this.id)
@@ -233,7 +233,8 @@ apply(job){
     .subscribe(
       res=>(
         console.log(res),
-        this.presentAlert("Applied")
+        this.presentAlert("Applied"),
+        this.doRefreshTwo()
       ),
       err=> console.log(err)
     )
