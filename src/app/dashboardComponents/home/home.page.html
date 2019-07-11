@@ -11,14 +11,13 @@
       </ion-select>
     </ion-item>
   </ion-toolbar>
-
-<ion-content padding>
+<ion-content padding >
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <div *ngIf="!allJobsNear?.length; else elseBlock" class="nojobs"> There are no jobs near you, be the first to post :)</div>
+  <div *ngIf="!nearButNotApplied?.length; else elseBlock" class="nojobs"> There are no jobs near you, be the first to post :)</div>
 <ng-template #elseBlock>
-  <ion-card *ngFor="let jobs of allJobsNear">
+  <ion-card *ngFor="let jobs of nearButNotApplied">
     <div>
   <ion-card-header>
     <div class="user">
