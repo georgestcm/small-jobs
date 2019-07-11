@@ -25,7 +25,5 @@ logout(){
 }
 
 delete(){
-  //this._update.deleteAccount(this.id)
-  console.log(this.id)
 }
 }

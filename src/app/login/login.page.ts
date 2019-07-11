@@ -26,8 +26,18 @@ loginData = {}
     this.geolocation.getCurrentPosition().then((resp) => {
        }).catch((error) => {
         console.log('Error getting location', error);});
+
   }
 
+ionViewWillEnter(){
+  this.storage.get('token').then((token)=>{
+    if(token){
+      this.router.navigate(['/dashboard/home'])
+    } else {
+
+    }
+  })
+}
   async presentLoading() {
       const loading = await this.loadingController.create({
         message: 'loading',
