@@ -13,7 +13,10 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-loginData = {}
+loginData = {
+  username:'',
+  password:''
+}
  public  iconLink: string ="assets/imgs/icon.png";
   constructor(private router: Router,
     private geolocation: Geolocation,
