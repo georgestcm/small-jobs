@@ -22,7 +22,9 @@ export class AppComponent {
   initializeApp() {
     this.checkNetwork();
     this.platform.ready().then(() => {
-      //this.statusBar.styleDefault();
+      this.statusBar.overlaysWebView(false);
+    this.statusBar.styleDefault();
+    this.statusBar.backgroundColorByHexString('#ffffff');
       this.splashScreen.hide();
     });
   }
