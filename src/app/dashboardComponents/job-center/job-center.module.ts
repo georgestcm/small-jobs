@@ -9,8 +9,7 @@ import { JobCenterPage } from './job-center.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: JobCenterPage
+    path: ''
   }
 ];
 
@@ -21,6 +20,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [JobCenterPage]
+  declarations: []
 })
 export class JobCenterPageModule {}
