@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
 import {DataService} from "src/app/data.service"
 import { Router } from '@angular/router'
 import { Storage } from '@ionic/storage';
-
+import { ActionSheetController } from '@ionic/angular';
 @Component({
   selector: 'app-post',
   templateUrl: './post.page.html',
@@ -35,12 +35,20 @@ completed: false
    mediaType: this.camera.MediaType.PICTURE
  }
 
+ GalleryOptions: CameraOptions = {
+     quality: 50,
+     destinationType: this.camera.DestinationType.DATA_URL,
+     mediaType: this.camera.MediaType.PICTURE,
+     sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+  };
+
 constructor(public _data: DataService,
   public alertController: AlertController,
   private photoViewer: PhotoViewer,
   private camera: Camera,
 private _router:Router,
-public storage: Storage
+public storage: Storage,
+public actionSheetController: ActionSheetController
 ) { }
 
   ngOnInit() {
@@ -59,6 +67,8 @@ public storage: Storage
 
     await alert.present();
   }
+
+
 delete(index){
   this.jobToPost.images.splice(index,1)
 }
@@ -66,13 +76,48 @@ delete(index){
 viewImg(src){
   this.photoViewer.show(src);
 }
+async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Upload',
+      buttons: [{
+        text: 'Camera',
+        icon: 'Camera',
+        handler: () => {
+          this.camera.getPicture(this.options).then((imageData) => {
+         let base64Image = 'data:image/jpeg;base64,' + imageData;
+         this.jobToPost.images.push(base64Image)
+        }, (err) => {
+        });
+        }
+      }, {
+        text: 'Gallery',
+        icon: 'image',
+        handler: () => {
+          this.camera.getPicture(this.GalleryOptions).then((imageData) => {
+         let base64Image = 'data:image/jpeg;base64,' + imageData;
+         this.jobToPost.images.push(base64Image)
+        }, (err) => {
+        });
+        }
+      },{
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
 
 snapPic(){
-  this.camera.getPicture(this.options).then((imageData) => {
+this.presentActionSheet()
+  /*this.camera.getPicture(this.GalleryOptions).then((imageData) => {
  let base64Image = 'data:image/jpeg;base64,' + imageData;
  this.jobToPost.images.push(base64Image)
 }, (err) => {
-});
+}); */
 }
 
 post(){
