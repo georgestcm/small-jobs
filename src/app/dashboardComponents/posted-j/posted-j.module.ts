@@ -17,6 +17,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PostedJPage]
+  declarations: []
 })
 export class PostedJPageModule {}
