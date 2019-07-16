@@ -19,6 +19,12 @@ userData;
     });
   }
 
+ionViewWillEnter(){
+  this.userData = this.storage.get('user');
+  this.storage.get('user').then((value)=>{
+    this.userData = value;
+  });
+}
   toMessages(){
       this.router.navigate(['dashboard/messages'])
     }
