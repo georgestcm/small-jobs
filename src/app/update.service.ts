@@ -9,7 +9,7 @@ export class UpdateService {
 
 
  privatePhotoUpdate = "https://quickjobsapi.herokuapp.com/api/photoupdate"
- privateDeleteAccount = "https://quickjobsapi.herokuapp.com/api/:id"
+ privateDeleteAccount = "https://quickjobsapi.herokuapp.com/api/deleteaccount"
 
    updatePhoto(id,photo){
     return this.http.put(this.privatePhotoUpdate,{
