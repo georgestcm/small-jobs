@@ -6,6 +6,7 @@ import {MessagesPage } from './dashboardComponents/messages/messages.page'
 import {PaymentsPage } from './dashboardComponents/payments/payments.page'
 import {PostedJPage } from './dashboardComponents/posted-j/posted-j.page'
 import {ProfileEditPage } from './dashboardComponents/profile-edit/profile-edit.page'
+import { ProfilePage} from './dashboardComponents/profile/profile.page'
 import {PostPage } from './dashboardComponents/post/post.page'
 import {SettingsPage} from './dashboardComponents/settings/settings.page'
 import {JobCenterPage} from './dashboardComponents/job-center/job-center.page'
@@ -30,9 +31,11 @@ const routes: Routes = [
   {path:'posted', component:PostedJPage,pathMatch:'full'},
   {path:'job-completed', component:JobCompletedPage, pathMatch:'full' },
   {path:'applied-jobs',component:AppliedJobsPage,pathMatch:"full"},
-    { path: 'job-center', component: JobCenterPage, pathMatch:"full" }
+    { path: 'job-center', component: JobCenterPage, pathMatch:"full" },
+    { path: 'profile', component: ProfilePage, pathMatch:"full" }
   ]
 },
+
 ];
 
 @NgModule({
@@ -54,5 +57,6 @@ export const components = [
   PasswordResetPage,
   JobCompletedPage,
   AppliedJobsPage,
-  JobCenterPage
+  JobCenterPage,
+  ProfilePage
 ];
