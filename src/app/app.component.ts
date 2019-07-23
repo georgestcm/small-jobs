@@ -4,6 +4,8 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Network } from '@ionic-native/network/ngx';
+import { Storage } from '@ionic/storage';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -14,7 +16,9 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     public alertController: AlertController,
-    private network: Network
+    private network: Network,
+      private storage: Storage,
+      private router: Router
   ) {
     this.initializeApp();
   }
@@ -27,6 +31,14 @@ export class AppComponent {
     this.statusBar.backgroundColorByHexString('#ffffff');
       this.splashScreen.hide();
     });
+
+    this.storage.get('token').then((token)=>{
+      if(token){
+        this.router.navigate(['/dashboard/home'])
+      } else {
+
+      }
+    })
   }
 
   async alert(msg) {
