@@ -1,6 +1,7 @@
 
 
 ion-toolbar {
+  //margin-top: 15px;
   ion-item {
     ion-label {
       color: grey;
@@ -24,6 +25,14 @@ ion-content {
     ion-card-header {
       display: block !important;
       padding: 9px;
+      div.profile {
+        float: right;
+        margin-right: 17px;
+       border: 1px solid #80808073;
+       padding: 3px;
+       border-radius: 5px;
+      color: #80808073;
+      }
       div.user {
         width: 100%;
         display: flex;
@@ -50,7 +59,7 @@ ion-content {
             }
             h6 {
               margin: 0;
-              color: #808080a8;
+              color: grey;
               margin-left: 10px;
               margin-bottom: 7px;
               ion-icon {
