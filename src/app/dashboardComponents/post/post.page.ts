@@ -29,14 +29,14 @@ completed: false
  }
 
  options: CameraOptions = {
-   quality: 50,
+   quality: 100,
    destinationType: this.camera.DestinationType.DATA_URL,
    encodingType: this.camera.EncodingType.JPEG,
    mediaType: this.camera.MediaType.PICTURE
  }
 
  GalleryOptions: CameraOptions = {
-     quality: 50,
+     quality: 100,
      destinationType: this.camera.DestinationType.DATA_URL,
      mediaType: this.camera.MediaType.PICTURE,
      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
