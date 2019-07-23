@@ -32,7 +32,7 @@ loginData = {
 
   }
 
-ionViewWillEnter(){
+/*ionViewWillEnter(){
   this.storage.get('token').then((token)=>{
     if(token){
       this.router.navigate(['/dashboard/home'])
@@ -40,7 +40,7 @@ ionViewWillEnter(){
 
     }
   })
-}
+} */
   async presentLoading() {
       const loading = await this.loadingController.create({
         message: 'loading',
