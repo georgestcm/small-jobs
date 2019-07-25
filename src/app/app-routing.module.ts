@@ -8,6 +8,7 @@ import {PostedJPage } from './dashboardComponents/posted-j/posted-j.page'
 import {ProfileEditPage } from './dashboardComponents/profile-edit/profile-edit.page'
 import { ProfilePage} from './dashboardComponents/profile/profile.page'
 import {PostPage } from './dashboardComponents/post/post.page'
+import { ApplicantsPage} from './dashboardComponents/applicants/applicants.page'
 import {SettingsPage} from './dashboardComponents/settings/settings.page'
 import {JobCenterPage} from './dashboardComponents/job-center/job-center.page'
 import { PasswordResetPage } from './password-reset/password-reset.page'
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path:'job-completed', component:JobCompletedPage, pathMatch:'full' },
   {path:'applied-jobs',component:AppliedJobsPage,pathMatch:"full"},
     { path: 'job-center', component: JobCenterPage, pathMatch:"full" },
-    { path: 'profile', component: ProfilePage, pathMatch:"full" }
+    { path: 'profile', component: ProfilePage, pathMatch:"full" },
+    { path: 'applicants', component:ApplicantsPage, pathMatch:"full" }
   ]
 },
 
@@ -58,5 +60,6 @@ export const components = [
   JobCompletedPage,
   AppliedJobsPage,
   JobCenterPage,
-  ProfilePage
+  ProfilePage,
+  ApplicantsPage
 ];
