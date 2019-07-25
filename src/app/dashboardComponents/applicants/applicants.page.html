@@ -1,0 +1,32 @@
+<div class="header">
+<div class="menu">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="dashboard/job-center"></ion-back-button>
+  </ion-buttons>
+</div>
+<div class="c_title">Applicants</div>
+</div>
+<ion-content>
+  <div *ngIf="false else elseBlock" class="noApplicants"> You currently have no applicants</div>
+  <ng-template #elseBlock>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-card>
+        <ion-card-header>
+          <div class="info">
+            <p> <ion-icon name="person"></ion-icon> </p>
+          </div>
+          <div class="job_title">
+            <p> <ion-icon name="hammer"></ion-icon></p>
+          </div>
+        </ion-card-header>
+        <ion-card-content>
+   <ion-button (click)="presentAlertPrompt()">add a review</ion-button>
+   <ion-button color="danger">delete</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+
+  </ion-list>
+  </ng-template>
+</ion-content>

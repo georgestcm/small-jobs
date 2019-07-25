@@ -1,0 +1,56 @@
+div.header {
+  height: 41px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+div.header .menu {
+  display: inline-block;
+  margin: 7px 0 0 7px;
+  width: 37%;
+  color: grey;
+}
+
+div.header .c_title {
+  display: inline-block;
+  font-weight: bold;
+  color: grey;
+}
+
+ion-content .noApplicants {
+  color: grey;
+  text-align: center;
+}
+
+ion-content ion-list ion-item ion-card {
+  width: 100%;
+}
+
+ion-content ion-list ion-item ion-card ion-card-header {
+  padding: 0;
+}
+
+ion-content ion-list ion-item ion-card ion-card-header .info {
+  margin-left: 20px;
+}
+
+ion-content ion-list ion-item ion-card ion-card-header .job_title {
+  margin-left: 20px;
+}
+
+ion-content ion-list ion-item ion-card ion-card-content {
+  padding: 0;
+  text-align: center;
+}
+
+ion-content ion-list ion-item ion-card ion-card-content ion-button {
+  width: 35%;
+  height: 30px;
+  margin-bottom: 12px;
+}
+
+ion-content ion-list ion-item ion-card ion-card-content ion-button:nth-child(2) {
+  margin-left: 64px;
+}
