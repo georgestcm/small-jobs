@@ -1,0 +1,90 @@
+.header{
+  .back {
+    width: 30%;
+    display: inline-block;
+    color: grey;
+  }
+  .profile {
+    display: inline-block;
+    color: grey;
+font-weight: bold;
+margin-top: 6px;
+margin-left: 53px;
+  }
+}
+
+ion-content {
+  ion-card {
+    ion-card-header {
+
+      .img_wrapper{
+        display: inline-block;
+        width: 40%;
+       .img {
+         height: 100px;
+         width: 100px;
+         border-radius: 50%;
+         background-color: grey;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-left: 21px;
+         float: left;
+         img {
+           height: inherit;
+           width: inherit;
+         }
+       }
+      }
+      .info {
+        display: inline-block;
+          position: relative;
+          top: 20px;
+        width: 60%;
+        height: 100px;
+        float: right;
+        div.name {
+          margin-top: 6px;
+         margin-bottom: 20px;
+         ion-icon {
+           font-size: 15px;
+         }
+        }
+        div.location {
+          ion-icon {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    ion-card-content{
+      h2 {
+        letter-spacing: 2px;
+        text-align: center;
+        ion-icon {
+          position: relative;
+          top: 3px;
+        }
+      }
+      div.noReviews {
+        text-align: center;
+      }
+
+      ion-list {
+        ion-item {
+          .user {
+            display: block;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            color: grey;
+          }
+          .review {
+            margin: 20px 0 0 20px;
+            color: grey;
+          }
+        }
+      }
+    }
+  }
+}
