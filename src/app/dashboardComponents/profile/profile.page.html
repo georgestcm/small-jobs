@@ -1,9 +1,48 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<div class="header">
+<div class="back">
+  <ion-buttons slot="start">
+        <ion-back-button defaultHref="/dashboard/home"></ion-back-button>
+      </ion-buttons>
+</div>
+<div class="profile">
+    profile
+</div>
+</div>
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      <div class="img_wrapper">
+        <div class="img">
+          <img src="" alt="">
+        </div>
+      </div>
+      <div class="info">
+        <div class="name">
+         <ion-icon name="person"></ion-icon>
+        </div>
+        <div class="location">
+          <ion-icon name="pin"></ion-icon>
+        </div>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <h2> <ion-icon name="text"></ion-icon> Reviews</h2>
+   <div *ngIf="false else elseBlock" class="noReviews"> does not have any reviews</div>
+   <ng-template #elseBlock>
+    <ion-list>
+      <ion-item>
+        <div class="user"><ion-icon name="contact"></ion-icon></div>
+        <div class="review">
+          <p>
+            this user gfgshg gsfhgsfghsg  gshfgshg ghsgfsjg
+            this user gfgshg gsfhgsfghsg  gshfgshg ghsgfsjg
+            this user gfgshg gsfhgsfghsg  gshfgshg ghsgfsjg
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+     </ng-template>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
