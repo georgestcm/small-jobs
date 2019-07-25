@@ -79,41 +79,11 @@ ion-content ion-list ion-item:nth-child(2) div.account_info div.info p ion-icon 
   margin-right: 20px;
 }
 
-ion-content ion-list ion-item:nth-child(3) {
-  color: grey;
-}
-
-ion-content ion-list ion-item:nth-child(3) ion-icon {
-  position: relative;
-  top: 2px;
-  margin-left: 10px;
-}
-
-ion-content ion-list ion-item:nth-child(4) {
-  color: grey;
-}
-
-ion-content ion-list ion-item:nth-child(4) ion-icon {
-  position: relative;
-  top: 2px;
-  margin-left: 10px;
-}
-
-ion-content ion-list ion-item:nth-child(5) {
-  color: grey;
-}
-
-ion-content ion-list ion-item:nth-child(5) ion-icon {
-  position: relative;
-  top: 2px;
-  margin-left: 10px;
-}
-
-ion-content ion-list ion-item:nth-child(6) {
+ion-content ion-list ion-item:nth-child(1) {
   color: #e57373;
 }
 
-ion-content ion-list ion-item:nth-child(6) ion-icon {
+ion-content ion-list ion-item:nth-child(1) ion-icon {
   position: relative;
   top: 2px;
   margin-left: 10px;
