@@ -14,13 +14,18 @@
     </ion-item>
     <ion-item lines="full" (click)="toApplied()">
       <ion-icon name="checkmark-circle"></ion-icon>
-      <ion-label>Jobs Apllied</ion-label>
+      <ion-label>Jobs Applied</ion-label>
       <ion-badge color="primary">{{appliedJobs}}</ion-badge>
     </ion-item>
     <ion-item lines="full" (click)="toJobCompleted()">
       <ion-icon name="checkmark"></ion-icon>
       <ion-label>Completed Jobs</ion-label>
       <ion-badge color="primary">{{completedJobs}}</ion-badge>
+    </ion-item>
+    <ion-item lines="full" (click)="toApplicants()" >
+      <ion-icon name="done-all"></ion-icon>
+      <ion-label>Applicants</ion-label>
+      <ion-badge color="primary">0</ion-badge>
     </ion-item>
   </ion-list>
 </ion-content>
