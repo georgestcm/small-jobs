@@ -58,6 +58,16 @@ private menu: MenuController) {
   ngOnInit() {
   this.openFirst();
   console.log("ran")
+  this.storage.get('user').then((value)=>{
+    console.log(value)
+    this.id = value._id;
+  this.long = value.geometry.coordinates[0];
+  this.lat = value.geometry.coordinates[1];
+  this.myInfo.email = value.email;
+  this.myInfo.number = value.phone_number;
+  this.myInfo.name = value.first_name +' '+ value.last_name;
+  this.distance = "1609.34";
+  this.getUsers()})
   }
 
   openFirst() {
@@ -249,11 +259,9 @@ apply(job){
   ) */
 }
 
-checkApplied(){
-
+toProfile(){
+  this._router.navigate(['dashboard/profile'])
 }
-
-
 
 
 }
