@@ -13,30 +13,27 @@
     <ion-card-header>
       <div class="img_wrapper">
         <div class="img">
-          <img src="" alt="">
+          <img [src]="user.photo" alt="profile photo">
         </div>
       </div>
       <div class="info">
         <div class="name">
          <ion-icon name="person"></ion-icon>
-        </div>
-        <div class="location">
-          <ion-icon name="pin"></ion-icon>
+         {{user.name}}
         </div>
       </div>
     </ion-card-header>
     <ion-card-content>
       <h2> <ion-icon name="text"></ion-icon> Reviews</h2>
-   <div *ngIf="false else elseBlock" class="noReviews"> does not have any reviews</div>
+   <div *ngIf="!user.reviews?.length else elseBlock" class="noReviews"> no reviews available</div>
    <ng-template #elseBlock>
-    <ion-list>
+    <ion-list *ngFor="let reviews of user.reviews">
       <ion-item>
-        <div class="user"><ion-icon name="contact"></ion-icon></div>
+        <div class="user"><ion-icon name="contact"></ion-icon>
+        {{reviews.poster_first_name+" "+reviews.poster_last_name}}</div>
         <div class="review">
           <p>
-            this user gfgshg gsfhgsfghsg  gshfgshg ghsgfsjg
-            this user gfgshg gsfhgsfghsg  gshfgshg ghsgfsjg
-            this user gfgshg gsfhgsfghsg  gshfgshg ghsgfsjg
+            {{reviews.review}}
           </p>
         </div>
       </ion-item>
