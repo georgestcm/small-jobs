@@ -41,7 +41,7 @@
     "cordova-plugin-stripe": "1.5.3",
     "cordova-sqlite-storage": "3.2.0",
     "core-js": "^2.6.9",
-    "rxjs": "~6.5.1",
+    "rxjs": "^6.5.2",
     "stripe-angular": "^0.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.29"
