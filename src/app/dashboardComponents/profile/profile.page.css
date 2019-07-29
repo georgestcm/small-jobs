@@ -32,6 +32,7 @@ ion-content ion-card ion-card-header .img_wrapper .img {
 ion-content ion-card ion-card-header .img_wrapper .img img {
   height: inherit;
   width: inherit;
+  border-radius: 50%;
 }
 
 ion-content ion-card ion-card-header .info {
@@ -44,16 +45,14 @@ ion-content ion-card ion-card-header .info {
 }
 
 ion-content ion-card ion-card-header .info div.name {
-  margin-top: 6px;
+  margin-top: 25px;
   margin-bottom: 20px;
 }
 
 ion-content ion-card ion-card-header .info div.name ion-icon {
   font-size: 15px;
-}
-
-ion-content ion-card ion-card-header .info div.location ion-icon {
-  font-size: 15px;
+  position: relative;
+  top: 4px;
 }
 
 ion-content ion-card ion-card-content h2 {

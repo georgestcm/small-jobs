@@ -33,6 +33,7 @@ ion-content {
          img {
            height: inherit;
            width: inherit;
+           border-radius: 50%;
          }
        }
       }
@@ -44,17 +45,15 @@ ion-content {
         height: 100px;
         float: right;
         div.name {
-          margin-top: 6px;
+          margin-top: 25px;
          margin-bottom: 20px;
          ion-icon {
            font-size: 15px;
+           position: relative;
+           top: 4px;
          }
         }
-        div.location {
-          ion-icon {
-            font-size: 15px;
-          }
-        }
+
       }
     }
     ion-card-content{
