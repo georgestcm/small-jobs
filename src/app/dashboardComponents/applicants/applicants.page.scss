@@ -27,6 +27,14 @@ ion-content {
       ion-card {
         width: 100%;
         ion-card-header {
+          .profile {
+            float: right;
+margin-right: 17px;
+border: 1px solid #80808073;
+padding: 3px;
+border-radius: 5px;
+color: #80808073;
+          }
           padding: 0;
           .info {
 
