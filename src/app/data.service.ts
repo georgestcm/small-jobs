@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Storage } from '@ionic/storage';
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +10,8 @@ export class DataService {
 
 
   constructor(private http: HttpClient,public storage: Storage) { }
+  private profileId = new BehaviorSubject<String>('id');
+  currentId = this.profileId.asObservable();
   private _userNearMeUrl = "https://quickjobsapi.herokuapp.com/api/nearme/"
   private _jobPostUrl = "https://quickjobsapi.herokuapp.com/api/post"
   private _getpostedJobs = "https://quickjobsapi.herokuapp.com/api/posted"
@@ -119,5 +122,9 @@ completedDelete(id,jobid){
       jobid: jobid
     }
   })
+}
+
+changeId(id:String){
+  this.profileId.next(id)
 }
 }
