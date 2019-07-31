@@ -7,27 +7,26 @@
 <div class="c_title">Applicants</div>
 </div>
 <ion-content>
-  <div *ngIf="false else elseBlock" class="noApplicants"> You currently have no applicants</div>
+  <div *ngIf="!applicants?.length else elseBlock" class="noApplicants"> You currently have no applicants</div>
   <ng-template #elseBlock>
-  <ion-list>
-    <ion-item lines="none">
-      <ion-card>
+ <ion-list>
+    <ion-item lines="none" *ngFor="let app of userData.applicants">
+      <ion-card >
         <ion-card-header>
-          <div class="profile">profile</div>
+          <div class="profile" (click)="toProfile(app.applicant_id)">profile</div>
           <div class="info">
-            <p> <ion-icon name="person"></ion-icon> </p>
+            <p> <ion-icon name="person"></ion-icon> {{app.applicant_first_name+" "+app.applicant_last_name}}</p>
           </div>
           <div class="job_title">
-            <p> <ion-icon name="hammer"></ion-icon></p>
+            <p> <ion-icon name="hammer"></ion-icon>{{app.applicant_job_title}}</p>
           </div>
         </ion-card-header>
         <ion-card-content>
-   <ion-button (click)="presentAlertPrompt()">add a review</ion-button>
-   <ion-button color="danger">delete</ion-button>
+   <ion-button (click)="presentAlertPrompt(app.applicant_id)">add a review</ion-button>
+   <ion-button color="danger" (click)="deleteAppli(myId,app._id)">delete</ion-button>
         </ion-card-content>
       </ion-card>
     </ion-item>
-
-  </ion-list>
+    </ion-list>
   </ng-template>
 </ion-content>
