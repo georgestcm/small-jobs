@@ -15,25 +15,25 @@ export class JobCenterPage implements OnInit {
  postedJobs;
  completedJobs;
  appliedJobs;
+ applicants;
  dataLengths;
+
   ngOnInit() {
 
   }
 
   ionViewWillEnter(){
-
         this.userData = this.storage.get('user');
         this.storage.get('user').then((value)=>{
           this.userData = value;
           this._data.getCurrentUser(this.userData._id)
           .subscribe(
             res=>(
-              console.log(res),
             this.dataLengths = res,
-            console.log(JSON.stringify(this.dataLengths)),
             this.completedJobs = this.dataLengths.completedJobs.length,
             this.appliedJobs= this.dataLengths.appliedJobs.length,
-            this.postedJobs = this.dataLengths.postedJobs.length
+            this.postedJobs = this.dataLengths.postedJobs.length,
+            this.applicants = this.dataLengths.applicants.length
             ),
             err=> console.log(err)
           )
