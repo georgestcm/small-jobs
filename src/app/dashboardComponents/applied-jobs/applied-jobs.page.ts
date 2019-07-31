@@ -18,13 +18,10 @@ public alertController: AlertController,
 private photoViewer: PhotoViewer) { }
 
   ngOnInit() {
-
     this.storage.get('user').then((value)=>{
       this.id = value._id;
       this.getApplied();
     });
-
-
   }
 
 
@@ -40,8 +37,7 @@ private photoViewer: PhotoViewer) { }
     this._data.getAppliedJobs(this.id)
     .subscribe(
       res=>(
-        this.appliedJobs = res,
-        console.log(res)
+        this.appliedJobs = res
       ),
       err=> console.log(err)
     )
@@ -66,7 +62,7 @@ private photoViewer: PhotoViewer) { }
               console.log(res)
             ),
             err=> console.log(err)
-          ) */
+          )*/
          this._data.completedPost(this.id,data)
          .subscribe(
            res=>(
@@ -76,7 +72,6 @@ private photoViewer: PhotoViewer) { }
          )
        }
      }] })
-
       await alert.present();
     }
 
