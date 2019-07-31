@@ -16,16 +16,16 @@ export class PostPage implements OnInit {
 
  jobToPost = {
    poster_id:'',
-job_title:'',
-name: '',
-category:'',
-description:'',
-location:'',
-due_date:'',
-time:'',
-price:undefined,
-images: [],
-completed: false
+   job_title:'',
+   name: '',
+   category:'',
+   description:'',
+   location:'',
+   due_date:'',
+   time:'',
+   price:undefined,
+   images: [],
+   completed: false
  }
 
  options: CameraOptions = {
@@ -46,9 +46,9 @@ constructor(public _data: DataService,
   public alertController: AlertController,
   private photoViewer: PhotoViewer,
   private camera: Camera,
-private _router:Router,
-public storage: Storage,
-public actionSheetController: ActionSheetController
+  private _router:Router,
+  public storage: Storage,
+  public actionSheetController: ActionSheetController
 ) { }
 
   ngOnInit() {
@@ -76,6 +76,7 @@ delete(index){
 viewImg(src){
   this.photoViewer.show(src);
 }
+
 async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Upload',
@@ -113,11 +114,6 @@ async presentActionSheet() {
 
 snapPic(){
 this.presentActionSheet()
-  /*this.camera.getPicture(this.GalleryOptions).then((imageData) => {
- let base64Image = 'data:image/jpeg;base64,' + imageData;
- this.jobToPost.images.push(base64Image)
-}, (err) => {
-}); */
 }
 
 post(){
