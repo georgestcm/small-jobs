@@ -14,6 +14,7 @@ import { DashboardPageModule } from './dashboard/dashboard.module';
 import { AuthService } from './auth.service'
 import { AuthGuard} from './auth.guard'
 import { UpdateService} from './update.service'
+import {ReviewService} from './review.service'
 import { SendmessageService} from './sendmessage.service'
 import { SubscriptionService} from './subscription.service';
 import { TokenInterceptorService} from './token-interceptor.service'
@@ -45,6 +46,7 @@ import { Network } from '@ionic-native/network/ngx';
     AuthService,
     SendmessageService,
     UpdateService,
+    ReviewService,
     SubscriptionService,
     AuthGuard,
     PhotoViewer,
