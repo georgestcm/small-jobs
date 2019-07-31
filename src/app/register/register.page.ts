@@ -47,8 +47,6 @@ coordinates : [
 }).catch((error) => {
 console.log('Error getting location', error);
 });
-
-console.log(this.registerData)
 }
   async presentAlert(msg) {
     const alert = await this.alertController.create({
