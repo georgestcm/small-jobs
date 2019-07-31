@@ -19,9 +19,10 @@ public  iconLink: string ="/assets/imgs/icon.png";
 
     this.stripe.setPublishableKey('pk_test_OR9yEz19qnyImgqlHLaqBEwO00S5J9STou');
   }
+
   id;
   token;
-   card = {
+  card = {
      number:undefined,
      expMonth:undefined,
      expYear:undefined,
@@ -31,6 +32,7 @@ public  iconLink: string ="/assets/imgs/icon.png";
 trial(){
   this.presentAlert("You are currently on trial and you will be promped to subscribe after the trial")
 }
+
 createToken(){
   this.stripe.createCardToken(this.card)
    .then((token)=>{
