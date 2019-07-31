@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { DataService} from 'src/app/data.service';
+import {ReviewService} from 'src/app/review.service'
 import { ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
@@ -41,18 +42,24 @@ text={
 msg:''
 }
 nearButNotApplied;
-
+currentUser = {
+  applicant_job_title:"",
+  applicant_first_name: "",
+  applicant_last_name: "",
+  applicant_id:""
+}
 
 //jobsending
   constructor(public _data: DataService,
+    public _review: ReviewService,
     private route: ActivatedRoute,
     public storage: Storage,
     public alertController: AlertController,
-  private photoViewer: PhotoViewer,
-private _subscription: SubscriptionService,
-private _router:Router,
-public _sendM: SendmessageService,
-private menu: MenuController) {
+    private photoViewer: PhotoViewer,
+    private _subscription: SubscriptionService,
+    private _router:Router,
+    public _sendM: SendmessageService,
+    private menu: MenuController) {
  }
 
   ngOnInit() {
@@ -61,6 +68,7 @@ private menu: MenuController) {
     this.id = value._id;
   this.long = value.geometry.coordinates[0];
   this.lat = value.geometry.coordinates[1];
+  this.currentUser.applicant_id = value._id;
   this.myInfo.email = value.email;
   this.myInfo.number = value.phone_number;
   this.myInfo.name = value.first_name +' '+ value.last_name;
@@ -82,9 +90,10 @@ private menu: MenuController) {
     this.myInfo.number = value.phone_number;
     this.myInfo.name = value.first_name +' '+ value.last_name;
     this.distance = "1609.34";
-    //console.log(this.myInfo)
+    this.currentUser.applicant_id = value._id;
+    this.currentUser.applicant_first_name = value.first_name;
+    this.currentUser.applicant_last_name = value.last_name;
     })
-
   }
 
   doRefreshTwo() {
@@ -98,10 +107,10 @@ private menu: MenuController) {
   doRefresh(event) {
     this.getUsers();
     setTimeout(() => {
-      console.log('Async operation has ended');
       event.target.complete();
     }, 1000);
   }
+
   viewImg(src){
     this.photoViewer.show(src);
   }
@@ -169,7 +178,6 @@ this.getApplied()
  }
 
 
-
 setDistance(distance){
   this.distance = distance;
   this.getUsers();
@@ -190,8 +198,6 @@ this.allJobsNear= Array.prototype.concat.apply([], this.jobsNear);
    _id: appliedId
  }) => appliedId === nearId));
 
- console.log(this.nearButNotApplied)
-
  }
 
 
@@ -207,6 +213,7 @@ checkSubscriptionStatusApply(){
      err => console.log(err),
    )
 }
+
 checkData(){
   if(this.data.statusCode=404){
     this.alert("you need to subscribe to apply")
@@ -215,7 +222,6 @@ checkData(){
 
 apply(job){
   this.job = job;
-  console.log(job)
   this.text.msg ='User'+' '+this.myInfo.name+' '+ 'has applied to work for you. On the job titled'+' '+`'${job.job_title}'`+' '+'The applicant contact informations are:'+' '+'Email:'+' '+this.myInfo.email+', '+'Phone number:'+' '+this.myInfo.number;
   this._data.getCurrentUser(job.poster_id)
     .subscribe(
@@ -246,15 +252,17 @@ apply(job){
       ),
       err=> console.log(err)
     )
-  /*
-  this._data.postApplied(job,this.id)
-  .subscribe(
-    res=>(
-      console.log(res),
-      this.presentAlert("Applied")
-    ),
-    err=> console.log(err)
-  ) */
+  //applicants
+  console.log(this.currentUser)
+  this.currentUser.applicant_job_title = job.job_title;
+this._review.postapplicants(job.poster_id,this.currentUser)
+.subscribe(
+  res=>(
+  console.log(res)
+  ),
+  err=> console.log(err)
+)
+
 }
 
 
