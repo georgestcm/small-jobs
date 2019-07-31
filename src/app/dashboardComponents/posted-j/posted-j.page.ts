@@ -22,8 +22,6 @@ public alertController: AlertController) { }
       this.id = value._id;
         this.getPostedJobs()
     });
-
-
   }
 
   doRefresh(event) {
@@ -48,6 +46,7 @@ public alertController: AlertController) { }
 
       await alert.present();
     }
+
     async alert(msg,id) {
         const alert = await this.alertController.create({
           header: '',
