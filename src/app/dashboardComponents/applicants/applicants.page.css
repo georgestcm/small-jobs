@@ -19,9 +19,17 @@ div.header .c_title {
   color: grey;
 }
 
+.input-wrapper {
+  display: unset !important;
+}
+
 ion-content .noApplicants {
   color: grey;
   text-align: center;
+}
+
+ion-content ion-list ion-item div.item-native {
+  display: none;
 }
 
 ion-content ion-list ion-item ion-card {
@@ -45,8 +53,19 @@ ion-content ion-list ion-item ion-card ion-card-header .info {
   margin-left: 20px;
 }
 
+ion-content ion-list ion-item ion-card ion-card-header .info p ion-icon {
+  position: relative;
+  top: 2px;
+}
+
 ion-content ion-list ion-item ion-card ion-card-header .job_title {
   margin-left: 20px;
+}
+
+ion-content ion-list ion-item ion-card ion-card-header .job_title p ion-icon {
+  position: relative;
+  top: 2px;
+  margin-right: 4px;
 }
 
 ion-content ion-list ion-item ion-card ion-card-content {

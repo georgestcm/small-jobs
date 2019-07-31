@@ -17,6 +17,9 @@ div.header {
   }
 }
 
+.input-wrapper {
+  display: unset !important;
+}
 ion-content {
   .noApplicants {
     color: grey;
@@ -24,6 +27,9 @@ ion-content {
   }
   ion-list {
     ion-item {
+      div.item-native {
+        display: none;
+      }
       ion-card {
         width: 100%;
         ion-card-header {
@@ -39,10 +45,23 @@ color: #80808073;
           .info {
 
             margin-left: 20px;
+            p {
+              ion-icon {
+                position: relative;
+                top: 2px;
+              }
+            }
           }
           .job_title {
 
             margin-left: 20px;
+            p {
+              ion-icon {
+                position: relative;
+                top: 2px;
+                margin-right: 4px;
+              }
+            }
           }
         }
         ion-card-content {
