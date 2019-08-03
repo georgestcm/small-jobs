@@ -1,21 +1,19 @@
-div.header {
-  height: 41px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  .menu {
-    display: inline-block;
-    margin: 7px 0 0 7px;
-    width: 37%;
-    color: grey;
-  }
-  .c_title {
-    display: inline-block;
-    font-weight: bold;
-    color: grey;
+ion-header {
+  color: grey;
+  border-bottom: 1px solid #80808000;
+  ion-toolbar {
+    ion-buttons {
+      color: grey;
+    }
+    .payments {
+      position: relative;
+      left: 28%;
+      letter-spacing: 2px;
+      font-weight: bold;
+      color: grey;
+    }
   }
 }
-
 
 ion-content {
   ion-card {
