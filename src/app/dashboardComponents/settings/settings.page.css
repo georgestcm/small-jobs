@@ -3,11 +3,16 @@ ion-header {
   border-bottom: 1px solid #80808000;
 }
 
+ion-header ion-toolbar ion-buttons {
+  color: grey;
+}
+
 ion-header ion-toolbar .settings {
   position: relative;
   left: 34%;
   letter-spacing: 2px;
   font-weight: bold;
+  color: grey;
 }
 
 div.setting {
