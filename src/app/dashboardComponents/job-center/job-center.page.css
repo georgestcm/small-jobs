@@ -1,19 +1,16 @@
-div.header {
-  height: 41px;
-  width: 100%;
-  display: flex;
-  align-items: center;
+ion-header {
+  color: grey;
+  border-bottom: 1px solid #80808000;
 }
 
-div.header .menu {
-  display: inline-block;
-  margin: 7px 0 0 7px;
-  width: 37%;
+ion-header ion-toolbar ion-buttons {
   color: grey;
 }
 
-div.header .c_title {
-  display: inline-block;
+ion-header ion-toolbar .Jcenter {
+  position: relative;
+  left: 28%;
+  letter-spacing: 2px;
   font-weight: bold;
   color: grey;
 }
