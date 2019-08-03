@@ -1,18 +1,13 @@
-div.header {
-  height: 41px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  background-color: white;
-  border-bottom: 1px solid #CDCDCD;
-}
-
-div.header .exit {
-  width: 40%;
-}
-
-div.header .exit ion-menu-button {
+ion-header {
   color: grey;
+  border-bottom: 1px solid #80808000;
+}
+
+ion-header ion-toolbar .settings {
+  position: relative;
+  left: 34%;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 div.setting {

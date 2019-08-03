@@ -1,17 +1,16 @@
-div.header {
-  height: 41px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  background-color: white;
-  border-bottom: 1px solid #CDCDCD;
-  .exit {
-    width: 40%;
-    ion-menu-button {
-      color: grey;
+ion-header {
+  color: grey;
+  border-bottom: 1px solid #80808000;
+  ion-toolbar {
+    .settings {
+      position: relative;
+      left: 34%;
+      letter-spacing: 2px;
+      font-weight: bold;
     }
   }
 }
+
 
 div.setting {
   color: grey;
@@ -79,7 +78,7 @@ ion-content{
             }
           }
         }
-        
+
         &:nth-child(1){
           color: #e57373;
           ion-icon {
