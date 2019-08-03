@@ -1,9 +1,14 @@
-<div class="header">
-<div class="menu">
-  <ion-menu-button></ion-menu-button>
-</div>
-<div class="c_title">Payments</div>
-</div>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <div class="payments">
+      Payments
+    </div>
+  </ion-toolbar>
+  </ion-header>
+
 <ion-content>
   <ion-card (click)="trial()">
     <ion-card-content>
