@@ -3,9 +3,14 @@ ion-header {
   border-bottom: 1px solid #80808000;
 }
 
+ion-header ion-toolbar ion-buttons {
+  color: grey;
+}
+
 ion-header ion-toolbar ion-icon {
   position: relative;
   left: 90%;
+  color: grey;
 }
 
 div.upload-photo {
