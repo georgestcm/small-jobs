@@ -1,31 +1,10 @@
-div.header {
-  height: 41px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  .back {
-    display: inline-block;
-    width: 37%;
-    color: grey;
-    ion-buttons {
-      ion-back-button {
-        color: grey;
-        font-size: 20px;
-      }
-    }
-
-  }
-  .setting {
-    width: 63%;
-    height: 41px;
-    display: flex;
-    align-items: center;
+ion-header {
+  color: grey;
+  border-bottom: 1px solid #80808000;
+  ion-toolbar {
     ion-icon {
       position: relative;
-      left: 83%;
-      top: 4px;
-      color: grey;
-      font-size: 18px;
+      left: 90%;
     }
   }
 }
