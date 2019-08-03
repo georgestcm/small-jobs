@@ -1,34 +1,11 @@
-div.header {
-  height: 41px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-div.header .back {
-  display: inline-block;
-  width: 37%;
+ion-header {
   color: grey;
+  border-bottom: 1px solid #80808000;
 }
 
-div.header .back ion-buttons ion-back-button {
-  color: grey;
-  font-size: 20px;
-}
-
-div.header .setting {
-  width: 63%;
-  height: 41px;
-  display: flex;
-  align-items: center;
-}
-
-div.header .setting ion-icon {
+ion-header ion-toolbar ion-icon {
   position: relative;
-  left: 83%;
-  top: 4px;
-  color: grey;
-  font-size: 18px;
+  left: 90%;
 }
 
 div.upload-photo {
