@@ -1,12 +1,12 @@
-<div class="header">
-<div class="back">
-  <ion-buttons slot="start">
-        <ion-back-button defaultHref="/dashboard/home"></ion-back-button>
-      </ion-buttons>
-</div>
-<div class="setting"><ion-icon (click)="presentActionSheet()"name="settings"></ion-icon></div>
-</div>
 
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-icon (click)="presentActionSheet()"name="settings"></ion-icon>
+  </ion-toolbar>
+  </ion-header>
 <ion-content>
      <div class="upload-photo">
          <img  class="profile_photo" [src]="userData.profile_photo"  alt=""/>
