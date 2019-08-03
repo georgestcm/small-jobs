@@ -1,15 +1,13 @@
-.header .back {
-  width: 30%;
-  display: inline-block;
+ion-header {
   color: grey;
+  border-bottom: 1px solid #80808000;
 }
 
-.header .profile {
-  display: inline-block;
-  color: grey;
+ion-header ion-toolbar .profile {
+  position: relative;
+  left: 34%;
+  letter-spacing: 2px;
   font-weight: bold;
-  margin-top: 6px;
-  margin-left: 53px;
 }
 
 ion-content ion-card ion-card-header .img_wrapper {
