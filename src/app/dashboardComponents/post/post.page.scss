@@ -1,23 +1,20 @@
-div.header {
-  height: 41px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  background-color: white;
-  .exit {
-    width: 45%;
+ion-header {
+  color: grey;
+  border-bottom: 1px solid #80808000;
+  ion-toolbar {
     ion-buttons {
-      ion-back-button {
-        color: grey;
-        font-weight: bold;
-      }
+      color: grey;
+    }
+    .post {
+      position: relative;
+      left: 38%;
+      color: grey;
+      letter-spacing: 2px;
+      font-weight: bold;
     }
   }
-div.post {
-  color: grey;
-  font-weight: bold;
 }
-}
+
 
 div.title {
   h4 {
