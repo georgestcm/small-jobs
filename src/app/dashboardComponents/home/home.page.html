@@ -52,8 +52,8 @@
 
     </div>
     <div class="apply_description">
-      <ion-button (click)="presentAlert(jobs.description)" [hidden]="!disablebutton(jobs.poster_id)">More info</ion-button>
-      <ion-button (click)="presentAlert(jobs.description)" [hidden]="disablebutton(jobs.poster_id)" >More Info</ion-button>
+      <ion-button   (click)="presentAlert(jobs.description)" [hidden]="!disablebutton(jobs.poster_id)">More info</ion-button>
+      <ion-button   (click)="presentAlert(jobs.description)" [hidden]="disablebutton(jobs.poster_id)" >More Info</ion-button>
       <ion-button color="danger"(click)="apply(jobs)" [hidden]="disablebutton(jobs.poster_id)">Apply</ion-button>
     </div>
 </ion-card-content>
