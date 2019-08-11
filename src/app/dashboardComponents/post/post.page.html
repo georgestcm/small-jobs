@@ -1,13 +1,13 @@
-<div class="header">
-  <div class="exit">
+<ion-header>
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-  </div>
-  <div class="post">
-    Post
-  </div>
-</div>
+    <div class="post">
+      Post
+    </div>
+  </ion-toolbar>
+  </ion-header>
 
 <ion-content>
   <div class="title">
@@ -34,7 +34,7 @@
   <label for="job description">Job Description:</label>
    <ion-textarea rows="7"  placeholder="job description"[(ngModel)]="jobToPost.description" name="decription"></ion-textarea>
    <label for="images upload">Upload job images:</label>
-    <ion-button class="take_picture" (click)="snapPic()"><ion-icon name="camera"></ion-icon></ion-button>
+    <ion-button class="take_picture"  (click)="snapPic()"><ion-icon name="camera"></ion-icon></ion-button>
    <div class="images">
      <h3 *ngIf="jobToPost.images.length ===0" text-center>Please select images</h3>
      <ion-item *ngFor="let img of jobToPost.images; index as pos">
