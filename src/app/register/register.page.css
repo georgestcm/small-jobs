@@ -1,25 +1,24 @@
-ion-back-button {
+ion-header {
+  color: grey;
+  border-bottom: 1px solid #80808000;
+}
+
+ion-header ion-toolbar ion-buttons {
   color: grey;
 }
 
-ion-toolbar ion-buttons {
-  width: 34%;
+ion-header ion-toolbar .register {
+  position: relative;
+  left: 28%;
+  color: grey;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 ion-content {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-ion-content div.register_text {
-  text-align: center;
-}
-
-ion-content div.register_text h3 {
-  color: grey;
-  letter-spacing: 2px;
-  font-weight: 700;
 }
 
 ion-content .register_text {
@@ -46,6 +45,7 @@ ion-content .back_to_login a {
 
 div.form form {
   text-align: center;
+  margin-top: 80px;
 }
 
 div.form form ion-input {
