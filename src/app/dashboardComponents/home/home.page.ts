@@ -49,6 +49,9 @@ currentUser = {
   applicant_id:""
 }
 
+//subscription
+current_user_subscription_id;
+subscription_data;
 //jobsending
   constructor(public _data: DataService,
     public _review: ReviewService,
@@ -93,6 +96,7 @@ currentUser = {
     this.currentUser.applicant_id = value._id;
     this.currentUser.applicant_first_name = value.first_name;
     this.currentUser.applicant_last_name = value.last_name;
+    this.current_user_subscription_id = value.stripe[0].subsription_id;
     })
   }
 
@@ -221,47 +225,67 @@ checkData(){
 }
 
 apply(job){
-  this.job = job;
-  this.text.msg ='User'+' '+this.myInfo.name+' '+ 'has applied to work for you. On the job titled'+' '+`'${job.job_title}'`+' '+'The applicant contact informations are:'+' '+'Email:'+' '+this.myInfo.email+', '+'Phone number:'+' '+this.myInfo.number;
-  this._data.getCurrentUser(job.poster_id)
-    .subscribe(
-      res=>(
-        this.posterData = res,
-        this.poster_number  ='+1'+this.posterData.phone_number,
-        console.log(this.poster_number),
-        console.log(this.text),
-        this._sendM.sendmessage(this.text,this.poster_number)
-        .subscribe(
-          res=>(
-            this.presentAlert("Applied"),
-            console.log(res)
-          ),
-          err=> console.log(err)
-        )
-      ),
-      err=> console.log(err)
-    )
-    //this.poster_number ='+1';
-    //console.log(this.poster_number);
-    this._data.postApplied(job,this.id)
-    .subscribe(
-      res=>(
+  if(this.current_user_subscription_id){
+    this._subscription.checkSubscription(this.current_user_subscription_id)
+    .subscribe (
+      res =>(
         console.log(res),
-        this.presentAlert("Applied"),
-        this.doRefreshTwo()
+        this.subscription_data =res
       ),
-      err=> console.log(err)
+      err => console.log(err)
     )
-  //applicants
-  console.log(this.currentUser)
-  this.currentUser.applicant_job_title = job.job_title;
-this._review.postapplicants(job.poster_id,this.currentUser)
-.subscribe(
-  res=>(
-  console.log(res)
-  ),
-  err=> console.log(err)
-)
+  } else {
+    this.alert("You need to subscribe to apply")
+  }
+
+
+  if(this.subscription_data.status === "trialing" || this.subscription_data.status === "active" ) {
+    this.job = job;
+    this.text.msg ='User'+' '+this.myInfo.name+' '+ 'has applied to work for you. On the job titled'+' '+`'${job.job_title}'`+' '+'The applicant contact informations are:'+' '+'Email:'+' '+this.myInfo.email+', '+'Phone number:'+' '+this.myInfo.number;
+    this._data.getCurrentUser(job.poster_id)
+      .subscribe(
+        res=>(
+          this.posterData = res,
+          this.poster_number  ='+1'+this.posterData.phone_number,
+          console.log(this.poster_number),
+          console.log(this.text),
+          this._sendM.sendmessage(this.text,this.poster_number)
+          .subscribe(
+            res=>(
+              this.presentAlert("Applied"),
+              console.log(res)
+            ),
+            err=> console.log(err)
+          )
+        ),
+        err=> console.log(err)
+      )
+      //this.poster_number ='+1';
+      //console.log(this.poster_number);
+      this._data.postApplied(job,this.id)
+      .subscribe(
+        res=>(
+          console.log(res),
+          this.presentAlert("Applied"),
+          this.doRefreshTwo()
+        ),
+        err=> console.log(err)
+      )
+    //applicants
+    console.log(this.currentUser)
+    this.currentUser.applicant_job_title = job.job_title;
+  this._review.postapplicants(job.poster_id,this.currentUser)
+  .subscribe(
+    res=>(
+    console.log(res)
+    ),
+    err=> console.log(err)
+  )
+
+} else {
+  this.alert("Subscription payment failed")
+}
+
 
 }
 
