@@ -1,15 +1,15 @@
-<div class="header">
+<ion-header>
   <ion-toolbar color='bg'>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="login"></ion-back-button>
     </ion-buttons>
+    <div class="register">
+      Register
+    </div>
   </ion-toolbar>
-</div>
+</ion-header>
 
 <ion-content>
- <div class="register_text">
-   <h3>REGISTER</h3>
- </div>
  <div class="form">
    <form action="">
      <ion-input [(ngModel)]="registerData.username"  name="username" type="text" placeholder="username" required><ion-icon name="contact"></ion-icon></ion-input>
