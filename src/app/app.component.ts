@@ -27,9 +27,9 @@ export class AppComponent {
     this.checkNetwork();
     this.platform.ready().then(() => {
       this.statusBar.overlaysWebView(false);
-    this.statusBar.styleDefault();
-    this.statusBar.backgroundColorByHexString('#ffffff');
-      this.splashScreen.hide();
+      this.statusBar.styleDefault();
+      this.statusBar.backgroundColorByHexString('#f2f2f2');
+        this.splashScreen.hide();
     });
 
     this.storage.get('token').then((token)=>{
