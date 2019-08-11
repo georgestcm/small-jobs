@@ -3,7 +3,7 @@ ion-toolbar ion-item ion-label {
 }
 
 ion-toolbar ion-item ion-label ion-icon {
-  color: #86be59;
+  color: #BBBF49;
   position: relative;
   top: 2px;
 }
@@ -86,7 +86,7 @@ ion-content ion-card ion-card-header div.user div.info .info_text h5 {
 }
 
 ion-content ion-card ion-card-header div.user div.info .info_text h5 ion-icon {
-  color: #86be59;
+  color: #85bf4b;
   position: relative;
   top: 4px;
   margin-right: 5px;
