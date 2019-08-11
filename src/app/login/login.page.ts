@@ -66,6 +66,7 @@ loginData = {
     }
 
     loginUser(){
+      this.presentLoading()
    this._auth.loginUser(this.loginData)
    .subscribe(
      res =>(
@@ -74,7 +75,7 @@ loginData = {
        this.router.navigate(['/dashboard']),
        this.storage.set('user',res.user)
      ),
-     err => this.presentAlert("Login",err.error)
+     err => this.presentAlert("Login","Please check your credentials")
    )
  }
 
