@@ -1,6 +1,5 @@
-
-  <ion-toolbar>
-    <ion-item>
+<ion-header lines="full" >
+    <ion-item lines="full">
       <ion-label><ion-icon name="pin"></ion-icon>filter</ion-label>
       <ion-select placeholder="radius" (ionChange)="setDistance(distance)" value="1609.34" [(ngModel)]="distance" name="category">
         <ion-select-option value="1609.34">1 miles</ion-select-option>
@@ -10,7 +9,7 @@
         <ion-select-option value="32186.9">20 miles</ion-select-option>
       </ion-select>
     </ion-item>
-  </ion-toolbar>
+  </ion-header>
 <ion-content padding >
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
