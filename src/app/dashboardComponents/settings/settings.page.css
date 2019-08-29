@@ -33,16 +33,13 @@ ion-content ion-list ion-item {
   color: #e57373;
 }
 
-ion-content ion-list ion-item:nth-child(1) {
-  height: 10px;
-}
-
-ion-content ion-list ion-item:nth-child(2) div.account_info {
+ion-content ion-list ion-item:nth-child(1) div.account_info {
   width: 100%;
   display: inherit;
+  margin-bottom: 5px;
 }
 
-ion-content ion-list ion-item:nth-child(2) div.account_info div.my_photo {
+ion-content ion-list ion-item:nth-child(1) div.account_info div.my_photo {
   width: 30%;
   height: 120px;
   display: flex;
@@ -50,40 +47,40 @@ ion-content ion-list ion-item:nth-child(2) div.account_info div.my_photo {
   align-items: center;
 }
 
-ion-content ion-list ion-item:nth-child(2) div.account_info div.my_photo img {
+ion-content ion-list ion-item:nth-child(1) div.account_info div.my_photo img {
   border-radius: 50%;
   width: 100px;
   height: 100px;
   display: inline-block;
 }
 
-ion-content ion-list ion-item:nth-child(2) div.account_info div.info {
+ion-content ion-list ion-item:nth-child(1) div.account_info div.info {
   width: 70%;
   height: 120px;
   display: inline-block;
 }
 
-ion-content ion-list ion-item:nth-child(2) div.account_info div.info p {
+ion-content ion-list ion-item:nth-child(1) div.account_info div.info p {
   margin: 0;
   margin-bottom: 5px;
   color: grey;
 }
 
-ion-content ion-list ion-item:nth-child(2) div.account_info div.info p:nth-child(1) {
+ion-content ion-list ion-item:nth-child(1) div.account_info div.info p:nth-child(1) {
   margin-top: 20px;
 }
 
-ion-content ion-list ion-item:nth-child(2) div.account_info div.info p ion-icon {
+ion-content ion-list ion-item:nth-child(1) div.account_info div.info p ion-icon {
   color: grey;
   margin-left: 5px;
   margin-right: 20px;
 }
 
-ion-content ion-list ion-item:nth-child(1) {
+ion-content ion-list ion-item:nth-child(2) {
   color: #e57373;
 }
 
-ion-content ion-list ion-item:nth-child(1) ion-icon {
+ion-content ion-list ion-item:nth-child(2) ion-icon {
   position: relative;
   top: 2px;
   margin-left: 10px;

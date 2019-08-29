@@ -39,13 +39,12 @@ ion-content{
   ion-list {
     ion-item {
         color:#e57373;
+
         &:nth-child(1){
-          height: 10px;
-        }
-        &:nth-child(2){
           div.account_info {
             width: 100%;
             display: inherit;
+            margin-bottom: 5px;
             div.my_photo {
               width: 30%;
               height: 120px;
@@ -83,7 +82,7 @@ ion-content{
           }
         }
 
-        &:nth-child(1){
+        &:nth-child(2){
           color: #e57373;
           ion-icon {
             position: relative;
