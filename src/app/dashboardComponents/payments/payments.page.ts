@@ -28,19 +28,44 @@ public  iconLink: string ="/assets/imgs/icon.png";
      expYear:undefined,
      cvc:undefined
   }
+hiddenNot;
+customer_data;
+subscription_data;
+customer_id;
+subscribtion_id;
+ionViewWillEnter(){
 
-trial(){
-  this.presentAlert("You are currently on trial and you will be promped to subscribe after the trial")
 }
 
 createToken(){
+  /*
   this.stripe.createCardToken(this.card)
    .then((token)=>{
      console.log(token);
      this.token = token.id
      this.createCustomer()
+     this._subscription.addCustomer(token)
+     .subscribe(
+       res=> (
+         this.customer_data =res,
+         this.customer_id = this.customer_data.id,
+         this._subscription.createSubscription(res.id)
+         .subscribe(
+           res=> (
+             this.subscription_data =res,
+             this.subscribtion_id = this.subscription_data.id,
+           ),
+           err=> console.log(err)
+         )
+       )
+     )
    })
    .catch(error => this.presentAlert("Please check card details before submition"));
+   if(this.subscription_data.status=== "trailing"||this.subscription_data.status=== "active"){
+     this.hiddenNot = true
+   } else {
+     this.hiddenNot = false
+   } */
 }
 
 async presentAlert(msg) {
@@ -53,7 +78,7 @@ async presentAlert(msg) {
   await alert.present();
 }
 
-createCustomer(){
+/*createCustomer(){
   this._subscription.addCustomer(this.id,this.token)
   .subscribe(
     res=> (
@@ -63,5 +88,5 @@ createCustomer(){
       console.log(err)
     )
   )
-}
+} */
 }
