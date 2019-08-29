@@ -10,7 +10,7 @@
   </ion-header>
 
 <ion-content>
-  <ion-card (click)="trial()">
+  <ion-card >
     <ion-card-content>
       <div class="img">
         <ion-img [src]="iconLink" class="img"></ion-img>
@@ -27,12 +27,12 @@
     </ion-card-content>
   </ion-card>
   <div class="payment" >
-   <form>
+   <form >
      <h6> add a card to subscribe</h6>
-     <ion-input [(ngModel)]="card.number" name="number" type="number" placeholder="card number" required></ion-input>
-     <ion-input [(ngModel)]="card.expMonth" maxlength="2" min="01" max="12"pattern="([0-12])" name="card_exM" type="number" placeholder="month" required></ion-input>
-     <ion-input [(ngModel)]="card.expYear" maxlength="2" min="19" max="50" name="card_exY" type="number" placeholder="year" required></ion-input>
-     <ion-input [(ngModel)]="card.cvc" maxlength="3" name="cvc" type="number" placeholder="cvc" required></ion-input>
+     <ion-input [(ngModel)]="card.number" [disabled]="true" name="number" type="number" placeholder="card number" required></ion-input>
+     <ion-input [(ngModel)]="card.expMonth" [disabled]="true" maxlength="2" min="01" max="12"pattern="([0-12])" name="card_exM" type="number" placeholder="month" required></ion-input>
+     <ion-input [(ngModel)]="card.expYear" [disabled]="true" maxlength="2" min="19" max="50" name="card_exY" type="number" placeholder="year" required></ion-input>
+     <ion-input [(ngModel)]="card.cvc" [disabled]="true" maxlength="3" name="cvc" type="number" placeholder="cvc" required></ion-input>
      <ion-button (click)="createToken()" [disabled]="true">Active now</ion-button>
    </form>
   </div>
