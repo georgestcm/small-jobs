@@ -1,6 +1,6 @@
 
 
-ion-toolbar {
+ion-header{
   //margin-top: 15px;
   ion-item {
     ion-label {
@@ -11,6 +11,9 @@ ion-toolbar {
         top: 2px;
       }
     }
+    ion-select {
+      color: grey;
+    }
   }
 }
 
@@ -20,14 +23,14 @@ ion-content {
     text-align: center;
   }
   ion-card {
-    margin-bottom: 25px;
+    margin: 0px 0 15px 0;
     display: block;
     ion-card-header {
       display: block !important;
       padding: 9px;
       div.profile {
         float: right;
-        margin-right: 17px;
+        margin-right: 1px;
        border: 1px solid #80808073;
        padding: 3px;
        border-radius: 5px;
