@@ -16,7 +16,7 @@
   <div class="form">
      <form action="">
        <label for="job title">Job Title</label>
-  <ion-input  [(ngModel)]="jobToPost.job_title" name="job_title" type="text" placeholder="job title"></ion-input>
+  <ion-input  [(ngModel)]="jobToPost.job_title" name="job_title" type="text" ></ion-input>
   <ion-list>
   <ion-list-header>Categories</ion-list-header>
 
@@ -32,7 +32,7 @@
   </ion-item>
 </ion-list>
   <label for="job description">Job Description:</label>
-   <ion-textarea rows="7"  placeholder="job description"[(ngModel)]="jobToPost.description" name="decription"></ion-textarea>
+   <ion-textarea rows="7"  [(ngModel)]="jobToPost.description" name="decription"></ion-textarea>
    <label for="images upload">Upload job images:</label>
     <ion-button class="take_picture"  (click)="snapPic()"><ion-icon name="camera"></ion-icon></ion-button>
    <div class="images">
@@ -52,7 +52,7 @@
    <label for="time">Time:</label>
    <ion-datetime  display-format="hh:mm a" value="01:00" [(ngModel)]="jobToPost.time" name="time"></ion-datetime>
 <label for="payment"> Price:</label>
-<ion-input placeholder="price"type="number" [(ngModel)]="jobToPost.price" name="price">&nbsp; $ </ion-input>
+<ion-input #price placeholder="price"type="number" [(ngModel)]="jobToPost.price" name="price">&nbsp; $ </ion-input>
 <div class="submit">
     <ion-button type="submit" (click)="post()"  color="light" class="ion-text-center">SUBMIT</ion-button>
 </div>
