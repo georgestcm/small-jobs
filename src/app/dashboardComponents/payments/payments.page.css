@@ -1,6 +1,5 @@
 ion-header {
   color: grey;
-  border-bottom: 1px solid #80808000;
 }
 
 ion-header ion-toolbar ion-buttons {
@@ -88,7 +87,7 @@ ion-content ion-card ion-card-content div.status h2 ion-icon {
 }
 
 ion-content div.payment form {
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 ion-content div.payment form h6 {
