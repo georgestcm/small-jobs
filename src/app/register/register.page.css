@@ -45,25 +45,28 @@ ion-content .back_to_login a {
 
 div.form form {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 div.form form ion-input {
+  color: grey;
   width: 80%;
   height: 44px;
   margin: auto;
   text-align: left;
   font-size: 20px;
-  border-bottom: 1px solid grey;
+  border: 1px solid #80808029;
   margin-top: 20px;
+  border-radius: 20px;
 }
 
 div.form form ion-input ion-icon {
   color: grey;
+  margin-left: 9px;
 }
 
 div.form form ion-input:nth-child(1) {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 div.form form ion-button {
