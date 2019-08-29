@@ -225,7 +225,7 @@ checkData(){
 }
 
 apply(job){
-  if(this.current_user_subscription_id){
+  /*if(this.current_user_subscription_id){
     this._subscription.checkSubscription(this.current_user_subscription_id)
     .subscribe (
       res =>(
@@ -284,7 +284,48 @@ apply(job){
 
 } else {
   this.alert("Subscription payment failed")
-}
+} */
+this.job = job;
+this.text.msg ='User'+' '+this.myInfo.name+' '+ 'has applied to work for you. On the job titled'+' '+`'${job.job_title}'`+' '+'The applicant contact informations are:'+' '+'Email:'+' '+this.myInfo.email+', '+'Phone number:'+' '+this.myInfo.number;
+this._data.getCurrentUser(job.poster_id)
+  .subscribe(
+    res=>(
+      this.posterData = res,
+      this.poster_number  ='+1'+this.posterData.phone_number,
+      console.log(this.poster_number),
+      console.log(this.text),
+      this._sendM.sendmessage(this.text,this.poster_number)
+      .subscribe(
+        res=>(
+          this.presentAlert("Applied"),
+          console.log(res)
+        ),
+        err=> console.log(err)
+      )
+    ),
+    err=> console.log(err)
+  )
+  //this.poster_number ='+1';
+  //console.log(this.poster_number);
+  this._data.postApplied(job,this.id)
+  .subscribe(
+    res=>(
+      console.log(res),
+      this.presentAlert("Applied"),
+      this.doRefreshTwo()
+    ),
+    err=> console.log(err)
+  )
+//applicants
+console.log(this.currentUser)
+this.currentUser.applicant_job_title = job.job_title;
+this._review.postapplicants(job.poster_id,this.currentUser)
+.subscribe(
+res=>(
+console.log(res)
+),
+err=> console.log(err)
+)
 
 
 }
