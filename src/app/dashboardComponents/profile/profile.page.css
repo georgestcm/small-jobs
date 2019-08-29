@@ -8,6 +8,15 @@ ion-header ion-toolbar .profile {
   left: 34%;
   letter-spacing: 2px;
   font-weight: bold;
+  color: grey;
+}
+
+ion-header ion-toolbar .profile ion-button ion-back-button {
+  color: grey;
+}
+
+.sc-ion-buttons-md-h {
+  color: grey;
 }
 
 ion-content ion-card ion-card-header .img_wrapper {

@@ -3,14 +3,22 @@ ion-header {
   border-bottom: 1px solid #80808000;
   ion-toolbar {
     .profile {
+      ion-button {
+        ion-back-button {
+          color: grey;
+        }
+      }
       position: relative;
       left: 34%;
       letter-spacing: 2px;
       font-weight: bold;
+      color: grey;
     }
   }
 }
-
+.sc-ion-buttons-md-h {
+  color: grey;
+}
 
 ion-content {
   ion-card {
