@@ -37,7 +37,7 @@ import { Network } from '@ionic-native/network/ngx';
     HttpClientModule,
    IonicStorageModule.forRoot({
      name:"db",
-     driverOrder: ['localstorage', 'sqlite',]
+     driverOrder: ['websql','sqlite',]
    })],
   providers: [
     StatusBar,
