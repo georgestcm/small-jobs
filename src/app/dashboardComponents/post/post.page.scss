@@ -1,3 +1,11 @@
+.take_picture {
+  display: block;
+  width: 20%;
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
 ion-header {
   color: grey;
   border-bottom: 1px solid #80808000;
@@ -16,6 +24,8 @@ ion-header {
 }
 
 
+ion-content {
+
 div.title {
   h4 {
     text-align: center;
@@ -24,13 +34,6 @@ div.title {
   }
 }
 
-.take_picture {
-  display: block;
-  width: 20%;
-  margin-left: 20px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-}
 div.form {
 
   form {
@@ -40,12 +43,14 @@ div.form {
       margin-left: 20px;
     }
     ion-input {
+      color: grey;
       width: 90%;
       height: 40px;
       margin: auto;
    text-align: left;
    font-size: 20px;
-    border:1px solid grey;
+    border: 1px solid #8080806b;
+    border-radius: 20px !important;
    border-radius: 3px;
    margin-top: 10px;
    margin-bottom: 10px;
@@ -55,21 +60,24 @@ div.submit {
   margin-bottom: 10px;
 }
     ion-datetime {
+      color: grey;
       width: 90%;
       height: 40px;
       margin: auto;
       font-size: 20px;
-       border:1px solid grey;
-      border-radius: 3px;
+      border: 1px solid #8080806b;
+      border-radius: 20px;
       margin-top: 10px;
       margin-bottom: 10px;
     }
     ion-textarea {
+      color: grey;
       width: 90%;
       font-size: 20px;
        border:1px solid grey;
        margin: auto;
-       border-radius: 3px;
+       border: 1px solid #8080806b;
+       border-radius: 20px;
        margin-top: 10px;
        margin-bottom: 10px;
     }
@@ -113,31 +121,7 @@ div.submit {
 
       }
     }
-    div.location {
-      label {
-        width: 90%;
-        display: block;
-      }
-      ion-input {
-        display: inline-block;
-        width: 40%;
-        height: 40px;
-        margin: 0 !important;
-     text-align: left;
-     font-size: 20px;
-      border:1px solid grey;
-     border-radius: 3px;
-     margin-top: 10px !important;
-         margin-left: 20px !important;
-     margin-bottom: 10px !important;
-      }
-      ion-toggle {
-        display: inline-block;
-position: relative;
-top: 10px;
-left: 20px;
-      }
-    }
+
     ion-list {
       ion-list-header {
         color: grey;
@@ -145,4 +129,5 @@ left: 20px;
       }
     }
   }
+}
 }

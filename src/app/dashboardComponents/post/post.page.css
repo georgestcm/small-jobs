@@ -1,3 +1,11 @@
+.take_picture {
+  display: block;
+  width: 20%;
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
 ion-header {
   color: grey;
   border-bottom: 1px solid #80808000;
@@ -15,64 +23,61 @@ ion-header ion-toolbar .post {
   font-weight: bold;
 }
 
-div.title h4 {
+ion-content div.title h4 {
   text-align: center;
   color: grey;
   font-weight: bold;
 }
 
-.take_picture {
-  display: block;
-  width: 20%;
-  margin-left: 20px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-}
-
-div.form form label {
+ion-content div.form form label {
   color: grey;
   margin-left: 20px;
 }
 
-div.form form ion-input {
+ion-content div.form form ion-input {
+  color: grey;
   width: 90%;
   height: 40px;
   margin: auto;
   text-align: left;
   font-size: 20px;
-  border: 1px solid grey;
+  border: 1px solid #8080806b;
+  border-radius: 20px !important;
   border-radius: 3px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-div.form form div.submit {
+ion-content div.form form div.submit {
   text-align: center;
   margin-bottom: 10px;
 }
 
-div.form form ion-datetime {
+ion-content div.form form ion-datetime {
+  color: grey;
   width: 90%;
   height: 40px;
   margin: auto;
   font-size: 20px;
-  border: 1px solid grey;
-  border-radius: 3px;
+  border: 1px solid #8080806b;
+  border-radius: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-div.form form ion-textarea {
+ion-content div.form form ion-textarea {
+  color: grey;
   width: 90%;
   font-size: 20px;
   border: 1px solid grey;
   margin: auto;
-  border-radius: 3px;
+  border: 1px solid #8080806b;
+  border-radius: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-div.form form div.images {
+ion-content div.form form div.images {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -89,19 +94,19 @@ div.form form div.images {
   justify-content: center;
 }
 
-div.form form div.images ion-item {
+ion-content div.form form div.images ion-item {
   display: inline-block;
   height: inherit;
   width: auto;
 }
 
-div.form form div.images ion-item ion-thumbnail {
+ion-content div.form form div.images ion-item ion-thumbnail {
   margin: 0;
   height: inherit;
   width: 90px;
 }
 
-div.form form div.images ion-item ion-thumbnail ion-icon {
+ion-content div.form form div.images ion-item ion-thumbnail ion-icon {
   position: relative;
   background-color: #e57373;
   color: white;
@@ -110,37 +115,11 @@ div.form form div.images ion-item ion-thumbnail ion-icon {
   top: 15px;
 }
 
-div.form form div.images h3 {
+ion-content div.form form div.images h3 {
   color: grey;
 }
 
-div.form form div.location label {
-  width: 90%;
-  display: block;
-}
-
-div.form form div.location ion-input {
-  display: inline-block;
-  width: 40%;
-  height: 40px;
-  margin: 0 !important;
-  text-align: left;
-  font-size: 20px;
-  border: 1px solid grey;
-  border-radius: 3px;
-  margin-top: 10px !important;
-  margin-left: 20px !important;
-  margin-bottom: 10px !important;
-}
-
-div.form form div.location ion-toggle {
-  display: inline-block;
-  position: relative;
-  top: 10px;
-  left: 20px;
-}
-
-div.form form ion-list ion-list-header {
+ion-content div.form form ion-list ion-list-header {
   color: grey;
   font-size: 16px;
 }
