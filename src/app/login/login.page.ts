@@ -18,6 +18,7 @@ loginData = {
   password:''
 }
  public  iconLink: string ="assets/imgs/icon.png";
+ user;
   constructor(private router: Router,
     private geolocation: Geolocation,
     public loadingController: LoadingController,
@@ -32,15 +33,6 @@ loginData = {
 
   }
 
-/*ionViewWillEnter(){
-  this.storage.get('token').then((token)=>{
-    if(token){
-      this.router.navigate(['/dashboard/home'])
-    } else {
-
-    }
-  })
-} */
   async presentLoading() {
       const loading = await this.loadingController.create({
         message: 'loading',
@@ -66,16 +58,19 @@ loginData = {
     }
 
     loginUser(){
-      this.presentLoading()
+      //this.presentLoading()
    this._auth.loginUser(this.loginData)
    .subscribe(
      res =>(
+       console.log(res),
+       this.user = res.user,
+       console.log(JSON.stringify(res.user)),
+       this.storage.set('user',res.user),
        this.presentLoading(),
        this.storage.set('token',res.token),
-       this.router.navigate(['/dashboard']),
-       this.storage.set('user',res.user)
+       this.router.navigate(['/dashboard'])
      ),
-     err => this.presentAlert("Login","Please check your credentials")
+     err => console.log(err)/*this.presentAlert("Login","Please check your credentials")*/
    )
  }
 
