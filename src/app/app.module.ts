@@ -21,7 +21,6 @@ import { TokenInterceptorService} from './token-interceptor.service'
 import { IonicStorageModule } from '@ionic/storage';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import {Camera} from '@ionic-native/camera/ngx';
-import { Stripe } from '@ionic-native/stripe/ngx';
 import { Network } from '@ionic-native/network/ngx';
 @NgModule({
   declarations: [
@@ -51,7 +50,6 @@ import { Network } from '@ionic-native/network/ngx';
     AuthGuard,
     PhotoViewer,
     Camera,
-    Stripe,
     Network,
     IonicStorageModule,
     { provide: HTTP_INTERCEPTORS, useClass:TokenInterceptorService ,multi: true}
