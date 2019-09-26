@@ -3,7 +3,10 @@
 }
 
 .header {
-  margin-top: 100px;
+  height: 39%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   letter-spacing: 2px;
   border-bottom: 0;
 }
@@ -18,6 +21,7 @@
   width: 50%;
   margin: 0 auto;
   z-index: -2222;
+  animation: opening-img 3s;
 }
 
 form {
@@ -39,6 +43,7 @@ form ion-input {
 form ion-input ion-icon {
   color: grey;
   margin-left: 9px;
+  position: absolute;
 }
 
 form ion-button {
@@ -71,4 +76,21 @@ div.register a {
   text-decoration: none;
   font-size: 14px;
   color: grey;
+}
+
+.sc-ion-input-ios-h {
+  --padding-start: 36px;
+}
+
+.sc-ion-input-md-h {
+  --padding-start: 33px;
+}
+
+@keyframes opening-img {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -3,7 +3,10 @@
 }
 
 .header {
-  margin-top: 100px;
+  height: 39%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
  letter-spacing: 2px;
  //padding-top: 28%;
  border-bottom: 0;
@@ -15,6 +18,7 @@
     width: 50%;
     margin:  0 auto;
     z-index: -2222;
+    animation: opening-img 3s;
   }
   }
 }
@@ -35,6 +39,7 @@ text-align: center;
  ion-icon {
    color:grey;
    margin-left: 9px;
+   position: absolute;
  }
   }
   ion-button {
@@ -67,4 +72,21 @@ div.register {
    font-size: 14px;
    color: grey;
  }
+}
+
+.sc-ion-input-ios-h {
+  --padding-start: 36px;
+}
+
+.sc-ion-input-md-h {
+    --padding-start: 33px;
+}
+
+@keyframes opening-img {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
 }
