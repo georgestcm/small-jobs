@@ -20,6 +20,7 @@ ion-content ion-list {
 }
 
 ion-content ion-list ion-item {
+  border: 0;
   color: grey;
 }
 
