@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Stripe } from '@ionic-native/stripe/ngx';
 import { SubscriptionService } from 'src/app/subscription.service'
 import { AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { ActionSheetController } from '@ionic/angular';
 @Component({
   selector: 'app-payments',
   templateUrl: './payments.page.html',
@@ -10,14 +10,13 @@ import { Storage } from '@ionic/storage';
 })
 export class PaymentsPage implements OnInit {
 public  iconLink: string ="/assets/imgs/icon.png";
-  constructor(private stripe: Stripe,private _subscription: SubscriptionService,public alertController: AlertController,public storage: Storage) {}
+  constructor(private _subscription: SubscriptionService,public actionSheetController: ActionSheetController,public alertController: AlertController,public storage: Storage) {}
 
   ngOnInit() {
     this.storage.get('user').then((value)=>{
       this.id = value._id;
    })
 
-    this.stripe.setPublishableKey('pk_test_OR9yEz19qnyImgqlHLaqBEwO00S5J9STou');
   }
 
   id;
@@ -37,37 +36,6 @@ ionViewWillEnter(){
 
 }
 
-createToken(){
-  /*
-  this.stripe.createCardToken(this.card)
-   .then((token)=>{
-     console.log(token);
-     this.token = token.id
-     this.createCustomer()
-     this._subscription.addCustomer(token)
-     .subscribe(
-       res=> (
-         this.customer_data =res,
-         this.customer_id = this.customer_data.id,
-         this._subscription.createSubscription(res.id)
-         .subscribe(
-           res=> (
-             this.subscription_data =res,
-             this.subscribtion_id = this.subscription_data.id,
-           ),
-           err=> console.log(err)
-         )
-       )
-     )
-   })
-   .catch(error => this.presentAlert("Please check card details before submition"));
-   if(this.subscription_data.status=== "trailing"||this.subscription_data.status=== "active"){
-     this.hiddenNot = true
-   } else {
-     this.hiddenNot = false
-   } */
-}
-
 async presentAlert(msg) {
   const alert = await this.alertController.create({
     header:  "",
@@ -77,6 +45,27 @@ async presentAlert(msg) {
 
   await alert.present();
 }
+async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Subscription',
+      buttons: [{
+        text: 'Cancel subscription',
+        role: 'destructive',
+        icon: 'close',
+        handler: () => {
+
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'backspace',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
 
 /*createCustomer(){
   this._subscription.addCustomer(this.id,this.token)
