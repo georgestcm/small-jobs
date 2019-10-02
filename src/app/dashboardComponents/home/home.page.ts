@@ -96,7 +96,6 @@ subscription_data;
     this.currentUser.applicant_id = value._id;
     this.currentUser.applicant_first_name = value.first_name;
     this.currentUser.applicant_last_name = value.last_name;
-    this.current_user_subscription_id = value.stripe[0].subsription_id;
     })
   }
 
