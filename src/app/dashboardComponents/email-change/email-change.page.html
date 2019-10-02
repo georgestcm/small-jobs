@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <div class="password">
+      Change Email
+    </div>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+<div class="reset-form">
+  <div class="reset-info">
+    <p>Enter your email below  to change your email</p>
+  </div>
+  <form action="">
+    <ion-input type="text" name="email" [(ngModel)]="email.email" placeholder="email" [hidden]="btn.submit" ><ion-icon name="mail" required></ion-icon></ion-input>
+    <ion-input type="text" name="email" [(ngModel)]="email.newemail" placeholder="new email" [hidden]="btn.changeEmail"><ion-icon name="mail" required></ion-icon></ion-input>
+    <ion-button type="submit" (click)="checkEmail()" [hidden]= "btn.submit" color="light" class="ion-text-center">SUBMIT</ion-button>
+    <ion-button type="submit"  [hidden]= "btn.changeEmail" color="light" class="ion-text-center">Change email</ion-button>
+  </form>
+</div>
+</ion-content>
