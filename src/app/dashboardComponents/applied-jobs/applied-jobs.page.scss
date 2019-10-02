@@ -129,8 +129,7 @@ ion-content {
       }
       div.job_info {
         div.job_info_one {
-          display: inline-block;
-          width: 50%;
+          width: 100%;
           margin-bottom: 5px;
           p {
             ion-icon {
@@ -142,8 +141,7 @@ ion-content {
           }
         }
         div.job_info_two{
-          display: inline-block;
-          width: 50%;
+          width: 100%;
           p {
             ion-icon {
               margin-left: 5px;
