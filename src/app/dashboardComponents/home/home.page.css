@@ -138,8 +138,7 @@ ion-content ion-card ion-card-content div.job_imgs h3 {
 }
 
 ion-content ion-card ion-card-content div.job_info div.job_info_one {
-  display: inline-block;
-  width: 50%;
+  width: 100%;
   margin-bottom: 5px;
 }
 
@@ -151,8 +150,7 @@ ion-content ion-card ion-card-content div.job_info div.job_info_one p ion-icon {
 }
 
 ion-content ion-card ion-card-content div.job_info div.job_info_two {
-  display: inline-block;
-  width: 50%;
+  width: 100%;
 }
 
 ion-content ion-card ion-card-content div.job_info div.job_info_two p ion-icon {
@@ -182,4 +180,20 @@ ion-content ion-card ion-card-content div.apply_description ion-button:nth-child
 .sc-ion-card-md-h {
   margin: 0;
   margin-top: -10px;
+}
+
+ion-fab-button.ion-color.ion-color-light.ios.ion-activatable.ion-focusable.hydrated {
+  outline: none;
+}
+
+ion-fab.md.fab-horizontal-end.fab-vertical-bottom.hydrated {
+  outline: none;
+}
+
+ion-fab {
+  outline: none;
+}
+
+ion-fab ion-icon {
+  outline: none;
 }

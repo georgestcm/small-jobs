@@ -133,8 +133,7 @@ ion-content {
       }
       div.job_info {
         div.job_info_one {
-          display: inline-block;
-          width: 50%;
+          width: 100%;
           margin-bottom: 5px;
           p {
             ion-icon {
@@ -146,8 +145,7 @@ ion-content {
           }
         }
         div.job_info_two{
-          display: inline-block;
-          width: 50%;
+          width: 100%;
           p {
             ion-icon {
               margin-left: 5px;
@@ -178,4 +176,19 @@ ion-content {
 .sc-ion-card-md-h {
   margin:0;
   margin-top: -10px;
+}
+
+ion-fab-button.ion-color.ion-color-light.ios.ion-activatable.ion-focusable.hydrated {
+  outline: none;
+}
+
+ion-fab.md.fab-horizontal-end.fab-vertical-bottom.hydrated {
+  outline: none;
+}
+
+ion-fab {
+  outline: none;
+  ion-icon {
+    outline: none;
+  }
 }
