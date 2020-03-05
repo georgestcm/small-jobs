@@ -1,11 +1,11 @@
-<div class="header">
-<div class="menu">
-  <ion-buttons slot="start">
-    <ion-back-button defaultHref="dashboard/job-center"></ion-back-button>
-  </ion-buttons>
-</div>
-<div class="c_title">Jobs Applied</div>
-</div>
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="dashboard/job-center"></ion-back-button>
+      </ion-buttons>
+        <ion-title size="small">Applied jobs</ion-title>
+    </ion-toolbar>
+</ion-header>
 <ion-content>
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
@@ -30,7 +30,7 @@
     <div class="job_imgs">
       <ion-item>
      <ion-thumbnail slot="start" *ngFor="let img of jobs.images">
-       <img [src]="img" (click)="viewImg(img)"/>
+       <img [src]="img" (click)="viewImg(img,'job images')"/>
      </ion-thumbnail>
      </ion-item>
     </div>

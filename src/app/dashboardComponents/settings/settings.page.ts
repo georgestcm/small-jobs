@@ -54,4 +54,19 @@ async alert(msg) {
 delete(){
   this.alert("Do you really want to delete this account?")
 }
+
+toPasswordChange(){
+  this._router.navigate(['dashboard/passwordchange'])
+}
+
+toEmailChange(){
+  this._router.navigate(['dashboard/emailchange'])
+}
+toNumberChange(){
+  this._router.navigate(['dashboard/numberchange'])
+}
+
+toVerify(){
+  this._router.navigate(['dashboard/verify'])
+}
 }

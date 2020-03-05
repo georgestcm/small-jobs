@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class SendmessageService {
 
-  sendmessagelink = "https://quickjobsapi.herokuapp.com/api/message"
+  sendmessagelink = "https://huslapi.herokuapp.com/api/message"
 
   constructor(private http: HttpClient) { }
 

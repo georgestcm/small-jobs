@@ -14,15 +14,16 @@
    <form action="">
      <ion-input [(ngModel)]="registerData.username"  name="username" type="text" placeholder="username" required><ion-icon name="contact"></ion-icon></ion-input>
      <ion-input [(ngModel)]="registerData.password" name="password"type="password" placeholder="password" required><ion-icon name="key"></ion-icon></ion-input>
+     <ion-input [(ngModel)]="re_password" name="password"type="password" placeholder="re-enter your password" required><ion-icon name="key"></ion-icon></ion-input>
      <ion-input [(ngModel)]="registerData.first_name" name="first_name" type="text" placeholder="first name"><ion-icon name="person" required></ion-icon></ion-input>
      <ion-input [(ngModel)]="registerData.last_name"  name="last_name"type="text" placeholder="last name"><ion-icon name="person" required></ion-icon></ion-input>
      <ion-input  [(ngModel)]="registerData.email" name="email" type="text" placeholder="email"><ion-icon name="mail" required></ion-icon></ion-input>
-     <ion-input  [(ngModel)]="registerData.phone_number" name="phone_number" type="number" placeholder="phone number"><ion-icon name="call" required></ion-icon></ion-input>
-     <ion-input [(ngModel)]="registerData.zip_code" name="zip_code"type="number" placeholder="zip code"><ion-icon name="pin" required></ion-icon></ion-input>
+     <ion-input  [(ngModel)]="registerData.phone_number" name="phone_number" type="number" placeholder="phone number"><ion-label>+1</ion-label></ion-input>
+     <p>By clicking submit, you agree to our <a (click)="toTerms()">Terms and Conditions</a> and <a (click)="toPrivacy()">Privacy Statement</a></p>
      <ion-button  (click)="register()"type="submit"  color="light" class="ion-text-center">SUBMIT</ion-button>
    </form>
  </div>
  <div class="back_to_login">
- <a routerLink="/login" routerDirection="backward">Already Have An Account</a>
+ <a (click)=toLogin()>Already Have An Account</a>
  </div>
 </ion-content>

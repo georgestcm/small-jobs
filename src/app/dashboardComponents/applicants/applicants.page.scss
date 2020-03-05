@@ -80,3 +80,20 @@ color: #80808073;
     }
   }
 }
+
+ion-textarea-ios {
+    height: inherit;
+}
+
+ion-title {
+    height: 100%;
+    padding: 0;
+    position: relative;
+    right: 29px;
+    color: grey;
+    font-size: 15px;
+}
+
+ion-title.md.title-md.title-small.hydrated {
+    margin-left: 25px;
+}

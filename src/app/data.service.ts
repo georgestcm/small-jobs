@@ -12,19 +12,24 @@ export class DataService {
   constructor(private http: HttpClient,public storage: Storage) { }
   private profileId = new BehaviorSubject<String>('id');
   currentId = this.profileId.asObservable();
-  private _userNearMeUrl = "https://quickjobsapi.herokuapp.com/api/nearme/"
-  private _jobPostUrl = "https://quickjobsapi.herokuapp.com/api/post"
-  private _getpostedJobs = "https://quickjobsapi.herokuapp.com/api/posted"
-  private _deletejob = "https://quickjobsapi.herokuapp.com/api/postedDelete"
-  private _getAppliedJobs = "https://quickjobsapi.herokuapp.com/api/appliedget"
-  private _getUser = "https://quickjobsapi.herokuapp.com/api/user"
-  private _appliedPost = "https://quickjobsapi.herokuapp.com/api/appliedpost"
-  private _appliedDelete = "https://quickjobsapi.herokuapp.com/api/applieddelete"
-  private _appliedValue = "https://quickjobsapi.herokuapp.com/api/appliedupdate"
-  private _completedPost = "https://quickjobsapi.herokuapp.com/api/completedpost"
-  private _completedGet = "https://quickjobsapi.herokuapp.com/api/completedget"
-  private _completedDelete = "https://quickjobsapi.herokuapp.com/api/completeddelete"
-
+  private _userNearMeUrl = "https://huslapi.herokuapp.com/api/nearme/"
+  private _jobPostUrl = "https://huslapi.herokuapp.com/api/post"
+  private _getpostedJobs = "https://huslapi.herokuapp.com/api/posted"
+  private _deletejob = "https://huslapi.herokuapp.com/api/postedDelete"
+  private _getAppliedJobs = "https://huslapi.herokuapp.com/api/appliedget"
+  private _getUser = "https://huslapi.herokuapp.com/api/user"
+  private _appliedPost = "https://huslapi.herokuapp.com/api/appliedpost"
+  private _appliedDelete = "https://huslapi.herokuapp.com/api/applieddelete"
+  private _appliedValue = "https://huslapi.herokuapp.com/api/appliedupdate"
+  private _completedPost = "https://huslapi.herokuapp.com/api/completedpost"
+  private _completedGet = "https://huslapi.herokuapp.com/api/completedget"
+  private _completedDelete = "https://huslapi.herokuapp.com/api/completeddelete"
+  private _checkpassword = "https://huslapi.herokuapp.com/api/checkpassword"
+  private _checkemail = "https://huslapi.herokuapp.com/api/checkemail"
+  private _checkenumber = "https://huslapi.herokuapp.com/api/checknumber"
+  private _changepassword = "https://huslapi.herokuapp.com/api/changepassword"
+  private _changeemail = "https://huslapi.herokuapp.com/api/changeemail"
+  private _changenumber = "https://huslapi.herokuapp.com/api/changenumber"
     setPosition(distance,long,lat){
   return this.http.get<any>(this._userNearMeUrl,{params:{
     distance:distance,
@@ -126,5 +131,47 @@ completedDelete(id,jobid){
 
 changeId(id:String){
   this.profileId.next(id)
+}
+
+checkEmail(username,email){
+  return this.http.get<any>(this._checkemail,{
+    params:{
+      username:username,
+      email:email
+    }
+  })
+}
+
+changeEmail(data){
+  return this.http.post(this._changeemail,data)
+}
+
+
+checkPassword(username,password){
+  return this.http.get<any>(this._checkpassword,{
+    params:{
+      username:username,
+      password:password
+    }
+  })
+}
+
+changePassword(data){
+  return this.http.post(this._changepassword,data)
+}
+
+
+
+checkNumber(username,phone_number){
+  return this.http.get<any>(this._checkenumber,{
+    params:{
+      username:username,
+      phone_number:phone_number
+    }
+  })
+}
+
+changeNumber(data){
+  return  this.http.post(this._changenumber,data)
 }
 }

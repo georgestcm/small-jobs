@@ -28,13 +28,12 @@ ion-content {
         display: inline-block;
         width: 40%;
        .img {
+         display: inline-block;
+         width: 40%;
          height: 100px;
          width: 100px;
          border-radius: 50%;
          background-color: grey;
-         display: flex;
-         justify-content: center;
-         align-items: center;
          margin-left: 21px;
          float: left;
          img {
@@ -58,6 +57,7 @@ ion-content {
            font-size: 15px;
            position: relative;
            top: 4px;
+           margin-left: 20px;
          }
         }
 
@@ -78,15 +78,26 @@ ion-content {
 
       ion-list {
         ion-item {
+          width: 100%;
           .user {
+            width: 100%;
             display: block;
             width: 100%;
             position: absolute;
             top: 0;
             color: grey;
+            p {
+              width: inherit;
+              span {
+                margin-left: 8px;
+               position: relative;
+               bottom: 3px;
+              }
+            }
           }
           .review {
-            margin: 20px 0 0 20px;
+                margin-top: 14px;
+            width: 100%;
             color: grey;
           }
         }

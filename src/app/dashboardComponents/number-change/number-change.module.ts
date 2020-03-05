@@ -5,12 +5,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { NumberChangePage } from './number-change.page';
-
 const routes: Routes = [
   {
     path: '',
-    component: NumberChangePage
   }
 ];
 
@@ -21,6 +18,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [NumberChangePage]
+  declarations: []
 })
 export class NumberChangePageModule {}

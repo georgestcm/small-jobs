@@ -3,6 +3,7 @@ import { DataService} from 'src/app/data.service';
 import { Storage } from '@ionic/storage';
 import { AlertController } from '@ionic/angular';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
+import { Platform } from '@ionic/angular';
 @Component({
   selector: 'app-applied-jobs',
   templateUrl: './applied-jobs.page.html',
@@ -12,10 +13,12 @@ export class AppliedJobsPage implements OnInit {
   id;
   appliedJobs;
   jobid;
-  constructor(public _data: DataService,
-  public storage: Storage,
-public alertController: AlertController,
-private photoViewer: PhotoViewer) { }
+  constructor(
+    public _data: DataService,
+    public storage: Storage,
+    public alertController: AlertController,
+    private photoViewer: PhotoViewer,
+    public plt: Platform) { }
 
   ngOnInit() {
     this.storage.get('user').then((value)=>{
@@ -43,9 +46,19 @@ private photoViewer: PhotoViewer) { }
     )
   }
 
-  viewImg(src){
-    this.photoViewer.show(src);
+  viewImg(src,title){
+    var options = {
+      share: true, // default is false
+      closeButton: true, // iOS only: default is true
+      copyToReference: true // iOS only: default is false
+    };
+
+    if (this.plt.is("ios")) {
+      src = decodeURIComponent(src);
+    }
+    this.photoViewer.show(src,title,options);
   }
+
 
   async alert(msg,data) {
       const alert = await this.alertController.create({

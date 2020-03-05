@@ -2,8 +2,11 @@
   color: red;
 }
 
-.header {
-  height: 39%;
+ion-header {
+  border: 0px !important;
+  border-bottom-color: transparent !important;
+  background-image: none !important;
+  border-bottom: none !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,17 +14,17 @@
   border-bottom: 0;
 }
 
-.header .img_shadow {
+.img_shadow {
   width: 80%;
   margin: auto;
   margin-bottom: 5%;
+  margin-top: 22%;
 }
 
-.header .img_shadow ion-img {
+.img_shadow ion-img {
   width: 50%;
   margin: 0 auto;
   z-index: -2222;
-  animation: opening-img 3s;
 }
 
 form {
@@ -84,13 +87,4 @@ div.register a {
 
 .sc-ion-input-md-h {
   --padding-start: 33px;
-}
-
-@keyframes opening-img {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }

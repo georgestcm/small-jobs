@@ -1,0 +1,40 @@
+div {
+
+    ion-icon {
+      font-size: 27px;
+      display: block;
+      float: right;
+      margin-top: 17px;
+      margin-right: 24px;
+    color: grey;
+  }
+
+}
+
+ion-card {
+  ion-card-header {
+    text-align: center;
+    ion-card-subtitle {
+      font-size: 10px;
+    }
+  }
+
+  ion-card-content {
+    text-align: center;
+    ion-textarea {
+      text-align: left;
+      border: 1px solid #8080802e;
+      border-radius: 20px;
+      height: 290px;
+      margin: 10px 0 10px 0;
+    }
+  }
+}
+
+ion-textarea-ios {
+    height: inherit;
+}
+
+textarea.native-textarea.sc-ion-textarea-ios {
+  height: inherit;
+}

@@ -5,6 +5,8 @@ import { DataService } from 'src/app/data.service';
 import { UpdateService } from 'src/app/update.service';
 import { Storage } from '@ionic/storage';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-profile-edit',
@@ -22,7 +24,8 @@ export class ProfileEditPage implements OnInit {
               public _data: DataService,
               public storage: Storage,
               private camera: Camera,
-              public _update: UpdateService) { }
+              public _update: UpdateService,
+            public alertController: AlertController) { }
 
   ngOnInit() {
     this.userData = this.storage.get('user');
@@ -77,7 +80,7 @@ ionViewWillLeave(){
           }
         }, {
           text: 'Cancel',
-          icon: 'close',
+          icon: 'backspace',
           role: 'cancel',
           handler: () => {
             console.log('Cancel clicked');
@@ -128,7 +131,15 @@ ionViewWillLeave(){
   this.presentActionSheetTwo()
     }
 
+    async presentAlert(msg) {
+      const alert = await this.alertController.create({
+        header:  "",
+        message: msg,
+        buttons: ['OK']
+      });
 
+      await alert.present();
+    }
 
     updatePhoto(){
       console.log(this.userData._id)
@@ -136,7 +147,9 @@ ionViewWillLeave(){
       .subscribe(
         res =>(
           console.log(res),
-          this.storage.set('user',res)
+          this.storage.set('user',res),
+          this.presentAlert('Your profile picture has been updated'),
+          this.router.navigate(['dashboard/home'])
         )
       ,
         err => console.log(err)

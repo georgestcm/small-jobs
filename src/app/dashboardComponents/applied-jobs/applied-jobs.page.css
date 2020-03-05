@@ -114,7 +114,7 @@ ion-content ion-card ion-card-content div.job_imgs {
 
 ion-content ion-card ion-card-content div.job_imgs ion-item {
   display: inline-block;
-  height: 88%;
+  height: 99%;
   width: auto;
   --padding-start: 0 !important;
 }
@@ -177,4 +177,17 @@ ion-content ion-card ion-card-content div.apply_description ion-button:nth-child
 ion-content ion-card ion-card-content div.apply_description ion-button:nth-child(2) {
   margin-left: 12%;
   --ion-color-danger:#85bf4b;
+}
+
+ion-title {
+  height: 100%;
+  padding: 0;
+  position: relative;
+  right: 29px;
+  color: grey;
+  font-size: 15px;
+}
+
+ion-title.md.title-md.title-small.hydrated {
+  margin-left: 25px;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { DataService} from 'src/app/data.service';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 import {ReviewService} from 'src/app/review.service'
 import { ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage';
@@ -10,6 +11,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { SubscriptionService } from 'src/app/subscription.service';
 import { SendmessageService } from 'src/app/sendmessage.service';
 import { Router } from '@angular/router'
+import { Platform } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -53,30 +55,30 @@ currentUser = {
 current_user_subscription_id;
 subscription_data;
 //jobsending
+
   constructor(public _data: DataService,
     public _review: ReviewService,
     private route: ActivatedRoute,
+    private geolocation: Geolocation,
     public storage: Storage,
     public alertController: AlertController,
     private photoViewer: PhotoViewer,
     private _subscription: SubscriptionService,
     private _router:Router,
     public _sendM: SendmessageService,
-    private menu: MenuController) {
+    private menu: MenuController,
+  public plt: Platform) {
  }
 
   ngOnInit() {
-  this.openFirst();
   this.storage.get('user').then((value)=>{
     this.id = value._id;
-  this.long = value.geometry.coordinates[0];
-  this.lat = value.geometry.coordinates[1];
   this.currentUser.applicant_id = value._id;
   this.myInfo.email = value.email;
   this.myInfo.number = value.phone_number;
   this.myInfo.name = value.first_name +' '+ value.last_name;
   this.distance = "1609.34";
-  this.getUsers()
+  this.openFirst();
   })
   }
 
@@ -84,11 +86,19 @@ subscription_data;
       this.menu.open();
     }
 
+
+trackMe(){
+  let watch = this.geolocation.watchPosition();
+  watch.subscribe((data) => {
+    this.lat = data.coords.latitude
+    this.long = data.coords.longitude
+    this.getUsers()
+  });
+
+}
   ionViewWillEnter(){
     this.storage.get('user').then((value)=>{
       this.id = value._id;
-    this.long = value.geometry.coordinates[0];
-    this.lat = value.geometry.coordinates[1];
     this.myInfo.email = value.email;
     this.myInfo.number = value.phone_number;
     this.myInfo.name = value.first_name +' '+ value.last_name;
@@ -97,6 +107,7 @@ subscription_data;
     this.currentUser.applicant_first_name = value.first_name;
     this.currentUser.applicant_last_name = value.last_name;
     })
+  this.trackMe()
   }
 
   doRefreshTwo() {
@@ -114,9 +125,19 @@ subscription_data;
     }, 1000);
   }
 
-  viewImg(src){
-    this.photoViewer.show(src);
+  viewImg(src,title){
+    var options = {
+      share: true, // default is false
+      closeButton: true, // iOS only: default is true
+      copyToReference: true // iOS only: default is false
+    };
+
+    if (this.plt.is("ios")) {
+      src = decodeURIComponent(src);
+    }
+    this.photoViewer.show(src,title,options);
   }
+
 
 
   disablebutton(id){
@@ -172,7 +193,9 @@ this.getApplied()
    this._data.setPosition(this.distance,this.long,this.lat)
    .subscribe(
      res =>(
-       this.usersNear = res
+       console.log(res),
+       this.usersNear = res,
+       console.log("jobs loaded"+' '+this.distance+' '+this.long+' '+this.lat)
      ),
      err => console.log(err),
      ()=> this.loadJobs()
@@ -201,6 +224,7 @@ this.allJobsNear= Array.prototype.concat.apply([], this.jobsNear);
    _id: appliedId
  }) => appliedId === nearId));
 
+console.log(this.nearButNotApplied)
  }
 
 

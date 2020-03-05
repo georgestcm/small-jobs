@@ -90,7 +90,11 @@ div.menu_nav ul li ion-icon:nth-child(1) {
 }
 
 div.menu_nav ul li:nth-child(1) {
-  margin-top: 30%;
+  margin-top: 40%;
+}
+
+div.menu_nav ul ion-item {
+  --ripple-color: grey;
 }
 
 div.footer {
@@ -118,4 +122,8 @@ div.footer ul li ion-icon {
   font-size: 18px;
   position: relative;
   top: 3px;
+}
+
+ion-tab-button {
+  --color-selected:#bbbf49;
 }

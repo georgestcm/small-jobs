@@ -5,12 +5,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PasswordChangePage } from './password-change.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: PasswordChangePage
+
   }
 ];
 
@@ -21,6 +20,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PasswordChangePage]
+  declarations: []
 })
 export class PasswordChangePageModule {}

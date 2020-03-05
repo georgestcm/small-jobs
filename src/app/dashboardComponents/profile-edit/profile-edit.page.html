@@ -4,11 +4,12 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-icon (click)="presentActionSheet()"name="settings"></ion-icon>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
   </ion-header>
-
 <ion-content>
+<ion-card>
+  <ion-card-content>
      <div class="upload-photo">
          <img  class="profile_photo" [src]="userData.profile_photo ? userData.profile_photo: markupPhoto"  alt=""/>
        <ion-button (click)="snapPic()">Change photo</ion-button>
@@ -33,4 +34,6 @@
         </div>
       </div>
     </div>
+    </ion-card-content>
+</ion-card>
 </ion-content>

@@ -1,11 +1,11 @@
-<ion-split-pane>
+<!--<ion-split-pane>
   <ion-menu contentId="content" menuId="main">
  <ion-content>
    <ion-list class="list">
      <ion-menu-toggle auto-hide="false">
        <div class="header" (click)="toProfileEdit()">
        <div class="img" (click)="toProfileEdit()">
-         <img [src]="userData.profile_photo ? userData.profile_photo: markupPhoto" />
+         <img [src]="userData.profile_photo" />
        </div>
        <div class="name">
          <p>{{userData.first_name+" "+userData.last_name}}</p>
@@ -17,7 +17,7 @@
        <div class="menu_nav">
          <ul>
            <li (click)="toHome()" ><a><ion-icon name="home"></ion-icon>Home</a></li>
-            <li (click)="toPayments()"><ion-icon name="card"></ion-icon><a >Payments</a></li>
+            <li [hidden]="true" (click)="toPayments()"><ion-icon name="card"></ion-icon><a >Payments</a></li>
             <li (click)="toJobCenter()"><ion-icon name="briefcase"></ion-icon><a>Job Center</a></li>
          </ul>
        </div>
@@ -33,4 +33,27 @@
   </ion-menu>
   <ion-router-outlet id="content" main>
   </ion-router-outlet>
-</ion-split-pane>
+</ion-split-pane> -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="profile-edit">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button  tab="job-center">
+      <ion-icon name="hammer"></ion-icon>
+      <ion-label>Job Center</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="home">
+      <ion-icon name="search"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings">
+      <ion-icon name="cog"></ion-icon>
+      <ion-label>Settings</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

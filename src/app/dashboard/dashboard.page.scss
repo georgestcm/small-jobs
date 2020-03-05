@@ -80,8 +80,11 @@ div.menu_nav {
           top: 3px;
         }
         &:nth-child(1){
-          margin-top: 30%;
+          margin-top: 40%;
         }
+    }
+    ion-item {
+      --ripple-color: grey;
     }
   }
 }
@@ -107,4 +110,9 @@ div.footer {
       }
     }
   }
+}
+
+
+ion-tab-button {
+  --color-selected:#bbbf49;
 }

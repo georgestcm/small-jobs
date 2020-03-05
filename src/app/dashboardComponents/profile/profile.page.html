@@ -30,9 +30,13 @@
    <ng-template #elseBlock>
     <ion-list *ngFor="let reviews of user.reviews">
       <ion-item>
-        <div class="user"><ion-icon name="contact"></ion-icon>
-        {{reviews.poster_first_name+" "+reviews.poster_last_name}}</div>
+        <div class="user">
+        <p> <ion-icon name="contact"></ion-icon> <span>{{reviews.poster_first_name+" "+reviews.poster_last_name}}</span></p></div>
         <div class="review">
+          <rating [rate]="reviews.rating"
+                  readonly="true"
+                  size="default">
+          </rating>
           <p>
             {{reviews.review}}
           </p>

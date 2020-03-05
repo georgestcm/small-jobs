@@ -7,39 +7,51 @@
       Settings
     </div>
   </ion-toolbar>
-  </ion-header>
-
+</ion-header>
 <ion-content>
   <ion-list>
-    <ion-item lines="full"></ion-item>
   <ion-item lines="full">
     <div class="account_info">
       <div class="my_photo">
         <img [src]="userData.profile_photo" alt="">
       </div><div class="info">
            <p><ion-icon name="person"></ion-icon> {{userData.first_name + " "+userData.last_name}}</p>
-           <p><ion-icon name="contact"></ion-icon> {{userData.username}}</p>
-           <p><ion-icon name="mail"></ion-icon> {{userData.email}}</p>
-           <p><ion-icon name="call"></ion-icon> {{userData.phone_number}}</p>
       </div>
     </div>
-
   </ion-item>
-
-  <ion-item lines="full" (click)="delete()">
+  <ion-item  lines="full" (click)="toPasswordChange()">
+    <ion-label>
+      <ion-icon name="key"></ion-icon>
+      Change password
+    </ion-label>
+  </ion-item>
+  <ion-item  lines="full" (click)="toEmailChange()" >
+    <ion-label>
+      <ion-icon name="mail"></ion-icon>
+      Change email
+    </ion-label>
+  </ion-item>
+  <ion-item  lines="full" (click)="toNumberChange()">
+    <ion-label>
+      <ion-icon name="call"></ion-icon>
+      Change number
+    </ion-label>
+  </ion-item>
+  <ion-item  lines="full" (click)="delete()">
     <ion-label>
       <ion-icon name="close"></ion-icon>
       Delete Account
     </ion-label>
   </ion-item>
-
 </ion-list>
 </ion-content>
 <ion-footer>
-
-  <ion-list lines="full">
-  <ion-item (click)="logout()">
+  <ion-list>
+  <ion-item lines="full" (click)="logout()">
+    <ion-label>
+    <ion-icon name="exit"></ion-icon>
     Sign Out
+    </ion-label>
   </ion-item>
 </ion-list>
 </ion-footer>

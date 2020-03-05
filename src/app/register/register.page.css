@@ -63,13 +63,38 @@ div.form form ion-input {
 div.form form ion-input ion-icon {
   color: grey;
   margin-left: 9px;
+  position: absolute;
 }
 
 div.form form ion-input:nth-child(1) {
   margin-top: 20px;
 }
 
+div.form form ion-input ion-label {
+  margin-left: 9px;
+  position: absolute;
+}
+
 div.form form ion-button {
   margin-top: 30px;
   width: 40%;
+}
+
+div.form form p {
+  color: grey;
+  padding-top: 20px;
+  width: 80%;
+  margin: auto;
+}
+
+div.form form p a {
+  color: #3880ff;
+}
+
+.sc-ion-input-ios-h {
+  --padding-start: 36px;
+}
+
+.sc-ion-input-md-h {
+  --padding-start: 33px;
 }

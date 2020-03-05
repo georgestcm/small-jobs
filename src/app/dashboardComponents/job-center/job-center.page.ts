@@ -49,7 +49,7 @@ export class JobCenterPage implements OnInit {
   }
 
   toPosted(){
-    this.router.navigate(['dashboard/posted'])
+    this.router.navigate(['dashboard/job-center/posted'])
   }
 
   toApplicants(){

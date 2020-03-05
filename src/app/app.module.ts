@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule , HTTP_INTERCEPTORS} from "@angular/common/http"
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import {components} from './app-routing.module';
@@ -22,6 +21,8 @@ import { IonicStorageModule } from '@ionic/storage';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import {Camera} from '@ionic-native/camera/ngx';
 import { Network } from '@ionic-native/network/ngx';
+import { IonicRatingModule } from 'ionic4-rating';
+import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,13 +35,13 @@ import { Network } from '@ionic-native/network/ngx';
     DashboardPageModule,
     FormsModule,
     HttpClientModule,
+    IonicRatingModule,
    IonicStorageModule.forRoot({
      name:"db",
      driverOrder: ['websql','sqlite',]
    })],
   providers: [
     StatusBar,
-    SplashScreen,
     Geolocation,
     AuthService,
     SendmessageService,
@@ -49,6 +50,7 @@ import { Network } from '@ionic-native/network/ngx';
     SubscriptionService,
     AuthGuard,
     PhotoViewer,
+    DocumentViewer,
     Camera,
     Network,
     IonicStorageModule,

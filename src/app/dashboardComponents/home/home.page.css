@@ -112,7 +112,7 @@ ion-content ion-card ion-card-content div.job_imgs {
 
 ion-content ion-card ion-card-content div.job_imgs ion-item {
   display: inline-block;
-  height: 88%;
+  height: 99%;
   width: auto;
   --padding-start: 0 !important;
 }
@@ -131,6 +131,10 @@ ion-content ion-card ion-card-content div.job_imgs ion-item ion-thumbnail ion-ic
   border-radius: 50%;
   left: 90%;
   top: 15px;
+}
+
+ion-content ion-card ion-card-content div.job_imgs ion-item ion-thumbnail ion-img {
+  border-radius: 5px 5px 0 0;
 }
 
 ion-content ion-card ion-card-content div.job_imgs h3 {

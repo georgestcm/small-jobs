@@ -20,17 +20,27 @@ div.setting {
   font-weight: bold;
 }
 
-ion-list ion-item {
+ion-footer {
   color: #e57373;
-  width: 100%;
 }
 
 ion-footer ion-list {
   padding: 0;
 }
 
-ion-content ion-list ion-item {
+ion-footer ion-list ion-item {
   color: #e57373;
+}
+
+ion-footer ion-list ion-item ion-icon {
+  color: #e57373;
+  position: relative;
+  top: 2px;
+  margin-left: 10px;
+}
+
+ion-content ion-list {
+  width: 100%;
 }
 
 ion-content ion-list ion-item:nth-child(1) div.account_info {
@@ -42,9 +52,6 @@ ion-content ion-list ion-item:nth-child(1) div.account_info {
 ion-content ion-list ion-item:nth-child(1) div.account_info div.my_photo {
   width: 30%;
   height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 ion-content ion-list ion-item:nth-child(1) div.account_info div.my_photo img {
@@ -67,21 +74,57 @@ ion-content ion-list ion-item:nth-child(1) div.account_info div.info p {
 }
 
 ion-content ion-list ion-item:nth-child(1) div.account_info div.info p:nth-child(1) {
-  margin-top: 20px;
+  margin-top: 47px;
 }
 
 ion-content ion-list ion-item:nth-child(1) div.account_info div.info p ion-icon {
   color: grey;
   margin-left: 5px;
-  margin-right: 20px;
+  position: relative;
+  top: 3px;
 }
 
 ion-content ion-list ion-item:nth-child(2) {
-  color: #e57373;
+  color: grey;
 }
 
 ion-content ion-list ion-item:nth-child(2) ion-icon {
   position: relative;
   top: 2px;
   margin-left: 10px;
+}
+
+ion-content ion-list ion-item:nth-child(3) {
+  color: grey;
+}
+
+ion-content ion-list ion-item:nth-child(3) ion-icon {
+  position: relative;
+  top: 2px;
+  margin-left: 10px;
+}
+
+ion-content ion-list ion-item:nth-child(4) {
+  color: grey;
+}
+
+ion-content ion-list ion-item:nth-child(4) ion-icon {
+  position: relative;
+  top: 2px;
+  margin-left: 10px;
+}
+
+ion-content ion-list ion-item:nth-child(5) {
+  color: #e57373;
+}
+
+ion-content ion-list ion-item:nth-child(5) ion-icon {
+  position: relative;
+  top: 2px;
+  margin-left: 10px;
+}
+
+.list-ios {
+  margin-bottom: 0;
+  border-top: 1px solid #80808047;
 }

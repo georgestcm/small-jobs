@@ -123,3 +123,11 @@ ion-content div.form form ion-list ion-list-header {
   color: grey;
   font-size: 16px;
 }
+
+.sc-ion-input-ios-h {
+  --padding-start: 10px;
+}
+
+.sc-ion-textarea-ios-h {
+  --padding-start: 10px;
+}

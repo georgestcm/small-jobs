@@ -25,13 +25,12 @@ ion-content ion-card ion-card-header .img_wrapper {
 }
 
 ion-content ion-card ion-card-header .img_wrapper .img {
+  display: inline-block;
+  width: 40%;
   height: 100px;
   width: 100px;
   border-radius: 50%;
   background-color: grey;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-left: 21px;
   float: left;
 }
@@ -60,6 +59,7 @@ ion-content ion-card ion-card-header .info div.name ion-icon {
   font-size: 15px;
   position: relative;
   top: 4px;
+  margin-left: 20px;
 }
 
 ion-content ion-card ion-card-content h2 {
@@ -76,7 +76,12 @@ ion-content ion-card ion-card-content div.noReviews {
   text-align: center;
 }
 
+ion-content ion-card ion-card-content ion-list ion-item {
+  width: 100%;
+}
+
 ion-content ion-card ion-card-content ion-list ion-item .user {
+  width: 100%;
   display: block;
   width: 100%;
   position: absolute;
@@ -84,7 +89,18 @@ ion-content ion-card ion-card-content ion-list ion-item .user {
   color: grey;
 }
 
+ion-content ion-card ion-card-content ion-list ion-item .user p {
+  width: inherit;
+}
+
+ion-content ion-card ion-card-content ion-list ion-item .user p span {
+  margin-left: 8px;
+  position: relative;
+  bottom: 3px;
+}
+
 ion-content ion-card ion-card-content ion-list ion-item .review {
-  margin: 20px 0 0 20px;
+  margin-top: 14px;
+  width: 100%;
   color: grey;
 }

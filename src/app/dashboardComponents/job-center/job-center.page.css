@@ -3,16 +3,10 @@ ion-header {
   border-bottom: 1px solid #80808000;
 }
 
-ion-header ion-toolbar ion-buttons {
+ion-header ion-toolbar ion-title {
+  letter-spacing: 1px;
   color: grey;
-}
-
-ion-header ion-toolbar .Jcenter {
-  position: relative;
-  left: 28%;
-  letter-spacing: 2px;
   font-weight: bold;
-  color: grey;
 }
 
 ion-content ion-list {
@@ -33,6 +27,6 @@ ion-content ion-list ion-item ion-label {
   margin-left: 13px;
 }
 
-ion-content ion-list ion-item ion-icon {
-  padding-left: 3px;
+ion-buttons.buttons-first-slot.sc-ion-buttons-ios-h.sc-ion-buttons-ios-s.ios.hydrated {
+  margin-left: 5px;
 }

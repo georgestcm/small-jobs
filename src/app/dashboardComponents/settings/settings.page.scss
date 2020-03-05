@@ -21,25 +21,28 @@ div.setting {
   font-weight: bold;
 }
 
-ion-list {
-  ion-item {
-    color: #e57373;
-    width: 100%;
-  }
-}
 
 ion-footer {
+  color: #e57373;
   ion-list {
     padding: 0;
+    ion-item {
+      color: #e57373;
+      ion-icon {
+        color: #e57373;
+        position: relative;
+        top: 2px;
+        margin-left: 10px;
+      }
+    }
   }
 }
 
 
 ion-content{
   ion-list {
+      width: 100%;
     ion-item {
-        color:#e57373;
-
         &:nth-child(1){
           div.account_info {
             width: 100%;
@@ -48,20 +51,14 @@ ion-content{
             div.my_photo {
               width: 30%;
               height: 120px;
-              //background-color: blue;
-              display: flex;
-              justify-content: center;
-              align-items: center;
               img {
                 border-radius: 50%;
-                //background-color: red;
                 width: 100px;
                 height: 100px;
                 display: inline-block;
               }
             }
             div.info {
-              //background-color: red;
               width: 70%;
               height: 120px;
               display: inline-block;
@@ -70,12 +67,13 @@ ion-content{
                 margin-bottom: 5px;
                 color: grey;
                 &:nth-child(1){
-                  margin-top: 20px;
+                  margin-top: 47px;
                 }
                 ion-icon {
                 color: grey;
                 margin-left: 5px;
-                margin-right: 20px;
+                position: relative;
+                 top: 3px;
               }
               }
             }
@@ -83,6 +81,30 @@ ion-content{
         }
 
         &:nth-child(2){
+          color: grey;
+          ion-icon {
+            position: relative;
+            top: 2px;
+            margin-left: 10px;
+          }
+        }
+        &:nth-child(3){
+          color: grey;
+          ion-icon {
+            position: relative;
+            top: 2px;
+            margin-left: 10px;
+          }
+        }
+        &:nth-child(4){
+          color: grey;
+          ion-icon {
+            position: relative;
+            top: 2px;
+            margin-left: 10px;
+          }
+        }
+        &:nth-child(5){
           color: #e57373;
           ion-icon {
             position: relative;
@@ -92,4 +114,9 @@ ion-content{
         }
     }
   }
+}
+
+.list-ios {
+  margin-bottom: 0;
+  border-top: 1px solid #80808047;
 }

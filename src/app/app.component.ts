@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Network } from '@ionic-native/network/ngx';
 import { Storage } from '@ionic/storage';
@@ -13,7 +12,6 @@ import { Router } from '@angular/router';
 export class AppComponent {
   constructor(
     private platform: Platform,
-    private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     public alertController: AlertController,
     private network: Network,
@@ -27,9 +25,7 @@ export class AppComponent {
     this.checkNetwork();
     this.platform.ready().then(() => {
       this.statusBar.overlaysWebView(false);
-      this.statusBar.styleDefault();
       this.statusBar.backgroundColorByHexString('#f2f2f2');
-        this.splashScreen.hide();
     });
 
     this.storage.get('token').then((token)=>{

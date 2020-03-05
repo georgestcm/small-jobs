@@ -40,7 +40,7 @@
      <ion-item *ngFor="let img of jobToPost.images; index as pos">
     <ion-thumbnail slot="start">
       <ion-icon name="close" (click)="delete(pos)"></ion-icon>
-      <ion-img [src]="img" (click)="viewImg(img)">
+      <ion-img [src]="img" (click)="viewImg(img,'job images')">
       </ion-img>
     </ion-thumbnail>
  </ion-item>
@@ -50,7 +50,7 @@
    <label for="start">Due date:</label>
    <ion-datetime display-format="MMM DD, YYYY" value="001-01-19" [(ngModel)]="jobToPost.due_date" name="due_date"></ion-datetime>
    <label for="time">Time:</label>
-   <ion-datetime  display-format="hh:mm a" value="01:00" [(ngModel)]="jobToPost.time" name="time"></ion-datetime>
+   <ion-datetime  display-format="hh:mm a" picker-format="h:mm A"  value="3:00 pm" [(ngModel)]="jobToPost.time" name="time"></ion-datetime>
 <label for="payment"> Price:</label>
 <ion-input #price placeholder="price"type="number" [(ngModel)]="jobToPost.price" name="price">&nbsp; $ </ion-input>
 <div class="submit">

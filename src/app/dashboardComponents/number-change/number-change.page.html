@@ -12,11 +12,13 @@
 <ion-content>
 <div class="reset-form">
   <div class="reset-info">
-    <p>Enter your new number below</p>
+    <p>Enter your {{numberText}} number below</p>
   </div>
   <form action="">
-    <ion-input type="text" name="number" placeholder="email"><ion-icon name="call" required></ion-icon></ion-input>
-    <ion-button type="submit"  color="light" class="ion-text-center">SUBMIT</ion-button>
+    <ion-input type="text" name="number" [(ngModel)]="checkNumber.phone_number" [hidden]="numberCheckChange.check" placeholder="number"><ion-icon name="call" required></ion-icon></ion-input>
+    <ion-input type="text" name="number" [(ngModel)]="newNumber.phone_number" [hidden]="numberCheckChange.submit" placeholder="new number"><ion-icon name="call" required></ion-icon></ion-input>
+    <ion-button type="submit" (click)="numberCheck()" [hidden]="numberCheckChange.check" color="light" class="ion-text-center">CHECK</ion-button>
+    <ion-button type="submit" (click)="changeNumber()"  [hidden]="numberCheckChange.submit" color="light" class="ion-text-center">SUBMIT</ion-button>
   </form>
 </div>
 </ion-content>

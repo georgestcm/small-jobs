@@ -82,3 +82,20 @@ ion-content ion-list ion-item ion-card ion-card-content ion-button {
 ion-content ion-list ion-item ion-card ion-card-content ion-button:nth-child(2) {
   margin-left: 64px;
 }
+
+ion-textarea-ios {
+  height: inherit;
+}
+
+ion-title {
+  height: 100%;
+  padding: 0;
+  position: relative;
+  right: 29px;
+  color: grey;
+  font-size: 15px;
+}
+
+ion-title.md.title-md.title-small.hydrated {
+  margin-left: 25px;
+}

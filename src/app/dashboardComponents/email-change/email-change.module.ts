@@ -5,12 +5,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EmailChangePage } from './email-change.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: EmailChangePage
+
   }
 ];
 
@@ -21,6 +20,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [EmailChangePage]
+  declarations: []
 })
 export class EmailChangePageModule {}

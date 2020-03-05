@@ -5,9 +5,9 @@ import { HttpClient } from "@angular/common/http"
 })
 export class ReviewService {
 
-apppost = "https://quickjobsapi.herokuapp.com/api/applicantspost"
-appdelete = "https://quickjobsapi.herokuapp.com/api/applicantsdelete"
-reviewpost = "https://quickjobsapi.herokuapp.com/api/reviewpost"
+apppost = "https://huslapi.herokuapp.com/api/applicantspost"
+appdelete = "https://huslapi.herokuapp.com/api/applicantsdelete"
+reviewpost = "https://huslapi.herokuapp.com/api/reviewpost"
   constructor(private http: HttpClient) { }
 
   postapplicants(id,app){

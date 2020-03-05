@@ -4,6 +4,8 @@ import { DataService } from 'src/app/data.service';
 import {ReviewService} from 'src/app/review.service'
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router'
+import { ModalController } from '@ionic/angular';
+import {ReviewPage} from '../review/review.page'
 @Component({
   selector: 'app-applicants',
   templateUrl: './applicants.page.html',
@@ -13,7 +15,8 @@ export class ApplicantsPage implements OnInit {
 
   constructor(public alertController: AlertController,
   public _data: DataService,public storage: Storage,
-public _review: ReviewService,private _router:Router) { }
+public _review: ReviewService,private _router:Router,
+public modalController: ModalController) { }
   currentUser;
   userData;
   applicants;
@@ -47,6 +50,10 @@ public _review: ReviewService,private _router:Router) { }
     })
   }
 
+  ///////////////////
+  //////////////////
+  //////////////////
+  ///below method add review
   async presentAlertPrompt(id) {
       const alert = await this.alertController.create({
         header: "Review",
@@ -73,6 +80,22 @@ public _review: ReviewService,private _router:Router) { }
 
       await alert.present();
     }
+///////////////////
+//////////////////
+//////////////////
+///above method add review
+
+
+async openReviewPage(applicant_id) {
+    const modal = await this.modalController.create({
+      component: ReviewPage,
+      componentProps: {
+        applicant_identification:  applicant_id,
+      }
+    });
+    return await modal.present();
+  }
+
 
     async presentAlert(header,msg) {
         const alert = await this.alertController.create({
@@ -110,4 +133,6 @@ public _review: ReviewService,private _router:Router) { }
       this._data.changeId(id)
       this._router.navigate(['dashboard/profile'])
     }
+
+
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService} from 'src/app/data.service';
+import { LoadingController } from '@ionic/angular';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -7,7 +8,9 @@ import { DataService} from 'src/app/data.service';
 })
 export class ProfilePage implements OnInit {
 
-  constructor(public _data: DataService) { }
+  constructor(public _data: DataService,
+      public loadingController: LoadingController
+) { }
   data;
    user = {
      photo:'',
@@ -19,8 +22,18 @@ markupPhoto = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6
   ngOnInit() {
   }
 
+  async presentLoading() {
+      const loading = await this.loadingController.create({
+        message: 'loading',
+        duration: 2000
+      });
+      await loading.present();
+
+      const { role, data } = await loading.onDidDismiss();
+    }
 
   ionViewWillEnter(){
+    this.presentLoading()
     this._data.currentId
     .subscribe(value => this.id = value)
     this._data.getCurrentUser(this.id)
@@ -29,9 +42,11 @@ markupPhoto = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6
         this.data = res,
        this.user.name = this.data.first_name+' '+this.data.last_name,
        this.user.photo = this.data.profile_photo,
-       this.user.reviews = this.data.reviews
+       this.user.reviews = this.data.reviews,
+       console.log(this.data)
      ),
       err=> console.log(err)
    )
+
   }
   }

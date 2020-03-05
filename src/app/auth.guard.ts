@@ -12,34 +12,6 @@ constructor(private _authService: AuthService, private _router:Router,private st
 
 }
 
-/*checkAuth(): boolean {
-    return !!Promise.resolve("token")
-  }
-canActivate() {
-      if (this.checkAuth()) {
-        return true;
-      } else {
-        return false;
-      }
-    } */
-/*canActivate(){
-/*  this._authService.loggedIn().then((token)=>{
-    if(token){
-      return true
-    } else {
-      this._router.navigate(['/login'])
-      return false
-    }
-  }) */
-  /*if(this._authService.loggedIn()){
-    return true
-    window.alert(true)
-  } else {
-    return false
-    window.alert(false)
-  }
-} */
-
 async canActivate(): Promise<boolean> {
     if(await this._authService.loggedIn()){
       return true

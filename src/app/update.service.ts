@@ -8,8 +8,8 @@ export class UpdateService {
   constructor(private http: HttpClient) { }
 
 
- privatePhotoUpdate = "https://quickjobsapi.herokuapp.com/api/photoupdate"
- privateDeleteAccount = "https://quickjobsapi.herokuapp.com/api/deleteaccount"
+ privatePhotoUpdate = "https://huslapi.herokuapp.com/api/photoupdate"
+ privateDeleteAccount = "https://huslapi.herokuapp.com/api/deleteaccount"
 
    updatePhoto(id,photo){
     return this.http.put(this.privatePhotoUpdate,{
@@ -28,5 +28,6 @@ export class UpdateService {
       }
     })
   }
+
 
 }

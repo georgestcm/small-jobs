@@ -3,6 +3,8 @@ import { DataService} from 'src/app/data.service';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { Storage } from '@ionic/storage';
 import { AlertController } from '@ionic/angular';
+import { Platform } from '@ionic/angular';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-posted-j',
   templateUrl: './posted-j.page.html',
@@ -13,7 +15,9 @@ export class PostedJPage implements OnInit {
   constructor(public _data: DataService,
   private photoViewer: PhotoViewer,
 public storage: Storage,
-public alertController: AlertController) { }
+public alertController: AlertController,
+public plt: Platform,
+private router: Router) { }
    id;
    jobid;
    allJobs;
@@ -32,8 +36,17 @@ public alertController: AlertController) { }
     }, 1000);
   }
 
-  viewImg(src){
-    this.photoViewer.show(src);
+  viewImg(src,title){
+    var options = {
+      share: true, // default is false
+      closeButton: true, // iOS only: default is true
+      copyToReference: true // iOS only: default is false
+    };
+
+    if (this.plt.is("ios")) {
+      src = decodeURIComponent(src);
+    }
+    this.photoViewer.show(src,title,options);
   }
 
   async presentAlert(msg) {
@@ -83,6 +96,10 @@ public alertController: AlertController) { }
 delete(jobid){
 this.alert("Are you sure?",jobid)
 
+}
+
+toJobCenter(){
+  this.router.navigate(['dashboard/job-center'])
 }
 
 }
