@@ -29,7 +29,7 @@ const routes: Routes = [
           {
             path:"posted",
             loadChildren: 'src/app/dashboardComponents/posted-j/posted-j.module#PostedJPageModule'
-          },/*
+          },
           {
             path:"applied-jobs",
             component:AppliedJobsPage
@@ -43,8 +43,8 @@ const routes: Routes = [
             component:ApplicantsPage
           },
 
-        ]
-      },*/
+]
+      },
       {
         path: "profile-edit",
         component: ProfileEditPage
@@ -55,7 +55,7 @@ const routes: Routes = [
       }
     ]
   }
-]}]
+]
 
 @NgModule({
   imports: [

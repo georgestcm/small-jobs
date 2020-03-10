@@ -27,28 +27,5 @@ ionViewWillEnter(){
   });
 }
 
-  toMessages(){
-      this.router.navigate(['dashboard/messages'])
-    }
-
- toHome(){
-        this.router.navigate(['dashboard'])
-      }
-
-  toPayments(){
-            this.router.navigate(['dashboard/payments'])
-          }
-
-  toSettings(){
-      this.router.navigate(['dashboard/settings'])
-    }
-
-  toProfileEdit(){
-    this.router.navigate(['dashboard/profile-edit'])
-  }
-
-toJobCenter(){
-  this.router.navigate(['dashboard/job-center'])
-}
 
 }

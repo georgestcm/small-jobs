@@ -20,7 +20,7 @@ import {PasswordChangePage} from './dashboardComponents/password-change/password
 import {ReviewPage} from './dashboardComponents/review/review.page'
 import { AuthGuard } from './auth.guard'
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard/home', pathMatch: 'full' }/*,
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'password-reset', component:PasswordResetPage, pathMatch:'full' },
@@ -41,9 +41,9 @@ const routes: Routes = [
     children:[
       {path:'posted', component:PostedJPage,pathMatch:'full'},
       {path:'job-completed', component:JobCompletedPage, pathMatch:'full' },
-      {path:'applied-jobs',component:AppliedJobsPage,pathMatch:"full"},
+      {path:'dashboard/job-center/applied-jobs',component:AppliedJobsPage,pathMatch:"full"},
      { path: 'applicants', component:ApplicantsPage, pathMatch:"full" }
-    ] },
+   ]},
     { path: 'profile', component: ProfilePage, pathMatch:"full" },
    { path: 'applicants', component:ApplicantsPage, pathMatch:"full" },
     { path: 'passwordchange', component:PasswordChangePage, pathMatch:"full" },
@@ -55,7 +55,7 @@ const routes: Routes = [
 },
   { path: 'password-change', loadChildren: './dashboardComponents/password-change/password-change.module#PasswordChangePageModule' },
   { path: 'number-change', loadChildren: './dashboardComponents/number-change/number-change.module#NumberChangePageModule' },
-  { path: 'email-change', loadChildren: './dashboardComponents/email-change/email-change.module#EmailChangePageModule' },
+  { path: 'email-change', loadChildren: './dashboardComponents/email-change/email-change.module#EmailChangePageModule' }, */
 
 ];
 

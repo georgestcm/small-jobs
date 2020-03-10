@@ -41,11 +41,11 @@ export class JobCenterPage implements OnInit {
   }
 
   toApplied(){
-    this.router.navigate(['dashboard/applied-jobs'])
+    this.router.navigate(['dashboard/job-center/applied-jobs'])
   }
 
   toJobCompleted(){
-    this.router.navigate(['dashboard/job-completed'])
+    this.router.navigate(['dashboard/job-center/job-completed'])
   }
 
   toPosted(){
@@ -53,6 +53,6 @@ export class JobCenterPage implements OnInit {
   }
 
   toApplicants(){
-    this.router.navigate(['dashboard/applicants'])
+    this.router.navigate(['dashboard/job-center/applicants'])
   }
 }

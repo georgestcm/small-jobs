@@ -38,7 +38,7 @@ getToken(){
 logoutUser(){
   this.storage.remove('token')
   this.storage.remove('user')
- this._router.navigate(['/login'])
+ //this._router.navigate(['/login'])
 
 }
 }
